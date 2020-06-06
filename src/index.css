@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div#root {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.controlsCard {
+  display: flex;
+}
+
+.controlsHeader {
+  flex: 1;
+}
+
+.controlsBlock {
+  flex: 2;
+}
+
+.rangeInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+div#generatorResultColumn {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
