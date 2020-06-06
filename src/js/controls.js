@@ -5,21 +5,37 @@ class Controls extends React.Component{
       super(props)
     }
     render(){
+      let rangeList = []
       return(
         <div className = 'column'>
-            {this.props.settings.map(
+            {
+            this.props.settings.map(
                 (item, index)=>{
-                    return(
-                        <ControlsCard 
-                        options = {item.options}
-                        key = {index}
-                        type = {item.type}
-                        name = {item.title} 
-                        onInput = {this.props.onInput}/>
-                    )
+                    if(item.options){
+                        return(
+                            <ControlsCard
+                            key = {index}
+                            options = {item.options}
+                            type = {item.type}
+                            value = {item.value}
+                            name = {item.name} 
+                            onInput = {this.props.onInput}/>
+                        )
+                    } else {
+                        if(item.type == 'range'){
+                            let value = item;
+                            value.value = this.props.data[item.name]
+                            rangeList.push(value)
+                        }
+                    }
                 }
             )    
             }
+         <ControlsCard
+            options = {rangeList}
+            type = 'range'
+            name = "Generator" 
+            onInput = {this.props.onInput}/>
         </div>
       )
     }
@@ -38,29 +54,28 @@ render(){
         <div className = 'controlsBlock'>
             {
                 this.props.options.map(
-                (item, index)=>{
-                        if(this.props.type == 'range'){
-                            return(<MyRange 
-                                key = {index}
-                                name = {item.name}
-                                value = {item.value}
-                                onInput = {this.props.onInput}/>)
+                        (item, index)=>{
+                            if(this.props.type == 'radio'){
+                                return(<MyRadio
+                                    key = {index}
+                                    name = {this.props.name}
+                                    id = {item.name}
+                                    value = {item.value}
+                                    select = {item.select}
+                                    onInput = {this.props.onInput}/>)
+                            } else {
+                                return(<MyRange
+                                    key = {index}
+                                    name = {item.name}
+                                    id = {item.name}
+                                    value = {item.value}
+                                    select = {item.select}
+                                    onInput = {this.props.onInput}/>)
+                            }
+                            
                         } 
-                        if(this.props.type == 'radio'){
-                            return(<MyRadio
-                                key = {index}
-                                name = {this.props.name}
-                                id = {item.name}
-                                value = {item.value}
-                                select = {item.select}
-                                onInput = {this.props.onInput}/>)
-                        } 
-                        
-                    
-                }
-                )
+                    )
             }
-        
         </div>
     </div>
     )

@@ -13,20 +13,11 @@ class App extends React.Component{
     super(props)
     
     this.state = {
-      time: 0
+      time: 0,
     }   
     settings.map(
-      (item, index)=>{
-        if(item.type == 'radio'){
-          this.state[item.title] = item.options[item.value].value
-        } else {
-          item.options.map(
-            (item2, index2)=>{
-              this.state[item2.name] = item2.value 
-            }
-          )
-        }
-        
+      (item)=>{
+        this.state[item.name] = item.value
       }
     )
     this.loop = this.loop.bind(this)
@@ -42,17 +33,18 @@ class App extends React.Component{
     this.raf = requestAnimationFrame(this.loop)
   }
   inputHandler(event){
-      let name = event.target.name.toString();
-      this.setState({
-        [name]: event.target.value.split(",")
-      })
+    let target = event.target;
+    let name = target.name;
+    this.setState({
+      [name]: target.value
+    })
   }
 
   render(){
     return(
       <>
-        <Generatorresult data = {this.state}/>
-        <Controls settings = {settings} data = {this.state} onInput = {this.inputHandler}/>
+        <Generatorresult data = {this.state} settings = {settings}/>
+        <Controls data = {this.state} settings = {settings} onInput = {this.inputHandler}/>
       </>
     )
   }

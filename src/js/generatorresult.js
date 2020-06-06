@@ -10,12 +10,12 @@ class Generatorresult extends React.Component{
       return(
         <div id = 'generatorResultColumn' className = 'column'>
           <h1>ImageGenerator</h1>
-          <MyCanvas 
+          {/* <MyCanvas 
           width = {this.props.data.Format[0]} 
           height = {this.props.data.Format[1]} 
           time = {this.props.data.time}/>
-          <Button/>
-          <DataList data = {this.props.data}></DataList>
+          <Button/> */}
+          <DataList settings = {this.props.settings} data = {this.props.data}></DataList>
           <div className = 'js'>
             js 2020
           </div>
@@ -27,18 +27,19 @@ class Generatorresult extends React.Component{
 class DataList extends React.Component{
     constructor(props){
       super(props)
-      console.log(Object.entries(this.props.data))
     }
     render(){
       return(
           <>
-          {Object.keys(this.props.data).map(
+          {this.props.settings.map(
               (item)=>{
-                  return(
-                      <div>
-                          {item} = {this.props.data[item]}
-                      </div>
-                  )
+                if(item.type){
+                    return(
+                        <div>
+                            {item.name} = {this.props.data[item.name]}
+                        </div>
+                    )
+                }
               }
           )}
           </>

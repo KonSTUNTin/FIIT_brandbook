@@ -1,11 +1,11 @@
 const settings = [
     {
-        title: "Logotype",
+        name: 'Logotype',
         type: 'radio',
         value: 0,
         options: [
             {
-                name: 'None',
+                name: "None",
                 value: 'none',
                 select: true
             },
@@ -17,7 +17,7 @@ const settings = [
         ]
     },
     {
-        title: "Format",
+        name: "Format",
         type: 'radio',
         value: 0,
         options: [
@@ -34,7 +34,7 @@ const settings = [
         ]
     },
     {
-        title: "Color",
+        name: "Color",
         type: 'radio',
         value: 0,
         options: [
@@ -51,18 +51,14 @@ const settings = [
         ]
     },
     {
-        title: "Generator",
+        name: "Black",
         type: 'range',
-        options: [
-            {
-                name: 'Scale',
-                value: 50,
-            },
-            {
-                name: 'Black',
-                value: 50
-            }
-        ]
+        value: 50
+    },
+    {
+        name: "Scale",
+        type: 'range',
+        value: 50
     },
 ]
 
