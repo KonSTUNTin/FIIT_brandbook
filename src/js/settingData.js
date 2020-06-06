@@ -2,7 +2,7 @@ const settings = [
     {
         name: 'Logotype',
         type: 'radio',
-        value: 0,
+        value: "None",
         options: [
             {
                 name: "None",
@@ -19,7 +19,7 @@ const settings = [
     {
         name: "Format",
         type: 'radio',
-        value: 0,
+        value: [800, 400],
         options: [
             {
                 name: 'Youtube',

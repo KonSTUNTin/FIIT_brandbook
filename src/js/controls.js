@@ -7,7 +7,7 @@ class Controls extends React.Component{
     render(){
       let rangeList = []
       return(
-        <div className = 'column'>
+        <div id = 'ControlsPanel' className = 'column'>
             {
             this.props.settings.map(
                 (item, index)=>{
@@ -110,8 +110,16 @@ class MyRadio extends React.Component{
 class MyRange extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            value: this.props.value
+        }
         this.ref = React.createRef()
-        
+        this.point = React.createRef()
+        this.fill = React.createRef()
+    }
+    componentDidUpdate(){
+        this.point.current.style.marginLeft = this.props.value + '%'
+        this.fill.current.style.width = this.props.value + '%'
     }
 
     render(){
@@ -126,13 +134,21 @@ class MyRange extends React.Component{
             </div>
             </div>
             <div className = 'RangeLine'>
-            <input 
-            name = {this.props.name}
-            ref = {this.ref} 
-            onInput = {this.props.onInput} 
-            type = "range" 
-            className = 'myRange'>
-            </input>
+            
+            <div className = 'rangeLineDiv'>
+                <input 
+                name = {this.props.name}
+                ref = {this.ref} 
+                onInput = {this.props.onInput} 
+                type = "range" 
+                className = 'myRange'>
+                </input>
+                <div ref = {this.fill} className = 'rangeFillDiv'>
+                
+                </div>
+                <div ref = {this.point} className = 'rangePointDiv'></div>
+            </div>
+            
             </div>
         </div>
         )

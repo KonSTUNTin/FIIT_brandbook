@@ -36,7 +36,7 @@ class App extends React.Component{
     let target = event.target;
     let name = target.name;
     this.setState({
-      [name]: target.value
+      [name]: target.value.split(',')
     })
   }
 

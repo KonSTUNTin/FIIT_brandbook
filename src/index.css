@@ -1,10 +1,31 @@
+:root{
+  --pink: #FE25A7;
+  --darkBlue: #110F2C;
+  --white: white;
+  --regularTextStyle: 18px;
+  --h1TextStyle: 60px;
+  --h3TextStyle: 24px;
+  --module: 12px
+}
+@font-face {
+  font-family: 'Golos_Regular';
+  src: url('./fonts/Golos Text_Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Golos_Bold';
+  src: url('./fonts/Golos Text_Bold.ttf')  format('truetype');
+}
 body {
+  font-family: "Golos_Regular";
+  font-size: var(--regularTextStyle);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--white);
+  background-color: var( --darkBlue);
 }
 
 code {
@@ -14,18 +35,33 @@ code {
 
 div#root {
   display: flex;
+  width: 90%;
+  margin-left: 5%;
 }
-
+h1 {
+  font-size: var(--h1TextStyle);
+  font-family: "Golos_Bold";
+}
 .column {
   flex: 1;
 }
 
 .controlsCard {
   display: flex;
+  margin-bottom: calc(var(--module) * 3);
+}
+.Radio{
+  margin-bottom: calc( 1.5 * var(--module));
+  margin-top: 5px;
+}
+.range {
+  margin-bottom: calc(var(--module) * 2);
 }
 
 .controlsHeader {
   flex: 1;
+  font-size: var(--h3TextStyle);
+  font-family: 'Golos_Bold';
 }
 
 .controlsBlock {
@@ -34,6 +70,7 @@ div#root {
 
 .rangeInfo {
   display: flex;
+  margin-bottom: var(--module);
   justify-content: space-between;
 }
 
@@ -43,3 +80,67 @@ div#generatorResultColumn {
   justify-content: center;
   align-items: center;
 }
+
+.rangeLineDiv {
+  width: 100%;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.rangePointDiv {
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 43px;
+  transform: translate(-5px, -4px);
+  background-color: var(--white);
+  border: 3px solid var(--pink);
+}
+input.myRange {
+  position: absolute;
+  width: 100%;
+  opacity: .05;
+}
+.RangeLine {
+  position: relative;
+}
+
+.rangeFillDiv {
+  pointer-events: none;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  background-color: var(--pink);
+}
+canvas {
+  max-width: 80%;
+}
+
+.rangePointDiv {
+    pointer-events: none;
+}
+input[type="radio"]{
+  display: none;
+}
+
+input[type="radio"]+label:before{
+  content: '';
+  display: block;
+  float: left;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: var(--module);
+  width: 20px;
+  border-radius: 43px;
+  transform: translate(-5px, -11px);
+  border: 3px solid var(--white);
+}
+input[type="radio"]:checked+label:before{
+  background-color: var(--white);
+}
+
+div#ControlsPanel {
+  margin-top: calc(var(--module) * 6);
+}
+

@@ -10,11 +10,11 @@ class Generatorresult extends React.Component{
       return(
         <div id = 'generatorResultColumn' className = 'column'>
           <h1>ImageGenerator</h1>
-          {/* <MyCanvas 
+          <MyCanvas 
           width = {this.props.data.Format[0]} 
           height = {this.props.data.Format[1]} 
           time = {this.props.data.time}/>
-          <Button/> */}
+          <Button/>
           <DataList settings = {this.props.settings} data = {this.props.data}></DataList>
           <div className = 'js'>
             js 2020
