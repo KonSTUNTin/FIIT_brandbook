@@ -57,6 +57,9 @@ class MyCanvas extends React.Component{
             pic: {
                 value: this.canvasTexture
             },
+            grad: {
+                value: 50
+            },
             k: {
                 value: w / h
             },
@@ -84,6 +87,9 @@ class MyCanvas extends React.Component{
             bColor: {
                 value: 50
             },
+            Seed: {
+                value: 50
+            },
             formtype: {
                 value: this.props.settings.Form
             },
@@ -96,6 +102,7 @@ class MyCanvas extends React.Component{
             split: {
                 value: this.props.settings.Split
             },
+            
         }
         uniforms.pic.value.needsUpdate = true;
         let g = new THREE.PlaneGeometry(w, h, 1, 1);
