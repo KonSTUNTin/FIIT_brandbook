@@ -2,7 +2,7 @@ const settings = [
     {
         name: 'Logotype',
         type: 'radio',
-        value: "None",
+        value: "none",
         options: [
             {
                 name: "None",
@@ -10,8 +10,18 @@ const settings = [
                 select: true
             },
             {
+                name: "Yes",
+                value: 'yes',
+                select: false
+            },
+            {
                 name: 'Only borders',
-                value: 'Only borders',
+                value: 'borders',
+                select: false
+            },
+            {
+                name: 'One bracket',
+                value: 'bracket',
                 select: false
             }
         ]
@@ -19,18 +29,24 @@ const settings = [
     {
         name: "Format",
         type: 'radio',
-        value: [800, 400],
+        value: [1024, 1024],
         options: [
             {
-                name: 'Youtube',
-                value: [800, 400],
-                select: 1,
+                name: 'Square logo',
+                value: [1024, 1024],
+                select: 1
             },
             {
-                name: 'VK',
-                value: [300, 200],
+                name: 'Youtube header',
+                value: [2560, 1440],
+                select: 0,
+            },
+            {
+                name: 'VK header',
+                value: [1590, 400],
                 select: 0
-            }
+            },
+            
         ]
     },
     {

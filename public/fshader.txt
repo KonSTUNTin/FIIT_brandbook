@@ -9,8 +9,13 @@ uniform float formtype;
 uniform float black;
 uniform float trace;
 uniform float split;
+uniform float logoAlpha;
+uniform float bracketAlpha;
+uniform float borderAlpha;
 uniform sampler2D pic;
-
+uniform sampler2D logo;
+uniform sampler2D borders;
+uniform sampler2D bracket;
 // vec2 random( vec2 p ) {
 //     return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
 // }
@@ -18,9 +23,9 @@ uniform sampler2D pic;
 void main(){
     float kk = size;
     vec2 ip = vUv;
-    ip.x -= .5;
-    ip.x *= k;
-    ip.x += .5;
+    ip -= .5;
+    ip.y /= k;
+    ip += .5;
     vec2 mv = floor(vUv * kk) / kk; 
     vec4 col = texture2D(pic, mv) * trace / 100.;
     kk *= floor((1. - col.r) * split);
@@ -42,10 +47,18 @@ void main(){
     r = cc * formtype / 100. + (1.- formtype / 100.) * r;
 
     float lr = 1. - r;
-
-    gl_FragColor = vec4(
+    vec4 abstract = vec4(
         max(lr * rColor, 17.) / 256., 
         max(lr * gColor, 15.) / 256., 
         max(lr * bColor, 44.) / 256., 
         1.);
+    vec2 mp = vUv;
+    mp -= .5;
+    mp.x *= k;
+    mp *=1.5;
+    mp += .5;
+    vec4 logoTex = texture2D(logo, mp);
+    vec4 bracketTex = texture2D(bracket, mp);
+    vec4 bordersTex = texture2D(borders, mp);
+    gl_FragColor = abstract + logoTex * logoAlpha + bracketTex * bracketAlpha + bordersTex * borderAlpha;
 }

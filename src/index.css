@@ -3,8 +3,11 @@
   --darkBlue: #110F2C;
   --white: white;
   --regularTextStyle: 18px;
+  --regularMobileTextStyle: 14px;
   --h1TextStyle: 60px;
+  --h1MobileTextStyle: 30px;
   --h3TextStyle: 24px;
+  --h3MobileTextStyle: 16px;
   --module: 12px
 }
 @font-face {
@@ -117,7 +120,7 @@ input.myRange {
   background-color: var(--pink);
 }
 canvas {
-  max-width: 80%;
+  max-width: 60%;
   height: auto !important;
   margin-bottom: calc(var(--module) * 3)
 }
@@ -164,3 +167,16 @@ div#ControlsPanel {
   display: flex;
   width: 60%;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  width: 60%;
+  align-items: inherit;
+  justify-content: space-evenly;
+  background-color: var(--darkBlue);
+  padding: calc(var(--module) * 2);
+}
+
+

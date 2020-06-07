@@ -5,13 +5,19 @@ class Generatorresult extends React.Component{
     constructor(props){
       super(props)
         this.saveImage = this.saveImage.bind(this)
+        this.canvasRef = React.createRef()
     }
     saveImage(){
-        // var c = document.getElementById("alpha");
-        // var d = c.toDataURL("image/png");
-        // var w = window.open('about:blank','image from canvas');
-        // w.document.write("<img src='"+d+"' alt='from canvas'/>");
-        // console.log('saveStart')
+        
+        this.canvasRef.current.toBlob(function(blob) {
+            // после того, как Blob создан, загружаем его
+            let link = document.createElement('a');
+            link.download = 'example.png';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            // удаляем внутреннюю ссылку на Blob, что позволит браузеру очистить память
+            URL.revokeObjectURL(link.href);
+          }, 'image/png');
     }
 
     render(){
@@ -20,44 +26,24 @@ class Generatorresult extends React.Component{
             <div class = 'fixContainer'>
                 <h1>ImageGenerator</h1>
                 <MyCanvas 
+                refProp = {this.canvasRef}
                 settings = {this.props.data}
                 width = {this.props.data.Format[0]} 
                 height = {this.props.data.Format[1]} 
                 time = {this.props.data.time}/>
+             </div>
+             <div class = 'footer'>
                 <Button onClick = {this.saveImage}/>
-                <DataList settings = {this.props.settings} data = {this.props.data}></DataList>
                 <div className = 'js'>
                     js 2020
                 </div>
-          </div>
+             </div>
+               
+         
         </div>
       )
     }
-}
-
-class DataList extends React.Component{
-    constructor(props){
-      super(props)
-    }
-    render(){
-      return(
-          <>
-          {this.props.settings.map(
-              (item)=>{
-                if(item.type){
-                    return(
-                        <div>
-                            {item.name} = {this.props.data[item.name]}
-                        </div>
-                    )
-                }
-              }
-          )}
-          </>
-      )
-    }
-}
-  
+}  
 
 export default Generatorresult;
   

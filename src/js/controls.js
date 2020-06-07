@@ -34,7 +34,7 @@ class Controls extends React.Component{
          <ControlsCard
             options = {rangeList}
             type = 'range'
-            name = "Generator" 
+            name = "Abstraction" 
             onInput = {this.props.onInput}/>
         </div>
       )

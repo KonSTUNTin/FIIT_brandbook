@@ -12,21 +12,26 @@ const url = [
 class MyCanvas extends React.Component{
     constructor(props){
         super(props)
+       
+
         this.state = {
             width: this.props.height,
             height: this.props.width,
             time: 0
         }
-        this.canvasRef = React.createRef()
+       
     }
     async componentDidMount(){
         let w = this.props.width;
         let h = this.props.height;
         this.scene = new THREE.Scene();
         this.renderer = new THREE.WebGLRenderer({
-            canvas: this.canvasRef.current
+            canvas: this.props.refProp.current,
+            preserveDrawingBuffer: true 
         });
-    
+        this.logo = new THREE.TextureLoader().load('./logo.png');
+        this.bracket = new THREE.TextureLoader().load('./bracket.png');
+        this.borders = new THREE.TextureLoader().load('./borders.png');
         this.renderer.setSize(w , h);
         this.camera_Ortographic = new THREE.OrthographicCamera(-w / 2, w / 2, h / 2, - h / 2, .01, 30000);
         this.camera_Ortographic.position.set(0, 0, 1000);
@@ -37,6 +42,15 @@ class MyCanvas extends React.Component{
         this.canvasTexture = new THREE.CanvasTexture(this.tex.canvas.canvas)
 
         let uniforms = {
+            logo: {
+                value: this.logo
+            },
+            bracket: {
+                value: this.bracket
+            },
+            borders: {
+                value: this.borders
+            },
             time: {
                 value: 0
             },
@@ -54,6 +68,15 @@ class MyCanvas extends React.Component{
             },
             gColor: {
                 value: 50
+            },
+            logoAlpha: {
+                value: 0
+            },
+            bracketAlpha: {
+                value: 0
+            },
+            borderAlpha: {
+                value: 0
             },
             bColor: {
                 value: 50
@@ -104,7 +127,26 @@ class MyCanvas extends React.Component{
             shaderValue.trace.value = settings.Trace;
             shaderValue.split.value = settings.Split;
             shaderValue.k.value = this.props.width / this.props.height;
-            
+            if(this.props.settings.Logotype == 'yes'){
+                shaderValue.logoAlpha.value = 1;
+                shaderValue.bracketAlpha.value = 0;
+                shaderValue.borderAlpha.value = 0;
+            }
+            if(this.props.settings.Logotype == 'none'){
+                shaderValue.logoAlpha.value = 0;
+                shaderValue.bracketAlpha.value = 0;
+                shaderValue.borderAlpha.value = 0;
+            }
+            if(this.props.settings.Logotype == 'bracket'){
+                shaderValue.logoAlpha.value = 0;
+                shaderValue.bracketAlpha.value = 1;
+                shaderValue.borderAlpha.value = 0;
+            }
+            if(this.props.settings.Logotype == 'borders'){
+                shaderValue.logoAlpha.value = 0;
+                shaderValue.bracketAlpha.value = 0;
+                shaderValue.borderAlpha.value = 1;
+            }
             if(this.props.settings.Color == 'pink'){
                 shaderValue.rColor.value = 254;
                 shaderValue.gColor.value = 37;
@@ -121,14 +163,17 @@ class MyCanvas extends React.Component{
                 shaderValue.bColor.value = 256;
             }
         }
+
         this.renderer.render(
             this.scene, 
             this.camera_Ortographic
-            )
+        )
+        
+        
     }
     render(){
         return(
-        <canvas width = {this.props.width} height = {this.props.height} ref = {this.canvasRef}/>
+        <canvas width = {this.props.width} height = {this.props.height} ref = {this.props.refProp}/>
         )
     }
 }
@@ -164,6 +209,8 @@ class MyTexture{
         //     this.w = w
         //     this.h = h
         // }
+        // this.canvas.canvas.width = w;
+        // this.canvas.canvas.height = h
         let ctx = this.canvas.ctx;
         ctx.fillStyle = 'white';
         ctx.globalAlpha = .01;
