@@ -1,0 +1,42 @@
+varying vec2 vUv;
+uniform float time;
+uniform float k;
+uniform float size;
+uniform float rColor;
+uniform float gColor;
+uniform float bColor;
+uniform float formtype;
+uniform float black;
+uniform float trace;
+uniform float split;
+uniform sampler2D pic;
+
+// vec2 random( vec2 p ) {
+//     return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
+// }
+
+void main(){
+    float kk = size;
+    vec2 mv = floor(vUv * kk) / kk; 
+    vec4 col = texture2D(pic, mv) * trace / 100.;
+    kk *= floor((1. - col.r) * split);
+    vec2 p = fract(vUv * kk);
+    float r = smoothstep(
+        (1. - col.r) *.9 * black / 100.,
+        (1. - col.r) * black / 100.,
+        length(p - .5) );
+    float cc = step(
+        (1. - col.r) * black / 100.,
+        abs(p.x - .5)) + 
+        step(
+        (1. - col.r) * black / 100.,
+        abs(p.y - .5));
+    r = cc * formtype / 100. + (1.- formtype / 100.) * r;
+    float lr = 1. - r;
+    
+    gl_FragColor = vec4(
+        lr * rColor / 100., 
+        lr * gColor / 100., 
+        lr * bColor / 100., 
+        1.);
+}

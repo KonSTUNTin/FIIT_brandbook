@@ -60,6 +60,26 @@ const settings = [
         type: 'range',
         value: 50
     },
+    {
+        name: "Form",
+        type: 'range',
+        value: 50
+    },
+    {
+        name: "Trace",
+        type: 'range',
+        value: 50
+    },
+    {
+        name: "Split",
+        type: 'range',
+        value: 50
+    },
+    {
+        name: "K",
+        type: 'range',
+        value: 50
+    },
 ]
 
 export default settings

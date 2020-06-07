@@ -24,6 +24,7 @@ class App extends React.Component{
     this.inputHandler = this.inputHandler.bind(this)
   }
   componentDidMount(){
+    
     this.raf = requestAnimationFrame(this.loop)
   }
   loop(){
