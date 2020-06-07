@@ -59,7 +59,9 @@ h1 {
 }
 
 .controlsHeader {
-  flex: 1;
+  text-align: right;
+  margin-right: calc(var(--module) * 5);
+  flex: 1 1;
   font-size: var(--h3TextStyle);
   font-family: 'Golos_Bold';
 }
@@ -76,6 +78,7 @@ h1 {
 
 div#generatorResultColumn {
   display: flex;
+  flex: 2;
   flex-flow: column;
   justify-content: center;
   align-items: center;
@@ -115,6 +118,8 @@ input.myRange {
 }
 canvas {
   max-width: 80%;
+  height: auto !important;
+  margin-bottom: calc(var(--module) * 3)
 }
 
 .rangePointDiv {
@@ -144,3 +149,18 @@ div#ControlsPanel {
   margin-top: calc(var(--module) * 6);
 }
 
+.button {
+  padding: var(--module);
+  background-color: var(--pink);
+  border-radius: var(--module);
+  color: var(--darkBlue);
+  cursor: pointer;
+}
+
+.fixContainer {
+  align-items: center;
+  flex-flow: column;
+  position: fixed;
+  display: flex;
+  width: 60%;
+}

@@ -17,26 +17,35 @@ uniform sampler2D pic;
 
 void main(){
     float kk = size;
+    vec2 ip = vUv;
+    ip.x -= .5;
+    ip.x *= k;
+    ip.x += .5;
     vec2 mv = floor(vUv * kk) / kk; 
     vec4 col = texture2D(pic, mv) * trace / 100.;
     kk *= floor((1. - col.r) * split);
-    vec2 p = fract(vUv * kk);
+
+    vec2 p = fract(ip * kk);
+
     float r = smoothstep(
         (1. - col.r) *.9 * black / 100.,
         (1. - col.r) * black / 100.,
         length(p - .5) );
+
     float cc = step(
         (1. - col.r) * black / 100.,
         abs(p.x - .5)) + 
         step(
         (1. - col.r) * black / 100.,
         abs(p.y - .5));
+
     r = cc * formtype / 100. + (1.- formtype / 100.) * r;
+
     float lr = 1. - r;
-    
+
     gl_FragColor = vec4(
-        lr * rColor / 100., 
-        lr * gColor / 100., 
-        lr * bColor / 100., 
+        max(lr * rColor, 17.) / 256., 
+        max(lr * gColor, 15.) / 256., 
+        max(lr * bColor, 44.) / 256., 
         1.);
 }

@@ -20,6 +20,7 @@ class App extends React.Component{
         this.state[item.name] = item.value
       }
     )
+    console.log(this.state)
     this.loop = this.loop.bind(this)
     this.inputHandler = this.inputHandler.bind(this)
   }

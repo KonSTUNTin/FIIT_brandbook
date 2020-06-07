@@ -36,16 +36,25 @@ const settings = [
     {
         name: "Color",
         type: 'radio',
-        value: 0,
+        value: 'pink',
+        color: 1,
         options: [
             {
-                name: 'Red',
-                value: 0,
+                name: 'Pink',
+                value: 'pink',
+                class: 'PinkColor',
                 select: 1
             },
             {
                 name: 'Blue',
-                value: 1,
+                value: "blue",
+                class: 'BlueColor',
+                select: 0
+            },
+            {
+                name: 'White',
+                value: "white",
+                class: 'WhiteColor',
                 select: 0
             }
         ]
@@ -74,12 +83,7 @@ const settings = [
         name: "Split",
         type: 'range',
         value: 50
-    },
-    {
-        name: "K",
-        type: 'range',
-        value: 50
-    },
+    }
 ]
 
 export default settings

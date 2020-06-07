@@ -44,7 +44,7 @@ class MyCanvas extends React.Component{
                 value: this.canvasTexture
             },
             k: {
-                value: h / w
+                value: w / h
             },
             size: {
                 value: this.props.settings.Scale
@@ -87,19 +87,39 @@ class MyCanvas extends React.Component{
         return await response.text();
     }
     componentDidUpdate(){
+        let settings = this.props.settings;
+        this.renderer.setSize( this.props.width, this.props.height );
         if(this.tex)this.tex.draw(
             this.props.width,
             this.props.height,
             this.props.time
         )
         if(this.plane){
-            this.plane.material.uniforms.time.value = this.props.time;
-            this.plane.material.uniforms.pic.value.needsUpdate = true;
-            this.plane.material.uniforms.size.value = this.props.settings.Scale;
-            this.plane.material.uniforms.black.value = this.props.settings.Black;
-            this.plane.material.uniforms.formtype.value = this.props.settings.Form;
-            this.plane.material.uniforms.trace.value = this.props.settings.Trace;
-            this.plane.material.uniforms.split.value = this.props.settings.Split;
+            let shaderValue = this.plane.material.uniforms;
+            shaderValue.time.value = this.props.time;
+            shaderValue.pic.value.needsUpdate = true;
+            shaderValue.size.value = settings.Scale;
+            shaderValue.black.value = settings.Black;
+            shaderValue.formtype.value = settings.Form;
+            shaderValue.trace.value = settings.Trace;
+            shaderValue.split.value = settings.Split;
+            shaderValue.k.value = this.props.width / this.props.height;
+            
+            if(this.props.settings.Color == 'pink'){
+                shaderValue.rColor.value = 254;
+                shaderValue.gColor.value = 37;
+                shaderValue.bColor.value = 167;
+            }
+            if(this.props.settings.Color == 'blue'){
+                shaderValue.rColor.value = 26;
+                shaderValue.gColor.value = 179;
+                shaderValue.bColor.value = 213;
+            }
+            if(this.props.settings.Color == 'white'){
+                shaderValue.rColor.value = 256;
+                shaderValue.gColor.value = 256;
+                shaderValue.bColor.value = 256;
+            }
         }
         this.renderer.render(
             this.scene, 
@@ -116,8 +136,12 @@ class MyCanvas extends React.Component{
 
 class MyTexture{
     constructor(w, h){
+        w = Math.round(w / 512) * 512;
+        h = Math.round(h / 512) * 512;
         this.canvas = new Canvas(w, h, false);
         this.sprite = [];
+        this.w = w;
+        this.h = h;
         this.num = 25;
         for (let i = 0; i < this.num; i++) {
             this.sprite.push({
@@ -134,6 +158,12 @@ class MyTexture{
         ctx.fillRect(0, 0, w, w);
     }
     draw(w, h, time){
+        // if(this.w!=w || this.h!=h){
+        //     this.canvas = null
+        //     this.canvas = new Canvas(w, h, false);
+        //     this.w = w
+        //     this.h = h
+        // }
         let ctx = this.canvas.ctx;
         ctx.fillStyle = 'white';
         ctx.globalAlpha = .01;
