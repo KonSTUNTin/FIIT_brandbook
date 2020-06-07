@@ -35,10 +35,13 @@ class App extends React.Component{
     this.raf = requestAnimationFrame(this.loop)
   }
   inputHandler(event){
+    
     let target = event.target;
     let name = target.name;
+    let value = target.value;
+    if(value.indexOf(',')>-1)value = value.split(',')
     this.setState({
-      [name]: target.value.split(',')
+      [name]: value
     })
   }
 

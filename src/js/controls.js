@@ -22,10 +22,24 @@ class Controls extends React.Component{
                             onInput = {this.props.onInput}/>
                         )
                     } else {
-                        if(item.type == 'range'){
+                        if(item.type == 'range'&&item.abstract){
                             let value = item;
                             value.value = this.props.data[item.name]
                             rangeList.push(value)
+                        } else {
+                            if(item.type == 'range'){
+                                let array = new Array()
+                                let value = item;
+                                value.value = this.props.data[item.name]
+                                array.push(value)
+                                return(
+                                <ControlsCard
+                                options = {array}
+                                type = 'range'
+                                name = '' 
+                                onInput = {this.props.onInput}/>
+                                )
+                            }
                         }
                     }
                 }

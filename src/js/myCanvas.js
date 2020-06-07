@@ -63,6 +63,9 @@ class MyCanvas extends React.Component{
             size: {
                 value: this.props.settings.Scale
             },
+            logoSize: {
+                value: 50
+            },
             rColor: {
                 value: 50
             },
@@ -125,6 +128,7 @@ class MyCanvas extends React.Component{
             shaderValue.black.value = settings.Black;
             shaderValue.formtype.value = settings.Form;
             shaderValue.trace.value = settings.Trace;
+            shaderValue.logoSize.value = settings['Logo size'];
             shaderValue.split.value = settings.Split;
             shaderValue.k.value = this.props.width / this.props.height;
             if(this.props.settings.Logotype == 'yes'){

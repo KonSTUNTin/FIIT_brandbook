@@ -35,7 +35,7 @@ class Generatorresult extends React.Component{
              <div class = 'footer'>
                 <Button onClick = {this.saveImage}/>
                 <div className = 'js'>
-                    js 2020
+                  2020
                 </div>
              </div>
                

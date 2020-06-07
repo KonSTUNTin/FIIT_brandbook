@@ -12,6 +12,7 @@ uniform float split;
 uniform float logoAlpha;
 uniform float bracketAlpha;
 uniform float borderAlpha;
+uniform float logoSize;
 uniform sampler2D pic;
 uniform sampler2D logo;
 uniform sampler2D borders;
@@ -55,7 +56,7 @@ void main(){
     vec2 mp = vUv;
     mp -= .5;
     mp.x *= k;
-    mp *=1.5;
+    mp *= logoSize / 30.;
     mp += .5;
     vec4 logoTex = texture2D(logo, mp);
     vec4 bracketTex = texture2D(bracket, mp);

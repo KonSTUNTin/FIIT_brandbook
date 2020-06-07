@@ -27,6 +27,11 @@ const settings = [
         ]
     },
     {
+        name: "Logo size",
+        type: 'range',
+        value: 50
+    },
+    {
         name: "Format",
         type: 'radio',
         value: [1024, 1024],
@@ -78,27 +83,32 @@ const settings = [
     {
         name: "Black",
         type: 'range',
-        value: 50
+        abstract: 1,
+        value: 72
     },
     {
         name: "Scale",
         type: 'range',
+        abstract: 1,
         value: 50
     },
     {
         name: "Form",
         type: 'range',
+        abstract: 1,
         value: 50
     },
     {
         name: "Trace",
         type: 'range',
-        value: 50
+        abstract: 1,
+        value: 96
     },
     {
         name: "Split",
         type: 'range',
-        value: 50
+        abstract: 1,
+        value: 4
     }
 ]
 
