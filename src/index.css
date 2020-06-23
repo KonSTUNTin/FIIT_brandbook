@@ -46,6 +46,8 @@ code {
 }
 .column.border {
   border-bottom: 1px solid var( --blue);
+  padding-bottom: calc(var(--module) * 8);
+  padding-top: calc(var(--module) * 8);
 }
 .width2 {
   flex: 2;
@@ -85,7 +87,7 @@ div#root {
 .content {
   display: flex;
   flex-flow: row;
-  max-width: 1600px;
+  max-width: 1400px;
   width: 100%;
 }
 h1 {
@@ -237,11 +239,12 @@ div#ControlsPanel {
 }
 
 .button {
-  padding: var(--module);
-  background-color: var(--pink);
-  border-radius: var(--module);
-  color: var(--darkBlue);
+  padding: var(--module) calc(var(--module) * 2);
+  background-color: var( --pink);
+  border-radius: calc(var(--module) * 4);
+  color: var( --white);
   cursor: pointer;
+  margin-right: calc(var(--module) * 2);
 }
 
 .fixContainer {
@@ -266,6 +269,11 @@ img {
   max-width: 100%;
   max-height: 500px;
 }
+img.examples {
+  width: 100%;
+  max-height: none;
+  height: auto;
+}
 .section.lightgrey{
   background-color: var(--lightgrey);
   color: var(--black);
@@ -278,6 +286,56 @@ img {
   display: flex;
   flex-flow: column;
   align-items: center;
+}
+.aboutGeraldic {
+  display: flex;
+  margin-bottom: calc(var(--module) * 4);
+}
+
+img.aboutGeraldic {
+  width: 100px;
+  margin-right: calc(var(--module) * 4);
+}
+.bottom .content {
+  align-items: flex-end;
+}
+img.person {
+  width: 100px;
+  margin-right: calc(var(--module) * 4);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+}
+
+.buttonRow {
+  display: flex;
+}
+
+p {
+  margin-bottom: calc(var(--module) * 4);
+}
+.person p {
+  margin-bottom: 0px;
+}
+
+.column.arrow:after {
+  position: absolute;
+  content: '';
+  transform: translateY(50px);
+  margin-left: calc(50% - 77px);
+  display: block;
+  background: var(--darkBlue) url(./arrow.svg);
+  width: 100px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+.column.arrow {
+    position: relative;
 }
 
 

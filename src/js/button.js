@@ -7,7 +7,7 @@ class Button extends React.Component{
     render(){
       return(
         <div onClick = {this.props.onClick} className='button'>
-          Save Image
+          {this.props.text}
         </div>
       )
     }

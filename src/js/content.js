@@ -8,7 +8,7 @@ const brandbookContent = [
             },
             {
                 img: './images/code.png',
-                className: 'column width5'
+                className: 'column width5 arrow',
             },
             {
                 className: 'column width4',
@@ -21,14 +21,14 @@ const brandbookContent = [
         className: 'section',
         columns: [
             {
-                className: 'column width3'
+                className: 'column width3 border'
             },
             {
                 img: './images/shield.png',
-                className: 'column width5'
+                className: 'column width5 border arrow'
             },
             {
-                className: 'column width4',
+                className: 'column width4 border',
                 h3: 'Перевернутая скобка',
                 text: 'Дает основу для геральдического символа с любым содержимым, по ситуации.'
             }
@@ -39,15 +39,23 @@ const brandbookContent = [
         columns: [
             {
                 h2: 'Основной знак',
-                className: 'column width3',
+                className: 'column width3 border',
             },
             {
                 img: './images/logo.png',
-                className: 'column width5 center'
+                className: 'column width5 center border'
             },
             {
                 text: 'Самый самостоятельный знак по-умолчанию.',
-                className: 'column width4',
+                className: 'column width4 border',
+                buttonRow:[
+                    {
+                        text: 'PNG'
+                    },
+                    {
+                        text: 'SVG'
+                    }
+                ]
             },
         ],
     },
@@ -65,7 +73,26 @@ const brandbookContent = [
             },
             {
                 className: 'column width4',
-                text: 'Разделенный четверочастно французский щит, серебро на лазури'
+                aboutGeraldic: [
+                    {
+                        img:'./images/geraldic01.png',
+                        title: 'Уробoрос',
+                        text: 'Репрезентация циклической природы жизни:\
+                        чередования созидания и разрушения, жизни и смерти.'
+                    },
+                    {
+                        img:'./images/geraldic02.png',
+                        title: 'Молния',
+                        text: 'Начало революционного шторма.\
+                        Молния, озаряющая мрак, также символ борьбы света с тьмой,\
+                        символ революционной мысли.'
+                    },
+                    {
+                        img:'./images/geraldic03.png',
+                        title: 'Костыль',
+                        text: 'Одна из почетных фигур'
+                    }
+                ]
             }
         ]
     },
@@ -93,7 +120,15 @@ const brandbookContent = [
                 h2: 'Герб-контейнер',
                 text: 'Самостоятельный символ.\
                         Является контейнером для любого\
-                        содержимого.'
+                        содержимого.',
+                buttonRow:[
+                    {
+                        text: 'PNG'
+                    },
+                    {
+                        text: 'SVG'
+                    }
+                ]
             },
             {
                 className: 'column width6',
@@ -116,7 +151,15 @@ const brandbookContent = [
                 img: './images/bracket.png',
                 text: 'Логотип-скобка.\
                 Используется в графике,\
-                или в подписи'
+                или в подписи',
+                buttonRow:[
+                    {
+                        text: 'PNG'
+                    },
+                    {
+                        text: 'SVG'
+                    }
+                ]
             },
             {
                 className: 'column width4 border',
@@ -146,6 +189,14 @@ const brandbookContent = [
                 text: 'Самостоятельный символ,\
                 Зарифмован с формой нижней скобки.\
                 Может использоваться как маска для графики.',
+                buttonRow:[
+                    {
+                        text: 'PNG'
+                    },
+                    {
+                        text: 'SVG'
+                    }
+                ]
 
             },
             {
@@ -179,9 +230,14 @@ const brandbookContent = [
             {
                 className: 'column width3',
                 h2: 'Гарнитура',
+                buttonRow:[
+                    {
+                        text: 'OTF'
+                    },
+                ]
             },
             {
-                className: 'column width6',
+                className: 'column width6 border',
                 img: './images/font.png',
                 text: 'Бесплатная гарнитура. Golos Text от Paratype'
             },
@@ -197,7 +253,12 @@ const brandbookContent = [
                 className: 'column width3',
                 h2: 'Паттерн',
                 text: 'Фирменный стиль может использоватьлюбой визуал.\
-                Но также мы разработали генератор паттернов.'
+                Но также мы разработали генератор паттернов.',
+                buttonRow:[
+                    {
+                        text: 'PNG'
+                    }
+                ]
             },
             {
                 className: 'column width6',
@@ -216,14 +277,57 @@ const brandbookContent = [
             },
             {
                 className: 'column width9',
+                img: [
+                    './images/inLife1.png',
+                    './images/inLife2.png',
+                    './images/inLife3.png',
+                    './images/inLife4.png',
+                    './images/inLife5.png',
+                    './images/inLife6.png',
+                    './images/inLife7.png',
+                    './images/inLife8.png',
+                ]//'./images/inLife1.png',
             },
         ]
     },
-    // {h2: 'Цвета'},
-    // {h2: 'Гарнитура'},
-    // {h2: 'Паттерн'},
-    // {h2: 'Носители'},
-    // {h2: 'Команда'},
+    {
+        className: 'section lightgrey bottom',
+        columns: [
+            {
+                className: 'column width3',
+                h2: 'Команда',
+                person:{
+                        photo: './images/Lesha.png',
+                        name: 'Алексей Кулаков',
+                        role: 'Арт-директор',
+                },
+            },
+            {   
+                className: 'column width3',
+                person: {
+                    photo: './images/Vanya.png',
+                    name: 'Иван Торопов',
+                    role: 'Автор скобки-герба, дизайнер',
+                },
+            },
+            {   
+                className: 'column width3',
+                person: {
+                    photo: './images/Kostya.png',
+                    name: 'Константин Остроухов',
+                    role: 'Дизайнер, разработчик',
+                },
+            },
+            {   
+                className: 'column width3',
+                person: {
+                    photo: './images/Lyasya.png',
+                    name: 'Ляйсан Байбулова',
+                    role: 'Иллюстратор, 3D-дизайнер',
+                },
+            }
+        ]
+    },
 ]
 
 export default brandbookContent;
