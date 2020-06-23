@@ -1,59 +1,93 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Controls from './js/controls.js';
-import Generatorresult from './js/generatorresult';
-import settings from './js/settingData.js';
-
+import brandbookContent from './js/content.js'
 
 
 
 class App extends React.Component{
-  constructor(props){
-    super(props)
-    
-    this.state = {
-      time: 0,
-    }   
-    settings.map(
-      (item)=>{
-        this.state[item.name] = item.value
-      }
-    )
-    console.log(this.state)
-    this.loop = this.loop.bind(this)
-    this.inputHandler = this.inputHandler.bind(this)
-  }
-  componentDidMount(){
-    
-    this.raf = requestAnimationFrame(this.loop)
-  }
-  loop(){
-    this.setState({
-      time: this.state.time +1
-    })
-    this.raf = requestAnimationFrame(this.loop)
-  }
-  inputHandler(event){
-    
-    let target = event.target;
-    let name = target.name;
-    let value = target.value;
-    if(value.indexOf(',')>-1)value = value.split(',')
-    this.setState({
-      [name]: value
-    })
-  }
-
   render(){
     return(
-      <>
-        <Generatorresult data = {this.state} settings = {settings}/>
-        <Controls data = {this.state} settings = {settings} onInput = {this.inputHandler}/>
-      </>
+        <>
+            <HeroBlock/>
+                {brandbookContent.map(
+                    (item, index)=>{
+                        return(
+                            <Section
+                                content = {item}
+                            />
+                        )
+                    }
+                )}
+        </>
     )
   }
 }
+
+class Section extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+            <div className = {this.props.content.className}>
+                <div className = 'content'>
+                {
+                    this.props.content.columns.map(
+                        (item)=>{
+                            return(
+                                <div className = {item.className}>
+                                {
+                                    item.img&&
+                                    <img src = {item.img}/>
+                                }
+                                {
+                                    item.h3&&
+                                    <h3>
+                                        {item.h3}
+                                    </h3>
+                                }
+                                {
+                                    item.h2&&
+                                    <h2>
+                                        {item.h2}
+                                    </h2>
+                                }
+                                {
+                                    item.text&&
+                                    <p>
+                                        {item.text}
+                                    </p>
+                                }
+                                </div>
+                            )
+                            
+                        }
+                    )
+                }
+                </div>
+            </div>
+        )
+    }
+}
+
+class HeroBlock extends React.Component{
+    render(){
+        return(
+            <div className = 'section'>
+                <h1>
+                    Логотип и фирменный стиль ФИИТ
+                </h1>
+                <div className = 'heroBlockBottomLine'>
+                    <img src = './logoJS.png'/>
+                    <div className = 'socialIcons'>
+
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
 
 
 export default App;

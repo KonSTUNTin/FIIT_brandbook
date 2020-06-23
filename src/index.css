@@ -1,14 +1,22 @@
 :root{
   --pink: #FE25A7;
+  --lightgrey: #CCF1F6;
   --darkBlue: #110F2C;
+  --blue: #1AB3D5;
+  --black:#03081B;
   --white: white;
-  --regularTextStyle: 18px;
+  --regularTextStyle: 16px;
   --regularMobileTextStyle: 14px;
   --h1TextStyle: 60px;
+  --h2TextStyle: 40px;
   --h1MobileTextStyle: 30px;
   --h3TextStyle: 24px;
   --h3MobileTextStyle: 16px;
-  --module: 12px
+  --module: 10px
+}
+*{
+  margin: 0px;
+  padding: 0px;
 }
 @font-face {
   font-family: 'Golos_Regular';
@@ -21,10 +29,8 @@
 body {
   font-family: "Golos_Regular";
   font-size: var(--regularTextStyle);
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  line-height: 150%;
+  margin: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--white);
@@ -35,20 +41,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.column {
+  padding-right: calc(var(--module) * 4);
+}
+.column.border {
+  border-bottom: 1px solid var( --blue);
+}
+.width2 {
+  flex: 2;
+}
+.width1 {
+  flex: 1;
+}
+
+.width3 {
+  flex: 3;
+}
+.width5 {
+  flex: 5;
+}
+.width4 {
+  flex: 4;
+}
+.width6 {
+  flex: 6;
+}
+.width9 {
+  flex: 9;
+}
 
 div#root {
   display: flex;
-  width: 90%;
-  margin-left: 5%;
+  flex-flow: column;
+  width: 100%;
+}
+.section {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding-bottom: calc( var(--module) * 6);
+  padding-top: calc( var(--module) * 6);
+}
+.content {
+  display: flex;
+  flex-flow: row;
+  max-width: 1600px;
+  width: 100%;
 }
 h1 {
   font-size: var(--h1TextStyle);
   font-family: "Golos_Bold";
-  margin-bottom: calc( var(--module) * 5);
+  line-height: 125%;
 }
-.column {
-  flex: 1;
+h2 {
+  font-size: var(--h2TextStyle);
+  font-family: "Golos_Bold";
+  margin-bottom: calc(var(--module) * 2);
+  line-height: 125%;
 }
+h3 {
+  font-size: var(--h3TextStyle);
+  font-family: "Golos_Bold";
+  margin-bottom: calc(var(--module) * 2);
+  line-height: 125%;
+}
+
 h1:after {
   content: '';
   display: block;
@@ -204,6 +261,23 @@ div#ControlsPanel {
   justify-content: space-evenly;
   background-color: var(--darkBlue);
   padding: calc(var(--module) * 2);
+}
+img {
+  max-width: 100%;
+  max-height: 500px;
+}
+.section.lightgrey{
+  background-color: var(--lightgrey);
+  color: var(--black);
+}
+.section.white{
+  background-color: var(--white);
+  color: var(--black);
+}
+.column.center{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 
