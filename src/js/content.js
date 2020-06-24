@@ -17,20 +17,50 @@ const brandbookContent = [
             }
         ]
     },
+    {   
+        className: 'section',
+        columns:[
+            {
+                className: 'column width3'
+            },
+            {
+                img: './images/arrow.svg',
+                className: 'column width5 arrow center',
+            },
+            {
+                className: 'column width4',
+            }
+        ]
+    },
     {
         className: 'section',
         columns: [
             {
-                className: 'column width3 border'
+                className: 'column width3'
             },
             {
                 img: './images/shield.png',
-                className: 'column width5 border arrow'
+                className: 'column width5 arrow'
             },
             {
-                className: 'column width4 border',
+                className: 'column width4',
                 h3: 'Перевернутая скобка',
                 text: 'Дает основу для геральдического символа с любым содержимым, по ситуации.'
+            }
+        ]
+    },
+    {   
+        className: 'section',
+        columns:[
+            {
+                className: 'column width3'
+            },
+            {
+                img: './images/arrow.svg',
+                className: 'column width5 arrow center',
+            },
+            {
+                className: 'column width4',
             }
         ]
     },
@@ -48,6 +78,40 @@ const brandbookContent = [
             {
                 text: 'Самый самостоятельный знак по-умолчанию.',
                 className: 'column width4 border',
+                radioRow: [
+                    {
+                        name: 'language',
+                        type: 'text',
+                        values: [
+                            {
+                                text: "RUS",
+                                select: true
+                            },
+                            {
+                                text: "ENG",
+                                select: false
+                            },
+                        ]
+                    },
+                    {
+                        name: 'color',
+                        type: 'color',
+                        values: [
+                            {
+                                text: "white",
+                                select: true
+                            },
+                            {
+                                text: "pink",
+                                select: false
+                            },
+                            {
+                                text: "blue",
+                                select: false
+                            },
+                        ]
+                    }
+                ],
                 buttonRow:[
                     {
                         text: 'PNG'
@@ -148,7 +212,7 @@ const brandbookContent = [
             },
             {
                 className: 'column width2 border',
-                img: './images/bracket.png',
+                img: './images/bracket.svg',
                 text: 'Логотип-скобка.\
                 Используется в графике,\
                 или в подписи',
@@ -217,7 +281,43 @@ const brandbookContent = [
             },
             {
                 className: 'column width6',
-                colors: true, 
+                colorSwatches: [
+                    {
+                        class: 'pink_blue',
+                    },
+                    {
+                        name: '#FFFFFF',
+                        class: 'white',
+                        rgb: 'rgb(255, 255, 255)'
+                    },
+                    {
+                        name: '#1AB3D5',
+                        class: 'blue',
+                        rgb: 'rgb(26, 179, 213)'
+                    },
+                    {
+                        class: 'white_pink',
+                    },
+                    {
+                        name: '#000000',
+                        class: 'black',
+                        rgb: 'rgb(3, 8, 27)'
+                    },
+                    {
+                        name: '#FE25A7',
+                        class: 'pink',
+                        rgb: 'rgb(254, 37, 167)'
+                    },
+                    {
+                        class: 'white_blue',
+                    },
+                    {
+                        name: '#110F2C',
+                        class: 'darkBlue',
+                        rgb: 'rgb(17, 15, 44)'
+                    },
+                    
+                ], 
             },
             {
                 className: 'column width3',

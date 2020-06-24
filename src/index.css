@@ -12,7 +12,12 @@
   --h1MobileTextStyle: 30px;
   --h3TextStyle: 24px;
   --h3MobileTextStyle: 16px;
-  --module: 10px
+  --x: 10px;
+  --x2: 20px;
+  --x3: 30px;
+  --x4: 40px;
+  --x6: 60px;
+  --x8: 80px;
 }
 *{
   margin: 0px;
@@ -42,12 +47,11 @@ code {
     monospace;
 }
 .column {
-  padding-right: calc(var(--module) * 4);
+  padding-right: var(--x4);
 }
 .column.border {
   border-bottom: 1px solid var( --blue);
-  padding-bottom: calc(var(--module) * 8);
-  padding-top: calc(var(--module) * 8);
+  padding-bottom: var(--x8);
 }
 .width2 {
   flex: 2;
@@ -81,8 +85,8 @@ div#root {
   display: flex;
   align-items: center;
   flex-flow: column;
-  padding-bottom: calc( var(--module) * 6);
-  padding-top: calc( var(--module) * 6);
+  padding-bottom: var(--x6);
+  padding-top: var(--x6);
 }
 .content {
   display: flex;
@@ -98,13 +102,13 @@ h1 {
 h2 {
   font-size: var(--h2TextStyle);
   font-family: "Golos_Bold";
-  margin-bottom: calc(var(--module) * 2);
+  margin-bottom: var(--x2);
   line-height: 125%;
 }
 h3 {
   font-size: var(--h3TextStyle);
   font-family: "Golos_Bold";
-  margin-bottom: calc(var(--module) * 2);
+  margin-bottom: var(--x2);
   line-height: 125%;
 }
 
@@ -138,19 +142,15 @@ h1:after {
 
 .controlsCard {
   display: flex;
-  margin-bottom: calc(var(--module) * 3);
-}
-.Radio{
-  margin-bottom: calc( 1.5 * var(--module));
-  margin-top: 5px;
+  margin-bottom: var(--x3);
 }
 .range {
-  margin-bottom: calc(var(--module) * 2);
+  margin-bottom: var(--x2);
 }
 
 .controlsHeader {
   text-align: right;
-  margin-right: calc(var(--module) * 5);
+  margin-right: var(--x5);
   flex: 1 1;
   font-size: var(--h3TextStyle);
   font-family: 'Golos_Bold';
@@ -162,7 +162,7 @@ h1:after {
 
 .rangeInfo {
   display: flex;
-  margin-bottom: var(--module);
+  margin-bottom: var(--x);
   justify-content: space-between;
 }
 
@@ -208,7 +208,7 @@ input.myRange {
 canvas {
   max-width: 60%;
   height: auto !important;
-  margin-bottom: calc(var(--module) * 3)
+  margin-bottom: var(--x3)
 }
 
 .rangePointDiv {
@@ -218,33 +218,28 @@ input[type="radio"]{
   display: none;
 }
 
-input[type="radio"]+label:before{
-  content: '';
+label {
+  padding: var(--x) var(--x2);
   display: block;
-  float: left;
-  height: 20px;
-  margin-top: 10px;
-  margin-right: var(--module);
-  width: 20px;
-  border-radius: 43px;
-  transform: translate(-5px, -11px);
-  border: 3px solid var(--white);
 }
-input[type="radio"]:checked+label:before{
+
+input[type="radio"]:checked+label{
   background-color: var(--white);
+  color: var(--black);
+  border-radius: 60px;
 }
 
 div#ControlsPanel {
-  margin-top: calc(var(--module) * 6);
+  margin-top: var(--x6);
 }
 
 .button {
-  padding: var(--module) calc(var(--module) * 2);
+  padding: var(--x) var(--x2);
   background-color: var( --pink);
-  border-radius: calc(var(--module) * 4);
+  border-radius: var(--x4);
   color: var( --white);
   cursor: pointer;
-  margin-right: calc(var(--module) * 2);
+  margin-right: var(--x2);
 }
 
 .fixContainer {
@@ -263,7 +258,7 @@ div#ControlsPanel {
   align-items: inherit;
   justify-content: space-evenly;
   background-color: var(--darkBlue);
-  padding: calc(var(--module) * 2);
+  padding: var(--x2);
 }
 img {
   max-width: 100%;
@@ -289,19 +284,19 @@ img.examples {
 }
 .aboutGeraldic {
   display: flex;
-  margin-bottom: calc(var(--module) * 4);
+  margin-bottom: var(--x4);
 }
 
 img.aboutGeraldic {
   width: 100px;
-  margin-right: calc(var(--module) * 4);
+  margin-right: var(--x4);
 }
 .bottom .content {
   align-items: flex-end;
 }
 img.person {
   width: 100px;
-  margin-right: calc(var(--module) * 4);
+  margin-right: var(--x4);
 }
 
 .person {
@@ -314,13 +309,13 @@ img.person {
 }
 
 p {
-  margin-bottom: calc(var(--module) * 4);
+  margin-bottom: var(--x2);
 }
 .person p {
   margin-bottom: 0px;
 }
 
-.column.arrow:after {
+/* .column.arrow:after {
   position: absolute;
   content: '';
   transform: translateY(50px);
@@ -332,10 +327,108 @@ p {
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
-}
+} */
 
 .column.arrow {
     position: relative;
 }
+
+.heroBlock .content {
+  display: flex;
+  flex-flow: column;
+  min-height: 80vh;
+  justify-content: space-around;
+}
+
+img.jetLogo {
+  width: 70px;
+}
+.RadioRow {
+  display: flex;
+  margin-right: var(--x2);
+  margin-bottom: var(--x2);
+  border: 1px solid var(--white);
+  border-radius: 80px;
+  width: max-content;
+}
+.radioBlock {
+  display: flex;
+}
+
+label.colorRadio:before {
+  content: '';
+  display: block;
+  height: var(--x2);
+  width: var(--x2);
+  transform: translateY(2px);
+  border-radius: 30px;
+}
+
+label.colorRadio.pink:before{
+  background-color: var(--pink);
+}
+label.colorRadio.blue:before{
+  background-color: var(--blue);
+}
+label.colorRadio.white:before{
+  background-color: var(--white);
+  border: 1px solid var(--black)
+}
+label.colorRadio {
+  height: 24px;
+  padding: 10px 13px;
+}
+
+.column.horizontal_center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.colorSwatch {
+  cursor: pointer;
+  width: 23%;
+  margin-bottom: var(--x2);
+  height: var(--x6);
+  margin-right: var(--x2);
+  padding: var(--x2);
+  border-radius: var(--x);
+}
+.colorSwatches {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorSwatch.blue {
+  background-color: var(--blue);
+}
+.colorSwatch.white {
+  border:1px solid var(--lightgrey)
+}
+.colorSwatch.pink {
+  background-color: var(--pink);
+}
+.colorSwatch.black {
+  background-color: var(--black);
+  color: var(--white);
+}
+.colorSwatch.darkBlue {
+  background-color: var(--darkBlue);
+  color: var(--white);
+}
+.colorSwatch.pink_blue{
+  background: var(--pink);
+  background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 100%);
+}
+.colorSwatch.white_pink{
+  background: var(--pink);
+  border:1px solid var(--lightgrey);
+  background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
+}
+.colorSwatch.white_blue{
+  background: var(--pink);
+  border:1px solid var(--lightgrey);
+  background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
+}
+
 
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import brandbookContent from './js/content.js'
-import Button from './js/button.js'
-
+import Picture from './js/picture.js'
+import HeroBlock from './js/heroBlock.js'
+import {RadioRow, ButtonRow} from './js/formElements.js'
+import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
 
 class App extends React.Component{
   render(){
@@ -82,123 +84,20 @@ class Column extends React.Component{
                             {el=='person'&&
                             <Person data = {this.props.content[el]}/>
                             }
-                             {el=='buttonRow'&&
+                            {el=='buttonRow'&&
                             <ButtonRow data = {this.props.content[el]}/>
+                            }
+                            {el=='radioRow'&&
+                            <RadioRow data = {this.props.content[el]}/>
+                            }
+                            {el=='colorSwatches'&&
+                            <ColorSwatches data = {this.props.content[el]}/>
                             }
                         </>
                     )
                 }
             )}
         </div>
-        )
-    }
-}
-
-
-class ButtonRow extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <div className = 'buttonRow'>
-                {this.props.data.map(
-                    (button)=>{
-                        return(
-                            <Button text = {button.text}/>
-                        )
-                    }
-                )}
-            </div>
-        )
-    }
-}
-
-
-class Picture extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <>
-            {!Array.isArray(this.props.data)&&
-            <img src = {this.props.data}/>}
-            {Array.isArray(this.props.data)&&
-            this.props.data.map(
-                (pic)=>{
-                    return(
-                        <img className = 'examples' src = {pic}/>
-                    )
-                }
-            )}
-            </>
-        )
-    }
-}
-
-class GeraldicBlock extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            this.props.data.map(
-                (geraldic)=>{
-                    return(
-                        <div className = 'aboutGeraldic'>
-                        <img className = 'aboutGeraldic' src = {geraldic.img}/>
-                        <div>
-                            <h3>
-                                {geraldic.title}
-                            </h3>
-                            <p>
-                                {geraldic.text}
-                            </p>
-                        </div>
-                        </div>
-                    )
-                }
-            )
-        )
-    }
-}
-
-class Person extends React.Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <div className = 'person'>
-            <img className = 'person' src = {this.props.data.photo}/>
-            <div>
-                <h4>
-                    {this.props.data.name}
-                </h4>
-                <p>
-                    {this.props.data.role}
-                </p>
-            </div>
-            </div>
-        )
-    }
-}
-
-class HeroBlock extends React.Component{
-    render(){
-        return(
-            <div className = 'section'>
-                <h1>
-                    Логотип и фирменный стиль ФИИТ
-                </h1>
-                <div className = 'heroBlockBottomLine'>
-                    <img src = './logoJS.png'/>
-                    <div className = 'socialIcons'>
-
-                    </div>
-                </div>
-            </div>
         )
     }
 }
