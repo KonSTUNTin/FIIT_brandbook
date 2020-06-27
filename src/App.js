@@ -2,14 +2,17 @@ import React from 'react';
 import './App.css';
 import brandbookContent from './js/content.js'
 import Picture from './js/picture.js'
+import Header from './js/header.js'
 import HeroBlock from './js/heroBlock.js'
 import {RadioRow, ButtonRow} from './js/formElements.js'
 import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
+import LottieAnimation from './js/lottieAnimation'
 
 class App extends React.Component{
   render(){
     return(
         <>
+            <Header></Header>
             <HeroBlock/>
                 {brandbookContent.map(
                     (item, index)=>{
@@ -92,6 +95,9 @@ class Column extends React.Component{
                             }
                             {el=='colorSwatches'&&
                             <ColorSwatches data = {this.props.content[el]}/>
+                            }
+                            {el=='lottie'&&
+                            <LottieAnimation path = {this.props.content[el]}/>
                             }
                         </>
                     )

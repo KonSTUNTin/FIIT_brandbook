@@ -205,11 +205,6 @@ input.myRange {
   position: absolute;
   background-color: var(--pink);
 }
-canvas {
-  max-width: 60%;
-  height: auto !important;
-  margin-bottom: var(--x3)
-}
 
 .rangePointDiv {
     pointer-events: none;
@@ -240,6 +235,11 @@ div#ControlsPanel {
   color: var( --white);
   cursor: pointer;
   margin-right: var(--x2);
+  transition: background-color 500ms, color 500ms;
+}
+.button:hover {
+  color: var( --black);
+  background-color: var( --white);
 }
 
 .fixContainer {
@@ -314,20 +314,6 @@ p {
 .person p {
   margin-bottom: 0px;
 }
-
-/* .column.arrow:after {
-  position: absolute;
-  content: '';
-  transform: translateY(50px);
-  margin-left: calc(50% - 77px);
-  display: block;
-  background: var(--darkBlue) url(./arrow.svg);
-  width: 100px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-} */
 
 .column.arrow {
     position: relative;
@@ -429,6 +415,45 @@ label.colorRadio {
   border:1px solid var(--lightgrey);
   background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
 }
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: var(--x4);
+  padding-bottom: var(--x3);
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background: var(--darkBlue) /*linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--darkBlue) 40%);*/
+}
+a.menuUnit {
+  text-decoration: none;
+  margin-right: var(--x4);
+  color: var(--pink);
+  transition: color 500ms;
+}
+a.menuUnit:hover {
+  color: var(--white);
+}
+.header .button {
+  transform: translateY(-10px);
+}
+
+.header .content {
+  justify-content: space-between;
+}
+.heroBlock .content{
+  z-index: 3;
+}
+
+canvas.interactionCanvas {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+
+
 
 
 

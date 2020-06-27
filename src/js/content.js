@@ -69,15 +69,15 @@ const brandbookContent = [
         columns: [
             {
                 h2: 'Основной знак',
-                className: 'column width3 border',
+                className: 'column width3 border  horizontal_center',
             },
             {
-                img: './images/logo.png',
+                lottie: './lottie/main.json',
                 className: 'column width5 center border'
             },
             {
                 text: 'Самый самостоятельный знак по-умолчанию.',
-                className: 'column width4 border',
+                className: 'column width4 border  horizontal_center',
                 radioRow: [
                     {
                         name: 'language',
@@ -131,12 +131,12 @@ const brandbookContent = [
                 text:'Знак содержит и геральдические трактовки.'
             },
             {
-                className: 'column width5 center',
+                className: 'column width5 center horizontal_center',
                 img: './images/rendershield.png',
                 text: 'Разделенный четверочастно французский щит, серебро на лазури'
             },
             {
-                className: 'column width4',
+                className: 'column width4 horizontal_center',
                 aboutGeraldic: [
                     {
                         img:'./images/geraldic01.png',
@@ -180,7 +180,7 @@ const brandbookContent = [
         className: 'section white',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width3 horizontal_center',
                 h2: 'Герб-контейнер',
                 text: 'Самостоятельный символ.\
                         Является контейнером для любого\
@@ -196,7 +196,7 @@ const brandbookContent = [
             },
             {
                 className: 'column width6',
-                img: './images/carpet.png',
+                lottie: './lottie/slider.json',
             },
             {
                 className: 'column width3',
