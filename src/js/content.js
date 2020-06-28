@@ -96,6 +96,7 @@ const brandbookContent = [
                     {
                         name: 'color',
                         type: 'color',
+                        handler: 'logoColor',
                         values: [
                             {
                                 text: "white",
@@ -131,12 +132,12 @@ const brandbookContent = [
                 text:'Знак содержит и геральдические трактовки.'
             },
             {
-                className: 'column width5 center horizontal_center',
+                className: 'column width5 center',
                 img: './images/rendershield.png',
                 text: 'Разделенный четверочастно французский щит, серебро на лазури'
             },
             {
-                className: 'column width4 horizontal_center',
+                className: 'column width4',
                 aboutGeraldic: [
                     {
                         img:'./images/geraldic01.png',
@@ -361,7 +362,80 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width6',
+                className: 'column width6 vertical',
+                radioRow: [
+                    {
+                        name: 'logotype',
+                        type: 'text',
+                        values: [
+                            {
+                                text: "Без логотипа",
+                                select: true
+                            },
+                            {
+                                text: "Основной знак",
+                                select: false
+                            },
+                            {
+                                text: "Герб-контейнер",
+                                select: false
+                            },
+                            {
+                                text: "Краткая форма",
+                                select: false
+                            },
+                        ]
+                    },
+                    {
+                        name: 'ratio',
+                        type: 'text',
+                        values: [
+                            {
+                                text: "Квадрат",
+                                select: true
+                            },
+                            {
+                                text: "Шапка Youtube",
+                                select: false
+                            },
+                            {
+                                text: "Шапка VK",
+                                select: false
+                            }
+                        ]
+                    },
+                    {
+                        name: 'colorInGenerator',
+                        type: 'color',
+                        //handler: 'logoColorInGenerator',
+                        values: [
+                            {
+                                text: "white",
+                                select: true
+                            },
+                            {
+                                text: "pink",
+                                select: false
+                            },
+                            {
+                                text: "blue",
+                                select: false
+                            },
+                            {
+                                text: "white_pink",
+                                select: false
+                            },
+                            {
+                                text: "white_blue",
+                                select: false
+                            },
+                            {
+                                text: "pink_blue",
+                                select: false
+                            },
+                        ]
+                    }
+                ],
             },
             {
                 className: 'column width3',

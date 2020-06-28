@@ -1,9 +1,7 @@
 import React from 'react'
 
 class GeraldicBlock extends React.Component{
-    constructor(props){
-        super(props)
-    }
+
     render(){
         return(
             this.props.data.map(
@@ -28,13 +26,11 @@ class GeraldicBlock extends React.Component{
 }
 
 class Person extends React.Component{
-    constructor(props){
-        super(props)
-    }
+
     render(){
         return(
             <div className = 'person'>
-            <img className = 'person' src = {this.props.data.photo}/>
+            <img className = 'person' alt = '' src = {this.props.data.photo}/>
             <div>
                 <h4>
                     {this.props.data.name}

@@ -7,7 +7,7 @@
   --white: white;
   --regularTextStyle: 16px;
   --regularMobileTextStyle: 14px;
-  --h1TextStyle: 60px;
+  --h1TextStyle: 80px;
   --h2TextStyle: 40px;
   --h1MobileTextStyle: 30px;
   --h3TextStyle: 24px;
@@ -98,6 +98,8 @@ h1 {
   font-size: var(--h1TextStyle);
   font-family: "Golos_Bold";
   line-height: 125%;
+  max-width: 80%;
+  text-transform: uppercase;
 }
 h2 {
   font-size: var(--h2TextStyle);
@@ -122,6 +124,7 @@ h1:after {
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1001;
+  transform: translateY(10px);
 }
 .js:after {
   content: '';
@@ -216,12 +219,14 @@ input[type="radio"]{
 label {
   padding: var(--x) var(--x2);
   display: block;
+  cursor: pointer;
+  border-radius: 60px;
+  transition: background-color 500ms, color 500ms;
 }
 
 input[type="radio"]:checked+label{
   background-color: var(--white);
   color: var(--black);
-  border-radius: 60px;
 }
 
 div#ControlsPanel {
@@ -289,6 +294,7 @@ img.examples {
 
 img.aboutGeraldic {
   width: 100px;
+  height: 120px;
   margin-right: var(--x4);
 }
 .bottom .content {
@@ -296,6 +302,7 @@ img.aboutGeraldic {
 }
 img.person {
   width: 100px;
+  height: 100px;
   margin-right: var(--x4);
 }
 
@@ -323,7 +330,7 @@ p {
   display: flex;
   flex-flow: column;
   min-height: 80vh;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 img.jetLogo {
@@ -337,8 +344,12 @@ img.jetLogo {
   border-radius: 80px;
   width: max-content;
 }
+
 .radioBlock {
   display: flex;
+}
+.vertical .radioBlock{
+  flex-flow: column;
 }
 
 label.colorRadio:before {
@@ -358,6 +369,18 @@ label.colorRadio.blue:before{
 }
 label.colorRadio.white:before{
   background-color: var(--white);
+  border: 1px solid var(--black)
+}
+label.colorRadio.white_pink:before{
+  background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
+  border: 1px solid var(--black)
+}
+label.colorRadio.white_blue:before{
+  background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
+  border: 1px solid var(--black)
+}
+label.colorRadio.pink_blue:before{
+  background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 100%);
   border: 1px solid var(--black)
 }
 label.colorRadio {
@@ -443,15 +466,30 @@ a.menuUnit:hover {
   justify-content: space-between;
 }
 .heroBlock .content{
+  pointer-events: none;
+  position: absolute;
   z-index: 3;
 }
 
 canvas.interactionCanvas {
-  position: absolute;
   width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
+g#logo_FIIT path{
+  transition: fill 500ms;
+}
+
+g#logo_FIIT.pink path{
+  fill: var(--pink)
+}
+g#logo_FIIT.white path{
+  fill: var(--white)
+}
+g#logo_FIIT.blue path{
+  fill: var(--blue)
+}
 
 
 

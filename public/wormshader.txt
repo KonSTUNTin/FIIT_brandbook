@@ -1,0 +1,34 @@
+varying vec2 vUv;
+uniform float x;
+uniform float y; 
+uniform float w;
+uniform float h;
+uniform float time;
+uniform sampler2D texture;
+vec2 random( vec2 p ) {
+    return fract(sin(vec2(dot(p,vec2(127.1,311.7 )),dot(p,vec2(269.5,183.3))))*43758.5453);
+}
+
+void main(){
+    vec4 darkBlue = vec4(vec3(17., 15., 44.) / 256., 1.);
+    float aspect_ratio = w / h;
+    vec2 st = vUv;
+    st -=.5;
+    st.y /= aspect_ratio; 
+    st +=.5;
+    float r = 0.03 + 0.03 * abs(cos(time / 60.));
+    vec2 offset = vec2(x, 1. - y);
+    float k = step(length(st - offset), r) ;
+    vec2 p = vUv;
+    p += .5;
+    p *= .9999;
+    p -= .5;
+    p -= 0.001;
+    vec2 colUV = vUv;
+    colUV -= offset;
+    colUV *= 5.;
+    colUV += offset;
+    vec4 col = (1. - k) * texture2D(texture, p) + k * vec4(colUV, 1., 1.);
+    if(time < 1.) col = darkBlue;
+    gl_FragColor = col;
+}

@@ -2,9 +2,7 @@ import React from 'react'
 
 
 class Picture extends React.Component{
-    constructor(props){
-        super(props)
-    }
+
     render(){
         return(
             <>
@@ -14,7 +12,11 @@ class Picture extends React.Component{
             this.props.data.map(
                 (pic)=>{
                     return(
-                        <img className = 'examples' src = {pic}/>
+                        <img 
+                        className = 'examples' 
+                        src = {pic}
+                        alt = ''
+                        />
                     )
                 }
             )}
