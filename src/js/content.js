@@ -84,30 +84,40 @@ const brandbookContent = [
                         type: 'text',
                         values: [
                             {
+                                name: 'logo_rus',
+                                value: 'RUS',
                                 text: "RUS",
                                 select: true
                             },
                             {
+                                name: 'logo_eng',
+                                value: 'ENG',
                                 text: "ENG",
                                 select: false
                             },
                         ]
                     },
                     {
-                        name: 'color',
+                        name: 'colorAnimation',
                         type: 'color',
                         handler: 'logoColor',
                         values: [
                             {
+                                name: 'logo_white',
                                 text: "white",
+                                value: "white",
                                 select: true
                             },
                             {
+                                name: 'logo_pink',
                                 text: "pink",
+                                value: "pink",
                                 select: false
                             },
                             {
+                                name: 'logo_blue',
                                 text: "blue",
+                                value: "blue",
                                 select: false
                             },
                         ]
@@ -326,7 +336,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section',
+        className: 'section black',
         columns: [
             {
                 className: 'column width3',
@@ -338,7 +348,7 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width6 border',
+                className: 'column width6',
                 img: './images/font.png',
                 text: 'Бесплатная гарнитура. Golos Text от Paratype'
             },
@@ -351,10 +361,11 @@ const brandbookContent = [
         className: 'section',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width6',
                 h2: 'Паттерн',
-                text: 'Фирменный стиль может использоватьлюбой визуал.\
+                text: 'Фирменный стиль может использовать любой визуал.\
                 Но также мы разработали генератор паттернов.',
+                canvasGenerator: true,
                 buttonRow:[
                     {
                         text: 'PNG'
@@ -363,24 +374,34 @@ const brandbookContent = [
             },
             {
                 className: 'column width6 vertical',
+                
                 radioRow: [
                     {
-                        name: 'logotype',
+                        name: 'logo',
                         type: 'text',
+                        handler: 'logoColorInGenerator',
                         values: [
                             {
+                                name: 'generator_logo_without',
+                                value: 'none',
                                 text: "Без логотипа",
-                                select: true
-                            },
-                            {
-                                text: "Основной знак",
                                 select: false
                             },
                             {
+                                name: 'generator_logo_main',
+                                value: 'main',
+                                text: "Основной знак",
+                                select: true
+                            },
+                            {
+                                name: 'generator_logo_brackets',
+                                value: 'brackets',
                                 text: "Герб-контейнер",
                                 select: false
                             },
                             {
+                                name: 'generator_logo_short',
+                                value: 'short',
                                 text: "Краткая форма",
                                 select: false
                             },
@@ -391,55 +412,112 @@ const brandbookContent = [
                         type: 'text',
                         values: [
                             {
+                                name: 'generator_ratio_square',
+                                value: "square",
                                 text: "Квадрат",
                                 select: true
                             },
                             {
+                                name: 'generator_ratio_youtube',
+                                value: "youtube",
                                 text: "Шапка Youtube",
                                 select: false
                             },
                             {
+                                name: 'generator_ratio_vk',
+                                value: "vk",
                                 text: "Шапка VK",
                                 select: false
                             }
                         ]
                     },
                     {
-                        name: 'colorInGenerator',
+                        name: 'color',
                         type: 'color',
-                        //handler: 'logoColorInGenerator',
+                        handler: 'logoColorInGenerator',
                         values: [
                             {
+                                name: 'generator_white',
                                 text: "white",
+                                value: "white",
+                                select: false
+                            },
+                            {
+                                name: 'generator_pink',
+                                text: "pink",
+                                value: "pink",
                                 select: true
                             },
                             {
-                                text: "pink",
-                                select: false
-                            },
-                            {
+                                name: 'generator_blue',
                                 text: "blue",
+                                value: "blue",
                                 select: false
                             },
                             {
+                                name: 'generator_white_pink',
                                 text: "white_pink",
+                                value: "white_pink",
                                 select: false
                             },
                             {
+                                name: 'generator_white_blue',
                                 text: "white_blue",
+                                value: "white_blue",
                                 select: false
                             },
-                            {
+                            {   
+                                name: 'generator_pink_blue',
                                 text: "pink_blue",
+                                value: "pink_blue",
                                 select: false
                             },
                         ]
                     }
                 ],
+                rangeRow:[
+                    {
+                        text: 'Размер логотипа',
+                        name: 'logoSize',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    },
+                    {
+                        text: 'Размер точек',
+                        name: 'black',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    },
+                    {
+                        text: 'Масштаб',
+                        name: 'scale',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    },
+                    {
+                        text: 'Контраст',
+                        name: 'trace',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    },
+                    {
+                        text: 'Форма',
+                        name: 'form',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    },
+                    {
+                        text: 'Разделение',
+                        name: 'split',
+                        value: 0,
+                        handler: 'rangeHandler'
+                    }
+
+                ]
             },
-            {
-                className: 'column width3',
-            },
+            // {
+            //     className: 'column width3',
+            // },
         ]
     },
     {

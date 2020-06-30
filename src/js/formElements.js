@@ -21,6 +21,8 @@ class RadioRow extends React.Component{
                                         name = {el.name}
                                         type = {el.type}
                                         key = {index}
+                                        value = {item.value}
+                                        ident = {item.name}
                                         defaultChecked = {item.select}
                                     />
                                 )
@@ -50,21 +52,21 @@ class MyRadio extends React.Component{
         <div className = 'Radio'>
             <input 
             //onInput = {this.props.onInput}
-            id = {this.props.text}
+            id = {this.props.ident}
             name = {this.props.name} 
-            value = {this.props.text}
+            value = {this.props.value}
             type = 'radio'
-            onChange = { this.handler}
+            onChange = {this.handler}
             defaultChecked = {this.props.defaultChecked}
             />
             {
             this.props.type === "color"?
             <label 
             className = {'colorRadio ' + this.props.text}
-            htmlFor ={this.props.text}>
+            htmlFor ={this.props.ident}>
             </label>:
             <label 
-            htmlFor ={this.props.text}>
+            htmlFor ={this.props.ident}>
                 {this.props.text}
             </label>
             }
@@ -89,4 +91,77 @@ class ButtonRow extends React.Component{
     }
 }
 
-export {RadioRow, ButtonRow}
+class RangeRow extends React.Component{
+    render(){
+        return(
+            <div className = 'rangeRow'>
+                {this.props.data.map(
+                    (item, index) =>{
+                        return(
+                            <MyRange 
+                                handler = {this.props.handler}
+                                value = {this.props.generator[item.name]}
+                                name = {item.name}
+                                text = {item.text}
+                                handlerName = {item.handler}
+                            />
+                        )
+                    }
+                )}
+            </div>
+        )
+    }
+}
+
+class MyRange extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            value: this.props.value
+        }
+        this.ref = React.createRef()
+        this.point = React.createRef()
+        this.fill = React.createRef()
+        this.handler = this.handler.bind(this)
+    }
+    componentDidUpdate(){
+        this.point.current.style.marginLeft = this.props.value + '%'
+        this.fill.current.style.width = this.props.value + '%'
+    }
+    handler(event){
+        (this.props.handlerName!== undefined)&&this.props.handler[this.props.handlerName](event)
+    }
+
+    render(){
+        return(
+        <div className = 'range'>
+            <div className = 'rangeInfo'>
+            <div className = 'rangeName'>
+                {this.props.text}
+            </div>
+            <div className = 'rangeValue'>
+                {this.props.value}
+            </div>
+            </div>
+            <div className = 'RangeLine'>
+            
+            <div className = 'rangeLineDiv'>
+                <input 
+                name = {this.props.name}
+                ref = {this.ref} 
+                onInput = {this.handler} 
+                type = "range" 
+                className = 'myRange'>
+                </input>
+                <div ref = {this.fill} className = 'rangeFillDiv'>
+                </div>
+                <div ref = {this.point} className = 'rangePointDiv'></div>
+            </div>
+            
+            </div>
+        </div>
+        )
+    }
+}
+
+export {RadioRow, ButtonRow, RangeRow}

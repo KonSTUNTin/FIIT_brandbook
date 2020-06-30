@@ -19,14 +19,14 @@ class MyCanvas extends React.Component{
             height: this.props.width,
             time: 0
         }
-       
+        this.ref = React.createRef()
     }
     async componentDidMount(){
         let w = this.props.width;
         let h = this.props.height;
         this.scene = new THREE.Scene();
         this.renderer = new THREE.WebGLRenderer({
-            canvas: this.props.refProp.current,
+            canvas: this.ref.current,
             preserveDrawingBuffer: true 
         });
         this.logo = new THREE.TextureLoader().load('./logo.png');
@@ -64,7 +64,7 @@ class MyCanvas extends React.Component{
                 value: w / h
             },
             size: {
-                value: this.props.settings.Scale
+                value: this.props.settings.scale
             },
             logoSize: {
                 value: 50
@@ -91,16 +91,16 @@ class MyCanvas extends React.Component{
                 value: 50
             },
             formtype: {
-                value: this.props.settings.Form
+                value: this.props.settings.form
             },
             black: {
-                value: this.props.settings.Black
+                value: this.props.settings.black
             },
             trace: {
-                value: this.props.settings.Trace
+                value: this.props.settings.trace
             },
             split: {
-                value: this.props.settings.Split
+                value: this.props.settings.split
             },
             
         }
@@ -120,55 +120,56 @@ class MyCanvas extends React.Component{
         return await response.text();
     }
     componentDidUpdate(){
+       
         let settings = this.props.settings;
         this.renderer.setSize( this.props.width, this.props.height );
         if(this.tex)this.tex.draw(
             this.props.width,
             this.props.height,
-            this.props.time
+            settings.time
         )
         if(this.plane){
             let shaderValue = this.plane.material.uniforms;
-            shaderValue.time.value = this.props.time;
+            shaderValue.time.value = settings.time;
             shaderValue.pic.value.needsUpdate = true;
-            shaderValue.size.value = settings.Scale;
-            shaderValue.black.value = settings.Black;
-            shaderValue.formtype.value = settings.Form;
-            shaderValue.trace.value = settings.Trace;
-            shaderValue.logoSize.value = settings['Logo size'];
-            shaderValue.split.value = settings.Split;
+            shaderValue.size.value = settings.scale;
+            shaderValue.black.value = settings.black;
+            shaderValue.formtype.value = settings.form;
+            shaderValue.trace.value = settings.trace;
+            shaderValue.logoSize.value = settings.logoSize;
+            shaderValue.split.value = settings.split;
             shaderValue.k.value = this.props.width / this.props.height;
-            if(this.props.settings.Logotype == 'yes'){
+            if(settings.logo == 'main'){
                 shaderValue.logoAlpha.value = 1;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(this.props.settings.Logotype == 'none'){
+            if(settings.logo == 'none'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(this.props.settings.Logotype == 'bracket'){
+            if(settings.logo == 'short'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 1;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(this.props.settings.Logotype == 'borders'){
+            if(settings.logo == 'brackets'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 1;
             }
-            if(this.props.settings.Color == 'pink'){
+            if(this.props.settings.color == 'pink'){
                 shaderValue.rColor.value = 254;
                 shaderValue.gColor.value = 37;
                 shaderValue.bColor.value = 167;
             }
-            if(this.props.settings.Color == 'blue'){
+            if(this.props.settings.color == 'blue'){
                 shaderValue.rColor.value = 26;
                 shaderValue.gColor.value = 179;
                 shaderValue.bColor.value = 213;
             }
-            if(this.props.settings.Color == 'white'){
+            if(this.props.settings.color == 'white'){
                 shaderValue.rColor.value = 256;
                 shaderValue.gColor.value = 256;
                 shaderValue.bColor.value = 256;
@@ -184,7 +185,7 @@ class MyCanvas extends React.Component{
     }
     render(){
         return(
-        <canvas width = {this.props.width} height = {this.props.height} ref = {this.props.refProp}/>
+        <canvas className = 'generatorCanvas' width = {this.props.width} height = {this.props.height} ref = {this.ref}/>
         )
     }
 }

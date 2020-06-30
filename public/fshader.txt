@@ -56,7 +56,7 @@ void main(){
     vec2 mp = vUv;
     mp -= .5;
     mp.x *= k;
-    mp *= logoSize / 30.;
+    mp *= (100. - logoSize) / 30.;
     mp += .5;
     vec4 logoTex = texture2D(logo, mp);
     vec4 bracketTex = texture2D(bracket, mp);

@@ -282,6 +282,9 @@ img.examples {
   background-color: var(--white);
   color: var(--black);
 }
+.section.black{
+  background-color: var(--black);
+}
 .column.center{
   display: flex;
   flex-flow: column;
@@ -489,6 +492,10 @@ g#logo_FIIT.white path{
 }
 g#logo_FIIT.blue path{
   fill: var(--blue)
+}
+
+.generatorCanvas{
+  margin-bottom: var(--x2);
 }
 
 
