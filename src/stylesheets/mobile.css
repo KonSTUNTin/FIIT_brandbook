@@ -11,7 +11,6 @@
         margin-bottom: var(--x);
     }
     img {
-        margin-bottom: var(--x2);
         margin-top: var(--x2);
     }
     p, label, .rangeName, .rangeValue {
@@ -21,7 +20,7 @@
         display: flex;
         flex-flow: column;
         max-width: 700px;
-        width: 90%;
+        width: 80%;
         align-items: center;
     }
     .header {
@@ -46,7 +45,7 @@
         margin-top: var(--x4);
     }
     img.aboutGeraldic {
-        width: 30%;
+        width: 20%;
         height: auto;
         margin-right: var(--x2);
         margin-bottom: 0px;
@@ -103,15 +102,9 @@
     .RadioRow.text {
         width: 100%;
     }
-    img.examples {
-        padding-bottom: var(--x3);
-    }
     .person p {
         margin-bottom: 0px;
         text-align: left;
-    }
-    .person {
-        padding-bottom: var(--x2);
     }
     .heroBlock .content {
         align-items: baseline;
@@ -123,7 +116,8 @@
         display: none;
     }
     .bigpic img {
-        width: 70%;
+        width: auto;
+        max-width: 50%;
         height: auto;
         align-self: center;
     }
@@ -132,5 +126,8 @@
         display: flex;
         margin-top: var(--x2);
         margin-bottom: var(--x2);
+    }
+    .horizontal img.examples {
+        width: calc(70% - var(--x4));
     }
 }

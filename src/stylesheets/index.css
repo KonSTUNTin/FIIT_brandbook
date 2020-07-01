@@ -407,7 +407,7 @@ label.colorRadio {
 }
 .colorSwatch {
   cursor: pointer;
-  width: 23%;
+  width: calc(33% - var(--x6));
   margin-bottom: var(--x2);
   height: var(--x6);
   margin-right: var(--x2);
@@ -505,6 +505,13 @@ g#logo_FIIT.blue path{
 
 .generatorCanvas{
   margin-bottom: var(--x2);
+}
+
+.horizontal img.examples {
+  width: calc(50% - var(--x4));
+  height: auto;
+  align-self: center;
+  margin-right: var(--x4);
 }
 
 

@@ -135,7 +135,7 @@ const brandbookContent = [
         ],
     },
     {
-        className: 'section',
+        className: 'section geraldicSection',
         columns: [
             { 
                 className: 'column width3',
@@ -215,14 +215,14 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section nopadding_bottom',
+        className: 'section nopadding_bottom mobile_border',
         columns: [
             {
                 className: 'column width3',
                 h2: 'Краткая форма',
             },
             {
-                className: 'column width2 border',
+                className: 'column width2 border bracket',
                 img: './images/bracket.svg',
                 text: 'Логотип-скобка.\
                 Используется в графике,\
@@ -237,12 +237,11 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width4 border bigpic',
-                img: './images/bracketExample1.png',
-            },
-            {
-                className: 'column width2 border bigpic',
-                img: './images/bracketExample2.png',
+                className: 'column width6 border horizontal',
+                img: [
+                    './images/bracketExample1.png',
+                    './images/bracketExample2.png'  
+                ],
             },
             {
                 className: 'column width1',
@@ -250,10 +249,10 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section',
+        className: 'section f_letter',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width3 tablet_none',
             },
             {
                 className: 'column width2 bigpic',
@@ -279,7 +278,7 @@ const brandbookContent = [
                 img: './images/Fletterexample.png',
             },
             {
-                className: 'column width1',
+                className: 'column width1 tablet_none',
             },
         ]
     },
