@@ -8,7 +8,7 @@ class RadioRow extends React.Component{
         <div className = 'radioBlock'>
             {this.props.data.map((el,ind)=>{
                 return(
-                    <div className = 'RadioRow' key = {ind}>
+                    <div className = {'RadioRow ' + el.type} key = {ind}>
                         {
                         el.values.map(
                             (item, index)=>{

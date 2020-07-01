@@ -1,0 +1,136 @@
+@media screen and (max-width: 800px){
+
+    h1{
+        font-size: var(--h1MobileTextStyle);
+    }
+    h2{
+        font-size: var(--h2MobileTextStyle);
+    }
+    h3{
+        font-size: var(--h3MobileTextStyle);
+        margin-bottom: var(--x);
+    }
+    img {
+        margin-bottom: var(--x2);
+        margin-top: var(--x2);
+    }
+    p, label, .rangeName, .rangeValue {
+        font-size: var(--regularMobileTextStyle);
+    }
+    .content {
+        display: flex;
+        flex-flow: column;
+        max-width: 700px;
+        width: 90%;
+        align-items: center;
+    }
+    .header {
+        padding-top: var(--x2);
+        padding-bottom: var(--x);
+    }
+
+    .column.border {
+        border-bottom: none;
+        padding-bottom: 0px;
+    }
+    .column {
+        display: flex;
+        padding-right: 0px;
+        flex-flow: column;
+        width: 100%
+    }
+    div.aboutGeraldic {
+        display: flex;
+        align-items: end;
+        margin-bottom: 0px;
+        margin-top: var(--x4);
+    }
+    img.aboutGeraldic {
+        width: 30%;
+        height: auto;
+        margin-right: var(--x2);
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .radioBlock {
+        width: 100%;
+        align-items: baseline;
+        flex-flow: column;
+    }
+    .rangeRow {
+        width: 100%;
+    }
+    
+    .RadioRow.text{
+        display: flex;
+        flex-flow: column;
+        border: 0px;
+    }
+    .text input[type="radio"]:checked+label {
+        background-color: var(--darkBlue);
+        color: var(--white);
+    }
+
+    
+    .text label:before {
+        content: '';
+        width: var(--x2);
+        height: var(--x2);
+        display: block;
+        border: 1px solid var(--white);
+        border-radius: var(--x2);
+        margin-right: var(--x);
+        transition: background-color 500ms;
+    }
+    .text input[type="radio"]:checked+label:before {
+        background-color: var(--white);
+    }
+    .text label {
+        display: flex;
+        padding-left: 0px;
+    }
+    .section {
+        padding-bottom: var(--x4);
+        padding-top: var(--x4);
+    }
+    canvas.generatorCanvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .RadioRow{
+        margin-right: 0px;
+    }
+    .RadioRow.text {
+        width: 100%;
+    }
+    img.examples {
+        padding-bottom: var(--x3);
+    }
+    .person p {
+        margin-bottom: 0px;
+        text-align: left;
+    }
+    .person {
+        padding-bottom: var(--x2);
+    }
+    .heroBlock .content {
+        align-items: baseline;
+    }
+    .section.nopadding {
+        padding: 0px;
+    }
+    .menuNavigation {
+        display: none;
+    }
+    .bigpic img {
+        width: 70%;
+        height: auto;
+        align-self: center;
+    }
+    
+    .buttonRow {
+        display: flex;
+        margin-top: var(--x2);
+        margin-bottom: var(--x2);
+    }
+}

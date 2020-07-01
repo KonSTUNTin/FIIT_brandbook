@@ -18,7 +18,7 @@ const brandbookContent = [
         ]
     },
     {   
-        className: 'section',
+        className: 'section nopadding',
         columns:[
             {
                 className: 'column width3'
@@ -50,7 +50,7 @@ const brandbookContent = [
         ]
     },
     {   
-        className: 'section',
+        className: 'section nopadding',
         columns:[
             {
                 className: 'column width3'
@@ -215,7 +215,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section',
+        className: 'section nopadding_bottom',
         columns: [
             {
                 className: 'column width3',
@@ -237,11 +237,11 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width4 border',
+                className: 'column width4 border bigpic',
                 img: './images/bracketExample1.png',
             },
             {
-                className: 'column width2 border',
+                className: 'column width2 border bigpic',
                 img: './images/bracketExample2.png',
             },
             {
@@ -256,7 +256,7 @@ const brandbookContent = [
                 className: 'column width3',
             },
             {
-                className: 'column width2',
+                className: 'column width2 bigpic',
                 img: './images/fLetter.png',
             },
             {
@@ -275,7 +275,7 @@ const brandbookContent = [
 
             },
             {
-                className: 'column width2',
+                className: 'column width2 bigpic',
                 img: './images/Fletterexample.png',
             },
             {

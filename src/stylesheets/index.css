@@ -5,13 +5,22 @@
   --blue: #1AB3D5;
   --black:#03081B;
   --white: white;
-  --regularTextStyle: 16px;
-  --regularMobileTextStyle: 14px;
+  
   --h1TextStyle: 80px;
   --h2TextStyle: 40px;
-  --h1MobileTextStyle: 30px;
   --h3TextStyle: 24px;
-  --h3MobileTextStyle: 16px;
+  --regularTextStyle: 16px;
+  
+  --h1MobileTextStyle: 30px;
+  --h2MobileTextStyle: 20px;
+  --h3MobileTextStyle: 14px;
+  --regularMobileTextStyle: 14px;
+
+  --h1TabletTextStyle: 40px;
+  --h2TabletTextStyle: 24px;
+  --h3TabletTextStyle: 16px;
+  --regularTabletTextStyle: 16px;
+  
   --x: 10px;
   --x2: 20px;
   --x3: 30px;
@@ -25,11 +34,11 @@
 }
 @font-face {
   font-family: 'Golos_Regular';
-  src: url('./fonts/Golos Text_Regular.ttf')  format('truetype');
+  src: url('../fonts/Golos Text_Regular.ttf')  format('truetype');
 }
 @font-face {
   font-family: 'Golos_Bold';
-  src: url('./fonts/Golos Text_Bold.ttf')  format('truetype');
+  src: url('../fonts/Golos Text_Bold.ttf')  format('truetype');
 }
 body {
   font-family: "Golos_Regular";
@@ -92,7 +101,7 @@ div#root {
   display: flex;
   flex-flow: row;
   max-width: 1400px;
-  width: 100%;
+  width: 90%;
 }
 h1 {
   font-size: var(--h1TextStyle);
@@ -119,7 +128,7 @@ h1:after {
   display: block;
   width: 100px;
   height: 35px;
-  background-image: url("logoFiit.png");
+  background-image: url("../logoFiit.png");
   background-size: 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -131,7 +140,7 @@ h1:after {
   display: block;
   width: 40px;
   height: 40px;
-  background-image: url("logoJS.png");
+  background-image: url("../logoJS.png");
   background-size: 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -449,7 +458,7 @@ label.colorRadio {
   padding-bottom: var(--x3);
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   background: var(--darkBlue) /*linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--darkBlue) 40%);*/
 }
 a.menuUnit {
