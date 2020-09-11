@@ -41,6 +41,7 @@ class InteractionCanvas extends React.Component{
         this.ref = React.createRef()
         this.animate = this.animate.bind(this)
         this.initMouse = this.initMouse.bind(this)
+        this.initWindowResize = this.initWindowResize.bind(this)
     }
     initMouse(){
         this.ref.current.onmousemove = ()=>{
@@ -50,6 +51,16 @@ class InteractionCanvas extends React.Component{
             if(y <this.h * .8)this.y = y ;
         }
     }
+    initWindowResize(){
+        window.onresize = ()=>{
+            this.w = window.innerWidth;
+            this.h = window.innerHeight * .8;
+            this.renderer.setSize( this.w, this.h )
+            this.uniforms.w.value = this.w;
+            this.uniforms.h.value = this.h
+        }
+    }
+
     animate(){
         requestAnimationFrame(this.animate)
 
@@ -168,6 +179,7 @@ class InteractionCanvas extends React.Component{
         
         this.animate()
         this.initMouse()
+        this.initWindowResize()
     }
     
     render(){

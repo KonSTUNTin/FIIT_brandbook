@@ -55,12 +55,13 @@ class Header extends React.Component{
                             )
                         }
                     </div>
-                    <Button text = 'Скачать как PDF'/>
+                    <Button file = './media/FIIT.pdf' text = 'Скачать как PDF'/>
                 </div>
             </div>
         )
     }
 }
+
 
 
 export default Header

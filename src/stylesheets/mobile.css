@@ -130,4 +130,8 @@
     .horizontal img.examples {
         width: calc(70% - var(--x4));
     }
+    .bracket_examples {
+        display: flex;
+        align-items: center;
+    }
 }

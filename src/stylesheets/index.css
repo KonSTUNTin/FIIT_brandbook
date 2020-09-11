@@ -510,8 +510,10 @@ g#logo_FIIT.blue path{
 .horizontal img.examples {
   width: calc(50% - var(--x4));
   height: auto;
-  align-self: center;
   margin-right: var(--x4);
+}
+a.button {
+  text-decoration: none;
 }
 
 

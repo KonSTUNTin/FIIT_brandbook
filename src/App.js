@@ -28,6 +28,7 @@ class App extends React.Component{
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
         this.rangeHandler = this.rangeHandler.bind(this)
         this.animate = this.animate.bind(this)
+        this.downloadPDF = this.downloadPDF.bind(this)
         this.animate()
     }
     animate(){
@@ -51,11 +52,15 @@ class App extends React.Component{
             [event.target.name]: event.target.value
         })
     }
+    downloadPDF(){
+        console.log('hi')
+    }
 
     render(){
         return(
             <>
-                <Header></Header>
+                <Header 
+                    handler = {this.downloadPDF}></Header>
                 <HeroBlock/>
                     {brandbookContent.map(
                         (item, index)=>{

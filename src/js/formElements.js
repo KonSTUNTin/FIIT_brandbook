@@ -82,7 +82,7 @@ class ButtonRow extends React.Component{
                 {this.props.data.map(
                     (button, index)=>{
                         return(
-                            <Button text = {button.text} key = {index}/>
+                            <Button text = {button.text} key = {index} file = {button.file}/>
                         )
                     }
                 )}

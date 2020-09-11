@@ -65,7 +65,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section',
+        className: 'section mobile_border',
         columns: [
             {
                 h2: 'Основной знак',
@@ -125,10 +125,12 @@ const brandbookContent = [
                 ],
                 buttonRow:[
                     {
-                        text: 'PNG'
+                        text: 'PNG',
+                        file: './media/logo_white.svg'
                     },
                     {
-                        text: 'SVG'
+                        text: 'SVG',
+                        file: './media/logo_white.svg'
                     }
                 ]
             },
@@ -237,7 +239,7 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width6 border horizontal',
+                className: 'column width6 border horizontal bracket_examples',
                 img: [
                     './images/bracketExample1.png',
                     './images/bracketExample2.png'  
