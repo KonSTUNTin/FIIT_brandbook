@@ -1,6 +1,6 @@
 import React from 'react'
 import * as THREE from 'three';
-import { Vector2 } from 'three';
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 
 class HeroBlock extends React.Component{
     render(){
@@ -31,10 +31,10 @@ class InteractionCanvas extends React.Component{
         this.time = 0;
         this.w = window.innerWidth;
         this.h = window.innerHeight * .8;
-
+        
         this.x = this.w / 2;
         this.y = this.h / 2;
-
+        this.texture = null;
         this.px = this.x;
         this.py = this.y;
         this.a = Math.random() * Math.PI * 2;
@@ -56,129 +56,74 @@ class InteractionCanvas extends React.Component{
             this.w = window.innerWidth;
             this.h = window.innerHeight * .8;
             this.renderer.setSize( this.w, this.h )
-            this.uniforms.w.value = this.w;
-            this.uniforms.h.value = this.h
         }
     }
 
     animate(){
         requestAnimationFrame(this.animate)
-
-        let dx = this.x - this.px;
-        let dy = this.y - this.py;
-        let a = Math.atan2(dy, dx);
-        let d = Math.sqrt(dx * dx + dy * dy);
-        d = Math.min(d, this.h / 5) / (this.h / 5);
-
-        this.a += Math.cos(this.time / 70) / 50;
-        let deltaVector = new THREE.Vector2(
-            Math.cos(a), Math.sin(a)
-        )
-        deltaVector.multiplyScalar(d)
-
-        let vector = new THREE.Vector2(
-            Math.cos(this.a), Math.sin(this.a)
-        )
-        vector.multiplyScalar(1 - d)
-        vector.add(deltaVector);
-        vector.normalize();
-
-        this.px += vector.x * 3;
-        this.py += vector.y * 3;
-
-        this.uniforms.x.value = this.px / this.w;
-        this.uniforms.y.value = this.py / this.h;
-
-        this.time +=1
-
-        this.renderer.setRenderTarget(
-            this.rtA
-        )
-        this.renderer.render(
-            this.buffer_scene, this.camera
-        )
-        let t = this.rtB;
-        this.rtB = this.rtA;
-        this.rtA = t;
-
-        this.basicMaterial.map = this.rtA.texture
-        this.uniforms.texture.value = this.rtB.texture
-
-        this.renderer.setRenderTarget(
-            null
-        )
+        this.texture.offset.y -= 0.001
+       
         this.renderer.render(
             this.scene, this.camera
         )
-
-        this.uniforms.time.value = this.time
         
     }
     async componentDidMount(){
         this.scene = new THREE.Scene();
-        this.rtA = new THREE.WebGLRenderTarget(this.w, this.h);
-        this.rtB = new THREE.WebGLRenderTarget(this.w, this.h)
-        this.camera = new THREE.OrthographicCamera(-this.w / 2, this.w / 2, this.h / 2, -this.h / 2, 0.01, 1000)
-        this.buffer_scene = new THREE.Scene();
+       
+        this.camera = new THREE.OrthographicCamera(-this.w / 2, this.w / 2, this.h / 2, -this.h / 2, 0.01, 20000)
+        
 
         this.renderer = new THREE.WebGLRenderer({
-            canvas: this.ref.current
+            canvas: this.ref.current,
+            antialias: true
         })
+        this.renderer.setClearColor( "#110F2C", 1 );
         this.renderer.setSize(
             this.w, this.h
         )
+        let loader = new GLTFLoader();
         
-        let vshader = await fetch('./vshader.txt');
-        vshader = await vshader.text();
+        this.texture = new THREE.TextureLoader().load('./images/text.png');
+        this.texture.wrapS = THREE.RepeatWrapping;
+        this.texture.wrapT = THREE.RepeatWrapping;
+        this.texture.magFilter = THREE.LinearMipmapLinearFilter;
+        this.texture.minFilter = THREE.LinearMipmapLinearFilter;
+        
+        loader.load('./carpet.gltf',
+            (gltf)=>{
+                gltf.scene.traverse(
+                    (child)=>{
+                        if(child.isMesh){
+                            let geometry = child.geometry;
+                            let material = new THREE.MeshBasicMaterial(
+                                {   
+                                    map: this.texture,
+                                    side: THREE.DoubleSide
+                                })
+                            let mesh = new THREE.Mesh(geometry,material);
+                            this.scene.add(mesh);
+                            mesh.position.set(0, 0, -2000)
+                            mesh.rotation.set(-Math.PI, -Math.PI / 2, -Math.PI / 2)
+                            mesh.scale.set(400, 400, 300)
+                        }
+                    }
+                )
+                
+            },
+            (xhr)=>{
 
-        let fshader = await fetch('./wormshader.txt');
-        fshader = await fshader.text();
+                console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
-        this.uniforms = {
-            texture:{
-                value: this.rtB.texture
             },
-            time: {
-                value: 0
-            },
-            x: {
-                value: this.x
-            },
-            y: {
-                value: this.y
-            },
-            w: {
-                value: this.w
-            },
-            h: {
-                value: this.h
+            function ( error ) {
+
+                console.log( 'An error happened' );
+        
             }
-        }
-        let g = new THREE.PlaneGeometry(
-            this.w, 
-            this.h, 
-            1, 
-            1
-        );
-        let shaderMaterial = new THREE.ShaderMaterial({
-            vertexShader: vshader,
-            fragmentShader: fshader,
-            uniforms: this.uniforms
-        })
-        this.basicMaterial = new THREE.MeshBasicMaterial({
-            map: this.rtA.texture
-        })
-
-        this.buffer_plane = new THREE.Mesh(g, shaderMaterial);
-        this.buffer_plane.position.z = -100;
-        this.buffer_scene.add(this.buffer_plane);
-
-        this.plane = new THREE.Mesh(g, this.basicMaterial);
-        this.plane.position.z = -100;
-        this.scene.add(this.plane);
+        )
         
         this.animate()
-        this.initMouse()
         this.initWindowResize()
     }
     
