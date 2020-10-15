@@ -224,8 +224,7 @@ const brandbookContent = [
                 h2: 'Краткая форма',
             },
             {
-                className: 'column width2 border bracket',
-                img: './images/bracket.svg',
+                className: 'column width3 border bracket',
                 text: 'Логотип-скобка.\
                 Используется в графике,\
                 или в подписи',
@@ -239,14 +238,13 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width6 border horizontal bracket_examples',
+                className: 'column width3 border',
                 img: [
                     './images/bracketExample1.png',
-                    './images/bracketExample2.png'  
                 ],
             },
             {
-                className: 'column width1',
+                className: 'column width3',
             },
         ]
     },
@@ -257,11 +255,7 @@ const brandbookContent = [
                 className: 'column width3 tablet_none',
             },
             {
-                className: 'column width2 bigpic',
-                img: './images/fLetter.png',
-            },
-            {
-                className: 'column width4',
+                className: 'column width3',
                 text: 'Самостоятельный символ,\
                 Зарифмован с формой нижней скобки.\
                 Может использоваться как маска для графики.',
@@ -276,11 +270,11 @@ const brandbookContent = [
 
             },
             {
-                className: 'column width2 bigpic',
+                className: 'column width3 bigpic',
                 img: './images/Fletterexample.png',
             },
             {
-                className: 'column width1 tablet_none',
+                className: 'column width3 tablet_none',
             },
         ]
     },
