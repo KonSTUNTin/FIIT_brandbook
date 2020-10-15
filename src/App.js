@@ -116,46 +116,45 @@ class Column extends React.Component{
                 (el, index)=>{
                     return(
                         <>
-                            {el==='h2'&&
+                            {el.indexOf('h2')>-1&&
                             <h2 key = {index}>
                                 {this.props.content[el]}
                             </h2>
                             }
-                            {el==='h3'&&
+                            {el.indexOf('h3')>-1&&
                             <h3 key = {index}>
                                 {this.props.content[el]}
                             </h3>
                             }
-                            {el==='text'&&
+                            {el.indexOf('text')>-1&&
                             <p key = {index}>
                                 {this.props.content[el]}
                             </p>
                             }
-                            {el==='img'&&
+                            {el.indexOf('img')>-1&&
                                 <Picture data = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='aboutGeraldic'&&
+                            {el.indexOf('aboutGeraldic')>-1&&
                                 <GeraldicBlock data = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='person'&&
+                            {el.indexOf('person')>-1&&
                             <Person data = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='buttonRow'&&
+                            {el.indexOf('buttonRow')>-1&&
                             <ButtonRow data = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='radioRow'&&
-                            <RadioRow data = {this.props.content[el]} key = {index} handler = {this.props.handler}/>
+                            {el.indexOf('radioRow')>-1&&<RadioRow data = {this.props.content[el]} key = {index} handler = {this.props.handler}/>
                             }
-                            {el==='rangeRow'&&
+                            {el.indexOf('rangeRow')>-1&&
                             <RangeRow data = {this.props.content[el]} key = {index} handler = {this.props.handler} generator = {this.props.generator}/>
                             }
-                            {el==='colorSwatches'&&
+                            {el.indexOf('colorSwatches')>-1&&
                             <ColorSwatches data = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='lottie'&&
+                            {el.indexOf('lottie')>-1&&
                             <LottieAnimation path = {this.props.content[el]} key = {index}/>
                             }
-                            {el==='canvasGenerator'&&
+                            {el.indexOf('canvasGenerator')>-1&&
                             <MyCanvas width = '400' height = "400" key = {index} settings = {this.props.generator}/>
                             }
                         </>

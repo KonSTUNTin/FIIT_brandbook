@@ -90,6 +90,8 @@ class InteractionCanvas extends React.Component{
         this.texture.magFilter = THREE.LinearMipmapLinearFilter;
         this.texture.minFilter = THREE.LinearMipmapLinearFilter;
         
+        let alphaMap = new THREE.TextureLoader().load('./images/carpethair.png');
+
         loader.load('./carpet.gltf',
             (gltf)=>{
                 gltf.scene.traverse(
@@ -98,11 +100,14 @@ class InteractionCanvas extends React.Component{
                             let geometry = child.geometry;
                             let material = new THREE.MeshBasicMaterial(
                                 {   
+                                    // alphaMap: alphaMap,
+                                    // transparent: true,
                                     map: this.texture,
                                     side: THREE.DoubleSide
                                 })
                             let mesh = new THREE.Mesh(geometry,material);
                             this.scene.add(mesh);
+                            mesh.renderOrder = 0.5;
                             mesh.position.set(0, 0, -2000)
                             mesh.rotation.set(-Math.PI, -Math.PI / 2, -Math.PI / 2)
                             mesh.scale.set(400, 400, 300)

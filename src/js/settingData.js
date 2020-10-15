@@ -1,5 +1,6 @@
 const settings = [
     {
+        header: 'Логотип',
         name: 'Logotype',
         type: 'radio',
         value: "none",

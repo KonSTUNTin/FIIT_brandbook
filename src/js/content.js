@@ -369,8 +369,7 @@ const brandbookContent = [
             },
             {
                 className: 'column width6 vertical',
-                
-                radioRow: [
+                radioRow_1: [
                     {
                         name: 'logo',
                         type: 'text',
@@ -401,7 +400,16 @@ const brandbookContent = [
                                 select: false
                             },
                         ]
+                    }],
+                rangeRow_1:[
+                    {
+                        text: 'Размер логотипа',
+                        name: 'logoSize',
+                        value: 0,
+                        handler: 'rangeHandler'
                     },
+                ],
+                radioRow_2: [
                     {
                         name: 'ratio',
                         type: 'text',
@@ -470,13 +478,7 @@ const brandbookContent = [
                         ]
                     }
                 ],
-                rangeRow:[
-                    {
-                        text: 'Размер логотипа',
-                        name: 'logoSize',
-                        value: 0,
-                        handler: 'rangeHandler'
-                    },
+                rangeRow_2:[
                     {
                         text: 'Размер точек',
                         name: 'black',
