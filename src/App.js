@@ -19,7 +19,6 @@ class App extends React.Component{
             form: 50,
             trace: 50,
             split: 50,
-            time: 0,
             logoSize: 50,
             color: 'pink',
             logo: 'main'
@@ -27,16 +26,7 @@ class App extends React.Component{
         this.logoColor = this.logoColor.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
         this.rangeHandler = this.rangeHandler.bind(this)
-        this.animate = this.animate.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
-        this.animate()
-    }
-    animate(){
-        requestAnimationFrame(this.animate);
-        let time = this.state.time + 1;
-        this.setState({
-            time: time
-        })
     }
     logoColor(event){
         document.getElementById('logo_FIIT').setAttribute('class', '')

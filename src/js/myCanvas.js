@@ -20,6 +20,13 @@ class MyCanvas extends React.Component{
             time: 0
         }
         this.ref = React.createRef()
+        this.animate = this.animate.bind(this);
+        this.animate()
+    }
+    animate(){
+        requestAnimationFrame(this.animate)
+        let time = this.state.time + 1;
+        this.setState({time: time})
     }
     async componentDidMount(){
         let w = this.props.width;
@@ -126,11 +133,11 @@ class MyCanvas extends React.Component{
         if(this.tex)this.tex.draw(
             this.props.width,
             this.props.height,
-            settings.time
+            this.state.time
         )
         if(this.plane){
             let shaderValue = this.plane.material.uniforms;
-            shaderValue.time.value = settings.time;
+            shaderValue.time.value = this.state.time;
             shaderValue.pic.value.needsUpdate = true;
             shaderValue.size.value = settings.scale;
             shaderValue.black.value = settings.black;
