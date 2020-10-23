@@ -369,46 +369,8 @@ const brandbookContent = [
             },
             {
                 className: 'column width6 vertical',
-                radioRow_1: [
-                    {
-                        name: 'logo',
-                        type: 'text',
-                        handler: 'logoColorInGenerator',
-                        values: [
-                            {
-                                name: 'generator_logo_without',
-                                value: 'none',
-                                text: "Без логотипа",
-                                select: false
-                            },
-                            {
-                                name: 'generator_logo_main',
-                                value: 'main',
-                                text: "Основной знак",
-                                select: true
-                            },
-                            {
-                                name: 'generator_logo_brackets',
-                                value: 'brackets',
-                                text: "Герб-контейнер",
-                                select: false
-                            },
-                            {
-                                name: 'generator_logo_short',
-                                value: 'short',
-                                text: "Краткая форма",
-                                select: false
-                            },
-                        ]
-                    }],
-                rangeRow_1:[
-                    {
-                        text: 'Размер логотипа',
-                        name: 'logoSize',
-                        value: 0,
-                        handler: 'rangeHandler'
-                    },
-                ],
+              
+                
                 radioRow_2: [
                     {
                         name: 'ratio',
@@ -478,35 +440,75 @@ const brandbookContent = [
                         ]
                     }
                 ],
+                radioRow_1: [
+                    {
+                        name: 'logo',
+                        type: 'text',
+                        handler: 'logoColorInGenerator',
+                        values: [
+                            {
+                                name: 'generator_logo_without',
+                                value: 'none',
+                                text: "Без логотипа",
+                                select: false
+                            },
+                            {
+                                name: 'generator_logo_main',
+                                value: 'main',
+                                text: "Основной знак",
+                                select: true
+                            },
+                            {
+                                name: 'generator_logo_brackets',
+                                value: 'brackets',
+                                text: "Герб-контейнер",
+                                select: false
+                            },
+                            {
+                                name: 'generator_logo_short',
+                                value: 'short',
+                                text: "Краткая форма",
+                                select: false
+                            },
+                        ]
+                    }],
+                rangeRow_1:[
+                    {
+                        text: 'Размер логотипа',
+                        name: 'logoSize',
+                        value: 50,
+                        handler: 'rangeHandler'
+                    },
+                ],
                 rangeRow_2:[
                     {
                         text: 'Размер точек',
                         name: 'black',
-                        value: 0,
+                        value: 50,
                         handler: 'rangeHandler'
                     },
                     {
                         text: 'Масштаб',
                         name: 'scale',
-                        value: 0,
+                        value: 50,
                         handler: 'rangeHandler'
                     },
                     {
                         text: 'Контраст',
                         name: 'trace',
-                        value: 0,
+                        value: 50,
                         handler: 'rangeHandler'
                     },
                     {
                         text: 'Форма',
                         name: 'form',
-                        value: 0,
+                        value: 50,
                         handler: 'rangeHandler'
                     },
                     {
                         text: 'Разделение',
                         name: 'split',
-                        value: 0,
+                        value: 50,
                         handler: 'rangeHandler'
                     }
 

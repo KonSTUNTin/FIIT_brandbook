@@ -9,7 +9,7 @@ class HeroBlock extends React.Component{
                
                 <div className = 'content'>
                     <h1>
-                        Логотип и фирменный стиль ФИИТ
+                        Логотип<br/>и&nbsp;фирменный<br/>стиль ФИИТ
                     </h1>
                     <div className = 'heroBlockBottomLine'>
                         <img className = 'jetLogo' src = './logoJS.png'/>
@@ -55,13 +55,15 @@ class InteractionCanvas extends React.Component{
         window.onresize = ()=>{
             this.w = window.innerWidth;
             this.h = window.innerHeight * .8;
+            this.ref.current.width = this.w;
+            this.ref.current.height = this.h;
             this.renderer.setSize( this.w, this.h )
         }
     }
 
     animate(){
         requestAnimationFrame(this.animate)
-        this.texture.offset.y -= 0.001
+        this.texture.offset.y -= 0.0005
        
         this.renderer.render(
             this.scene, this.camera
@@ -78,6 +80,18 @@ class InteractionCanvas extends React.Component{
             canvas: this.ref.current,
             antialias: true
         })
+
+        let light = new THREE.PointLight(new THREE.Color('white'), .8);
+        light.position.set(0, 1000, 0);
+
+        let secondLight = new THREE.PointLight(new THREE.Color('#383289'), .5);
+        secondLight.position.set(0, -2000, 0);
+
+        let atmosphere = new THREE.AmbientLight(new THREE.Color("white"), .1);
+        this.scene.add(light)
+        this.scene.add(secondLight)
+        this.scene.add(atmosphere)
+
         this.renderer.setClearColor( "#110F2C", 1 );
         this.renderer.setSize(
             this.w, this.h
@@ -90,27 +104,29 @@ class InteractionCanvas extends React.Component{
         this.texture.magFilter = THREE.LinearMipmapLinearFilter;
         //this.texture.minFilter = THREE.LinearMipmapLinearFilter;
         
-        let alphaMap = new THREE.TextureLoader().load('./images/carpethair.png');
+        let alphaMap = new THREE.TextureLoader().load('./images/carpethair2.png');
 
-        loader.load('./carpet.gltf',
+        loader.load('./carpet3.gltf',
             (gltf)=>{
                 gltf.scene.traverse(
                     (child)=>{
                         if(child.isMesh){
                             let geometry = child.geometry;
-                            let material = new THREE.MeshBasicMaterial(
+                            let material = new THREE.MeshStandardMaterial(
                                 {   
-                                    // alphaMap: alphaMap,
                                     // transparent: true,
+                                    // alphaMap: alphaMap, 
                                     map: this.texture,
-                                    side: THREE.DoubleSide
+                                    side: THREE.DoubleSide,
+                                    //alphaTest: 0.5,
                                 })
+                            //material.depthWrite = false
                             let mesh = new THREE.Mesh(geometry,material);
                             this.scene.add(mesh);
                             mesh.renderOrder = 0.5;
                             mesh.position.set(0, 0, -2000)
                             mesh.rotation.set(-Math.PI, -Math.PI / 2, -Math.PI / 2)
-                            mesh.scale.set(400, 400, 300)
+                            mesh.scale.set(300, 300, 250)
                         }
                     }
                 )
