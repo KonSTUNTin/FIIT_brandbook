@@ -4,64 +4,21 @@ const brandbookContent = [
         columns:[
             {
                 h2: 'Концепция',
-                className: 'column width3'
+                className: 'column width4'
             },
             {
                 img: './images/code.png',
-                className: 'column width5 arrow',
-            },
-            {
-                className: 'column width4',
+                className: 'column width4 arrow',
                 h3: 'Фигурная скобка',
                 text: 'Используется как в математике, так и в программинге (JS, Python).'
-            }
-        ]
-    },
-    {   
-        className: 'section nopadding',
-        columns:[
-            {
-                className: 'column width3'
-            },
-            {
-                img: './images/arrow.svg',
-                className: 'column width5 arrow center',
             },
             {
                 className: 'column width4',
-            }
-        ]
-    },
-    {
-        className: 'section',
-        columns: [
-            {
-                className: 'column width3'
-            },
-            {
                 img: './images/shield.png',
-                className: 'column width5 arrow'
-            },
-            {
-                className: 'column width4',
                 h3: 'Перевернутая скобка',
                 text: 'Дает основу для геральдического символа с любым содержимым, по ситуации.'
-            }
-        ]
-    },
-    {   
-        className: 'section nopadding',
-        columns:[
-            {
-                className: 'column width3'
             },
-            {
-                img: './images/arrow.svg',
-                className: 'column width5 arrow center',
-            },
-            {
-                className: 'column width4',
-            }
+
         ]
     },
     {
@@ -70,12 +27,6 @@ const brandbookContent = [
             {
                 h2: 'Основной знак',
                 className: 'column width3 border  horizontal_center',
-            },
-            {
-                lottie: './lottie/main.json',
-                className: 'column width5 center border'
-            },
-            {
                 text: 'Самый самостоятельный знак по-умолчанию.',
                 className: 'column width4 border  horizontal_center',
                 radioRow: [
@@ -134,21 +85,12 @@ const brandbookContent = [
                     }
                 ]
             },
-        ],
-    },
-    {
-        className: 'section geraldicSection',
-        columns: [
-            { 
-                className: 'column width3',
-                text:'Знак содержит и геральдические трактовки.'
+            {
+                lottie: './lottie/main.json',
+                className: 'column width5 center border'
             },
             {
-                className: 'column width5 center',
-                img: './images/rendershield.png',
-                text: 'Разделенный четверочастно французский щит, серебро на лазури'
-            },
-            {
+                text:'Знак содержит и геральдические трактовки.',
                 className: 'column width4',
                 aboutGeraldic: [
                     {
@@ -170,8 +112,9 @@ const brandbookContent = [
                         text: 'Одна из почетных фигур'
                     }
                 ]
-            }
-        ]
+                
+            },
+        ],
     },
     {
         className: 'section lightgrey',
@@ -217,7 +160,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section nopadding_bottom mobile_border',
+        className: 'section nopadding_bottom mobile_border bg width10',
         columns: [
             {
                 className: 'column width3',
