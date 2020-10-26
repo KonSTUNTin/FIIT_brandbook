@@ -56,7 +56,8 @@ code {
     monospace;
 }
 .column {
-  padding-right: var(--x4);
+  padding-right: var(--x2);
+  padding-left: var(--x2);
 }
 .column.border {
   border-bottom: 1px solid var( --blue);
@@ -80,6 +81,9 @@ code {
 }
 .width6 {
   flex: 6;
+}
+.width8 {
+  flex: 8;
 }
 .width9 {
   flex: 9;
@@ -301,13 +305,13 @@ img.examples {
 }
 .aboutGeraldic {
   display: flex;
-  margin-bottom: var(--x4);
+  margin-bottom: var(--x1);
 }
 
 img.aboutGeraldic {
-  width: 60px;
-  height: 75px;
-  margin-right: var(--x4);
+  width: 20px;
+  height: 20px;
+  margin-left: var(--x);
 }
 .bottom .content {
   align-items: flex-end;
@@ -407,7 +411,7 @@ label.colorRadio {
 }
 .colorSwatch {
   cursor: pointer;
-  width: calc(33% - var(--x6));
+  width: calc(24% - var(--x6));
   margin-bottom: var(--x2);
   height: var(--x6);
   margin-right: var(--x2);
@@ -515,8 +519,33 @@ g#logo_FIIT.blue path{
 a.button {
   text-decoration: none;
 }
+.nopadding_bottom{
+  padding-bottom: 0px;
+}
+.nopadding_top{
+  padding-top: 0px;
+}
 
+.section.center .content {
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+}
 
+.section.gradient{
+  background: radial-gradient(129.31% 452.65% at 127.84% 43.79%, #0F1B47 0%, rgba(84, 18, 85, 0.93) 100%);
+}
 
+.section.gradientBlack{
+  background: linear-gradient(0deg, #03081B 0%, rgba(3, 8, 27, 0) 94.52%);
+}
+.heraldicString{
+  display: flex;
+  align-items: center;
+}
 
-
+.concept img {
+  height: 258px;
+  width: auto;
+  margin-bottom: var(--x2);
+}

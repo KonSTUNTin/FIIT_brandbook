@@ -8,11 +8,12 @@ class GeraldicBlock extends React.Component{
                 (geraldic)=>{
                     return(
                         <div className = 'aboutGeraldic'>
-                        <img className = 'aboutGeraldic' src = {geraldic.img}/>
+                        {/* <img className = 'aboutGeraldic' src = {geraldic.img}/> */}
                         <div>
-                            <h3>
-                                {geraldic.title}
-                            </h3>
+                            <div className = 'heraldicString'>
+                                <h4>{geraldic.title}</h4> 
+                                <img className = 'aboutGeraldic' src = {geraldic.img}/>
+                            </div>
                             <p>
                                 {geraldic.text}
                             </p>
