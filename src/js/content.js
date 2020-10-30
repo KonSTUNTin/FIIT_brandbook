@@ -4,16 +4,16 @@ const brandbookContent = [
         columns:[
             {
                 h2: 'Концепция',
-                className: 'column width4'
+                className: 'column width4 border '
             },
             {
                 img: './images/code.png',
-                className: 'column width4 arrow',
+                className: 'column width4 arrow border concept',
                 h3: 'Фигурная скобка',
                 text: 'Используется как в математике, так и в программинге (JS, Python).'
             },
             {
-                className: 'column width4',
+                className: 'column width4 border concept',
                 img: './images/shield.png',
                 h3: 'Перевернутая скобка',
                 text: 'Дает основу для геральдического символа с любым содержимым, по ситуации.'
@@ -22,13 +22,12 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section mobile_border',
+        className: 'section mobile_border gradientBlack',
         columns: [
             {
                 h2: 'Основной знак',
-                className: 'column width3 border  horizontal_center',
                 text: 'Самый самостоятельный знак по-умолчанию.',
-                className: 'column width4 border  horizontal_center',
+                className: 'column width3 horizontal_center',
                 radioRow: [
                     {
                         name: 'language',
@@ -87,27 +86,27 @@ const brandbookContent = [
             },
             {
                 lottie: './lottie/main.json',
-                className: 'column width5 center border'
+                className: 'column width5 center'
             },
             {
                 text:'Знак содержит и геральдические трактовки.',
-                className: 'column width4',
+                className: 'column width4 horizontal_center',
                 aboutGeraldic: [
                     {
-                        img:'./images/geraldic01.png',
+                        img:'./images/1_heraldic.svg',
                         title: 'Уробoрос',
                         text: 'Репрезентация циклической природы жизни:\
                         чередования созидания и разрушения, жизни и смерти.'
                     },
                     {
-                        img:'./images/geraldic02.png',
+                        img:'./images/2_heraldic.svg',
                         title: 'Молния',
                         text: 'Начало революционного шторма.\
                         Молния, озаряющая мрак, также символ борьбы света с тьмой,\
                         символ революционной мысли.'
                     },
                     {
-                        img:'./images/geraldic03.png',
+                        img:'./images/3_heraldic.svg',
                         title: 'Костыль',
                         text: 'Одна из почетных фигур'
                     }
@@ -117,26 +116,27 @@ const brandbookContent = [
         ],
     },
     {
-        className: 'section lightgrey',
+        className: 'section gradientBlack',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width1',
+            },
+            {
+                className: 'column width10 center',
+                img: './images/chat.png',
                 text:'Знак также можно напечатать в мессенджере'
             },
             {
-                className: 'column width5',
-                img: './images/chat.png',
-            },
-            {
-                className: 'column width3',
+                className: 'column width1',
+               
             },
         ]
     },
     {
-        className: 'section white',
+        className: 'section nopadding_bottom center',
         columns: [
             {
-                className: 'column width3 horizontal_center',
+                className: 'column width12 center',
                 h2: 'Герб-контейнер',
                 text: 'Самостоятельный символ.\
                         Является контейнером для любого\
@@ -148,26 +148,23 @@ const brandbookContent = [
                     {
                         text: 'SVG'
                     }
-                ]
-            },
-            {
-                className: 'column width6',
+                ],
                 lottie: './lottie/slider.json',
-            },
-            {
-                className: 'column width3',
             },
         ]
     },
     {
-        className: 'section nopadding_bottom mobile_border bg width10',
+        className: 'section mobile_border gradient width10',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width4',
                 h2: 'Краткая форма',
             },
-            {
-                className: 'column width3 border bracket',
+            {   
+                className: 'column width4 concept',
+                img: [
+                    './images/bracketExample1.png',
+                ],
                 text: 'Логотип-скобка.\
                 Используется в графике,\
                 или в подписи',
@@ -181,26 +178,10 @@ const brandbookContent = [
                 ]
             },
             {
-                className: 'column width3 border',
-                img: [
-                    './images/bracketExample1.png',
-                ],
-            },
-            {
-                className: 'column width3',
-            },
-        ]
-    },
-    {
-        className: 'section f_letter',
-        columns: [
-            {
-                className: 'column width3 tablet_none',
-            },
-            {
-                className: 'column width3',
-                text: 'Самостоятельный символ,\
-                Зарифмован с формой нижней скобки.\
+                className: 'column width4 concept',  
+                img: './images/Fletterexample.png',          
+                text: 'Буква Ф,\
+                Зарифмована с формой нижней скобки.\
                 Может использоваться как маска для графики.',
                 buttonRow:[
                     {
@@ -209,27 +190,21 @@ const brandbookContent = [
                     {
                         text: 'SVG'
                     }
-                ]
-
-            },
-            {
-                className: 'column width3 bigpic',
-                img: './images/Fletterexample.png',
-            },
-            {
-                className: 'column width3 tablet_none',
+                ],
+                
+                
             },
         ]
     },
     {
-        className: 'section white',
+        className: 'section',
         columns: [
             {
-                className: 'column width3',
-                h2: 'Цвета',
+                className: 'column width2',
             },
             {
-                className: 'column width6',
+                className: 'column width8 center',
+                h2: 'Цвета',
                 colorSwatches: [
                     {
                         class: 'pink_blue',
@@ -269,7 +244,7 @@ const brandbookContent = [
                 ], 
             },
             {
-                className: 'column width3',
+                className: 'column width2',
             },
         ]
     },
@@ -277,33 +252,34 @@ const brandbookContent = [
         className: 'section black',
         columns: [
             {
-                className: 'column width3',
+                className: 'column width12 center',
+                lottie: './lottie/aboutfont/data.json',
                 h2: 'Гарнитура',
+                text: 'Бесплатная гарнитура. Golos Text от Paratype',
                 buttonRow:[
                     {
                         text: 'OTF'
                     },
-                ]
-            },
-            {
-                className: 'column width6',
-                img: './images/font.png',
-                text: 'Бесплатная гарнитура. Golos Text от Paratype'
-            },
-            {
-                className: 'column width3',
+                ],
             },
         ]
     },
     {
-        className: 'section',
+        className: 'section nopadding_bottom center',
+        columns: [
+            {
+                className: 'column center width12',
+                h2: 'Паттерн',
+            }]
+    },
+    {
+        className: 'section nopadding_top',
         columns: [
             {
                 className: 'column width6',
-                h2: 'Паттерн',
+                canvasGenerator: true,
                 text: 'Фирменный стиль может использовать любой визуал.\
                 Но также мы разработали генератор паттернов.',
-                canvasGenerator: true,
                 buttonRow:[
                     {
                         text: 'PNG'
@@ -312,8 +288,6 @@ const brandbookContent = [
             },
             {
                 className: 'column width6 vertical',
-              
-                
                 radioRow_2: [
                     {
                         name: 'ratio',
@@ -463,7 +437,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section white',
+        className: 'section black',
         columns: [
             {
                 className: 'column width3',
@@ -485,7 +459,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section lightgrey bottom',
+        className: 'section gradient bottom',
         columns: [
             {
                 className: 'column width3',

@@ -5,7 +5,7 @@ import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 class HeroBlock extends React.Component{
     render(){
         return(
-            <div className = 'section heroBlock'>
+            <div className = 'section heroBlock gradient nopadding_bottom'>
                
                 <div className = 'content'>
                     <h1>
@@ -75,10 +75,10 @@ class InteractionCanvas extends React.Component{
        
         this.camera = new THREE.OrthographicCamera(-this.w / 2, this.w / 2, this.h / 2, -this.h / 2, 0.01, 20000)
         
-
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.ref.current,
-            antialias: true
+            antialias: true,
+            alpha: true
         })
 
         let light = new THREE.PointLight(new THREE.Color('white'), .8);
@@ -87,12 +87,12 @@ class InteractionCanvas extends React.Component{
         let secondLight = new THREE.PointLight(new THREE.Color('#383289'), .5);
         secondLight.position.set(0, -2000, 0);
 
-        let atmosphere = new THREE.AmbientLight(new THREE.Color("white"), .1);
+        let atmosphere = new THREE.AmbientLight(new THREE.Color("white"), .3);
         this.scene.add(light)
         this.scene.add(secondLight)
         this.scene.add(atmosphere)
 
-        this.renderer.setClearColor( "#110F2C", 1 );
+        //this.renderer.setClearColor( "#110F2C", 1 );
         this.renderer.setSize(
             this.w, this.h
         )

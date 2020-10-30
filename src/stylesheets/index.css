@@ -56,7 +56,8 @@ code {
     monospace;
 }
 .column {
-  padding-right: var(--x4);
+  padding-right: var(--x2);
+  padding-left: var(--x2);
 }
 .column.border {
   border-bottom: 1px solid var( --blue);
@@ -80,6 +81,9 @@ code {
 }
 .width6 {
   flex: 6;
+}
+.width8 {
+  flex: 8;
 }
 .width9 {
   flex: 9;
@@ -147,9 +151,327 @@ h1:after {
 }
 
 
+<<<<<<< HEAD
 
+=======
+label {
+  padding: var(--x) var(--x2);
+  display: block;
+  cursor: pointer;
+  border-radius: 60px;
+  transition: background-color 500ms, color 500ms;
+}
 
+input[type="radio"]:checked+label{
+  background-color: var(--white);
+  color: var(--black);
+}
 
+div#ControlsPanel {
+  margin-top: var(--x6);
+}
 
+.button {
+  padding: var(--x) var(--x2);
+  background-color: var( --pink);
+  border-radius: var(--x4);
+  color: var( --white);
+  cursor: pointer;
+  margin-right: var(--x2);
+  transition: background-color 500ms, color 500ms;
+}
+.button:hover {
+  color: var( --black);
+  background-color: var( --white);
+}
 
+.fixContainer {
+  align-items: center;
+  flex-flow: column;
+  position: fixed;
+  display: flex;
+  width: 60%;
+}
 
+.footer {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  width: 60%;
+  align-items: inherit;
+  justify-content: space-evenly;
+  background-color: var(--darkBlue);
+  padding: var(--x2);
+}
+img {
+  max-width: 100%;
+  max-height: 500px;
+}
+img.examples {
+  width: 100%;
+  max-height: none;
+  height: auto;
+}
+.section.lightgrey{
+  background-color: var(--lightgrey);
+  color: var(--black);
+}
+.section.white{
+  background-color: var(--white);
+  color: var(--black);
+}
+.section.black{
+  background-color: var(--black);
+}
+.column.center{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.aboutGeraldic {
+  display: flex;
+  margin-bottom: var(--x1);
+}
+
+img.aboutGeraldic {
+  width: 20px;
+  height: 20px;
+  margin-left: var(--x);
+}
+.bottom .content {
+  align-items: flex-end;
+}
+img.person {
+  width: 100px;
+  height: 100px;
+  margin-right: var(--x4);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+}
+
+.buttonRow {
+  display: flex;
+}
+
+p {
+  margin-bottom: var(--x2);
+}
+.person p {
+  margin-bottom: 0px;
+}
+
+.column.arrow {
+    position: relative;
+}
+
+.heroBlock .content {
+  display: flex;
+  flex-flow: column;
+  min-height: 80vh;
+  justify-content: space-evenly;
+}
+
+img.jetLogo {
+  width: 70px;
+}
+.RadioRow {
+  display: flex;
+  margin-right: var(--x2);
+  margin-bottom: var(--x2);
+  border: 1px solid var(--white);
+  border-radius: 80px;
+  width: max-content;
+}
+
+.radioBlock {
+  display: flex;
+}
+.vertical .radioBlock{
+  flex-flow: column;
+}
+
+label.colorRadio:before {
+  content: '';
+  display: block;
+  height: var(--x2);
+  width: var(--x2);
+  transform: translateY(2px);
+  border-radius: 30px;
+}
+
+label.colorRadio.pink:before{
+  background-color: var(--pink);
+}
+label.colorRadio.blue:before{
+  background-color: var(--blue);
+}
+label.colorRadio.white:before{
+  background-color: var(--white);
+  border: 1px solid var(--black)
+}
+label.colorRadio.white_pink:before{
+  background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
+  border: 1px solid var(--black)
+}
+label.colorRadio.white_blue:before{
+  background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
+  border: 1px solid var(--black)
+}
+label.colorRadio.pink_blue:before{
+  background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 100%);
+  border: 1px solid var(--black)
+}
+label.colorRadio {
+  height: 24px;
+  padding: 10px 13px;
+}
+
+.column.horizontal_center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.colorSwatch {
+  cursor: pointer;
+  width: calc(24% - var(--x6));
+  margin-bottom: var(--x2);
+  height: var(--x6);
+  margin-right: var(--x2);
+  padding: var(--x2);
+  border-radius: var(--x);
+}
+.colorSwatches {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorSwatch.blue {
+  background-color: var(--blue);
+}
+.colorSwatch.white {
+  border:1px solid var(--lightgrey)
+}
+.colorSwatch.pink {
+  background-color: var(--pink);
+}
+.colorSwatch.black {
+  background-color: var(--black);
+  color: var(--white);
+}
+.colorSwatch.darkBlue {
+  background-color: var(--darkBlue);
+  color: var(--white);
+}
+.colorSwatch.pink_blue{
+  background: var(--pink);
+  background: linear-gradient(90deg, var(--pink) 0%, var(--blue) 100%);
+}
+.colorSwatch.white_pink{
+  background: var(--pink);
+  border:1px solid var(--lightgrey);
+  background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
+}
+.colorSwatch.white_blue{
+  background: var(--pink);
+  border:1px solid var(--lightgrey);
+  background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
+}
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: var(--x4);
+  padding-bottom: var(--x3);
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: var(--darkBlue) /*linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--darkBlue) 40%);*/
+}
+a.menuUnit {
+  text-decoration: none;
+  margin-right: var(--x4);
+  color: var(--pink);
+  transition: color 500ms;
+}
+a.menuUnit:hover {
+  color: var(--white);
+}
+.header .button {
+  transform: translateY(-10px);
+}
+
+.header .content {
+  justify-content: space-between;
+}
+.heroBlock .content{
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+canvas.interactionCanvas {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+g#logo_FIIT path{
+  transition: fill 500ms;
+}
+
+g#logo_FIIT.pink path{
+  fill: var(--pink)
+}
+g#logo_FIIT.white path{
+  fill: var(--white)
+}
+g#logo_FIIT.blue path{
+  fill: var(--blue)
+}
+
+.generatorCanvas{
+  margin-bottom: var(--x2);
+}
+
+.horizontal img.examples {
+  width: calc(50% - var(--x4));
+  height: auto;
+  margin-right: var(--x4);
+}
+a.button {
+  text-decoration: none;
+}
+.nopadding_bottom{
+  padding-bottom: 0px;
+}
+.nopadding_top{
+  padding-top: 0px;
+}
+>>>>>>> 733cb52aaab98ea3ccfea0c44e8809d1dfda1adf
+
+.section.center .content {
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+}
+
+.section.gradient{
+  background: radial-gradient(129.31% 452.65% at 127.84% 43.79%, #0F1B47 0%, rgba(84, 18, 85, 0.93) 100%);
+}
+
+.section.gradientBlack{
+  background: linear-gradient(0deg, #03081B 0%, rgba(3, 8, 27, 0) 94.52%);
+}
+.heraldicString{
+  display: flex;
+  align-items: center;
+}
+
+.concept img {
+  height: 258px;
+  width: auto;
+  margin-bottom: var(--x2);
+}
