@@ -101,6 +101,12 @@ div#root {
   padding-bottom: var(--x6);
   padding-top: var(--x6);
 }
+.content {
+  display: flex;
+  flex-flow: row;
+  max-width: 1400px;
+  width: 90%;
+}
 h1 {
   font-size: var(--h1TextStyle);
   font-family: "Golos_Bold";
@@ -150,10 +156,79 @@ h1:after {
   padding-right: 30px;
 }
 
+.controlsCard {
+  display: flex;
+  margin-bottom: var(--x3);
+}
+.range {
+  margin-bottom: var(--x2);
+}
 
-<<<<<<< HEAD
+.controlsHeader {
+  text-align: right;
+  margin-right: var(--x5);
+  flex: 1 1;
+  font-size: var(--h3TextStyle);
+  font-family: 'Golos_Bold';
+}
 
-=======
+.controlsBlock {
+  flex: 2;
+}
+
+.rangeInfo {
+  display: flex;
+  margin-bottom: var(--x);
+  justify-content: space-between;
+}
+
+div#generatorResultColumn {
+  display: flex;
+  flex: 2;
+  flex-flow: column;
+  align-items: center;
+}
+
+.rangeLineDiv {
+  width: 100%;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.rangePointDiv {
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 43px;
+  transform: translate(-5px, -4px);
+  background-color: var(--white);
+  border: 3px solid var(--pink);
+}
+input.myRange {
+  position: absolute;
+  width: 100%;
+  opacity: .05;
+}
+.RangeLine {
+  position: relative;
+}
+
+.rangeFillDiv {
+  pointer-events: none;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  background-color: var(--pink);
+}
+
+.rangePointDiv {
+    pointer-events: none;
+}
+input[type="radio"]{
+  display: none;
+}
+
 label {
   padding: var(--x) var(--x2);
   display: block;
@@ -450,7 +525,6 @@ a.button {
 .nopadding_top{
   padding-top: 0px;
 }
->>>>>>> 733cb52aaab98ea3ccfea0c44e8809d1dfda1adf
 
 .section.center .content {
   display: flex;
