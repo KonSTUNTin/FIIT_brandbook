@@ -136,7 +136,7 @@ class Column extends React.Component{
                             {el.indexOf('radioRow')>-1&&<RadioRow data = {this.props.content[el]} key = {index} handler = {this.props.handler}/>
                             }
                             {el.indexOf('rangeRow')>-1&&
-                            <RangeRow data = {this.props.content[el]} key = {index} handler = {this.props.handler} generator = {this.props.generator}/>
+                            <RangeRow name = {this.props.content[el].name} data = {this.props.content[el].values} key = {index} handler = {this.props.handler} generator = {this.props.generator}/>
                             }
                             {el.indexOf('colorSwatches')>-1&&
                             <ColorSwatches data = {this.props.content[el]} key = {index}/>

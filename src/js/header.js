@@ -42,6 +42,7 @@ class Header extends React.Component{
         return(
             <div className = 'header'>
                 <div className = 'content'>
+                    <div className = 'mobileMenu'> </div>
                     <div className = 'menuNavigation'>
                         {
                             menuContent.map(
@@ -55,7 +56,7 @@ class Header extends React.Component{
                             )
                         }
                     </div>
-                    <Button file = './media/FIIT.pdf' text = 'Скачать как PDF'/>
+                    <Button file = './media/FIIT.pdf' text = 'Скачать&nbsp;как&nbsp;PDF'/>
                 </div>
             </div>
         )

@@ -389,15 +389,20 @@ const brandbookContent = [
                             },
                         ]
                     }],
-                rangeRow_1:[
-                    {
-                        text: 'Размер логотипа',
-                        name: 'logoSize',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    },
-                ],
-                rangeRow_2:[
+                rangeRow_1:{
+                    name: 'Логотип',
+                    values: [
+                        {
+                            text: 'Размер логотипа',
+                            name: 'logoSize',
+                            value: 50,
+                            handler: 'rangeHandler'
+                        }
+                    ]
+                },
+                rangeRow_2:{
+                    name: 'Узор',
+                    values:[
                     {
                         text: 'Размер точек',
                         name: 'black',
@@ -429,7 +434,7 @@ const brandbookContent = [
                         handler: 'rangeHandler'
                     }
 
-                ]
+                ]}
             },
             // {
             //     className: 'column width3',
