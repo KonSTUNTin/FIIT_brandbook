@@ -401,7 +401,6 @@ const brandbookContent = [
                     ]
                 },
                 rangeRow_2:{
-                    name: 'Узор',
                     values:[
                     {
                         text: 'Размер точек',
