@@ -23,11 +23,13 @@ class App extends React.Component{
             color: 'pink',
             logo: 'main'
         }
+        this.ref = React.createRef();
         this.logoColor = this.logoColor.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
         this.rangeHandler = this.rangeHandler.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
     }
+
     logoColor(event){
         document.getElementById('logo_FIIT').setAttribute('class', '')
         document.getElementById('logo_FIIT').classList.add(event.target.value)
@@ -49,8 +51,8 @@ class App extends React.Component{
     render(){
         return(
             <>
-                <Header 
-                    handler = {this.downloadPDF}></Header>
+                <Header handler = {this.downloadPDF}></Header>
+                <div ref = {this.ref}>
                 <HeroBlock/>
                     {brandbookContent.map(
                         (item, index)=>{
@@ -68,6 +70,7 @@ class App extends React.Component{
                             )
                         }
                     )}
+                </div>
             </>
         )
   }

@@ -1,6 +1,6 @@
 const brandbookContent = [
     {   
-        className: 'section',
+        className: 'section mobile_border',
         columns:[
             {
                 h2: 'Концепция',
@@ -22,7 +22,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section mobile_border gradientBlack',
+        className: 'section gradientBlack',
         columns: [
             {
                 h2: 'Основной знак',
@@ -154,7 +154,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section mobile_border gradient width10',
+        className: 'section gradient width10',
         columns: [
             {
                 className: 'column width4',
@@ -265,21 +265,21 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section nopadding_bottom center',
+        className: 'section center',
         columns: [
             {
                 className: 'column center width12',
                 h2: 'Паттерн',
+                text: 'Фирменный стиль может использовать любой визуал.\
+                Но также мы разработали генератор паттернов.',
             }]
     },
     {
         className: 'section nopadding_top',
         columns: [
             {
-                className: 'column width6',
+                className: 'column width6 patternBlock',
                 canvasGenerator: true,
-                text: 'Фирменный стиль может использовать любой визуал.\
-                Но также мы разработали генератор паттернов.',
                 buttonRow:[
                     {
                         text: 'PNG'

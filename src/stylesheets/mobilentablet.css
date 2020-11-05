@@ -45,4 +45,11 @@
     .mobileMenu {
         display: block;
     }
+    .patternBlock {
+        position: sticky;
+        top: 70px;
+        padding-top: var(--x2);
+        z-index: 9;
+        background-color: var( --darkBlue);
+    }
 }

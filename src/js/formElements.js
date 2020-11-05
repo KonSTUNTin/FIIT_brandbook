@@ -95,7 +95,6 @@ class RangeRow extends React.Component{
     render(){
         return(
             <div className = 'rangeRow'>
-                <span className = 'rangeName'>{this.props.name}</span>
                 {this.props.data.map(
                     (item, index) =>{
                         return(
