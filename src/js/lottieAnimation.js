@@ -6,6 +6,9 @@ class LottieAnimation extends React.Component{
         super(props)
         this.ref = React.createRef()
     }
+    shouldComponentUpdate(){
+        return false
+    }
     componentDidMount(){
         lottie.loadAnimation({
             container: this.ref.current, // the dom element that will contain the animation

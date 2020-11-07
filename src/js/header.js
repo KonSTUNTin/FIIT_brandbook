@@ -38,6 +38,9 @@ const menuContent = [
 
 
 class Header extends React.Component{
+    shouldComponentUpdate(){
+        return false
+    }
     render(){
         return(
             <div className = 'header'>
