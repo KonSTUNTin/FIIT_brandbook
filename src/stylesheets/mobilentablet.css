@@ -52,4 +52,11 @@
         z-index: 9;
         background-color: var( --darkBlue);
     }
+    .minimize .generatorCanvas{
+        width: 25vh !important;
+        height: 25vh !important;
+    }
+    .header .button {
+        margin-right: 0px;
+      }
 }

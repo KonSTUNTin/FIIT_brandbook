@@ -482,9 +482,7 @@ a.menuUnit {
 a.menuUnit:hover {
   color: var(--white);
 }
-.header .button {
-  transform: translateY(-10px);
-}
+
 
 .header .content {
   justify-content: space-between;
@@ -515,9 +513,7 @@ g#logo_FIIT.blue path{
   fill: var(--blue)
 }
 
-.generatorCanvas{
-  margin-bottom: var(--x2);
-}
+
 
 .horizontal img.examples {
   width: calc(50% - var(--x4));
@@ -527,10 +523,10 @@ g#logo_FIIT.blue path{
 a.button {
   text-decoration: none;
 }
-.nopadding_bottom{
+.section.nopadding_bottom{
   padding-bottom: 0px;
 }
-.nopadding_top{
+.section.nopadding_top{
   padding-top: 0px;
 }
 

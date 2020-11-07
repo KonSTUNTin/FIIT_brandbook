@@ -12,8 +12,6 @@ const url = [
 class MyCanvas extends React.Component{
     constructor(props){
         super(props)
-       
-
         this.state = {
             width: this.props.height,
             height: this.props.width,
@@ -146,37 +144,37 @@ class MyCanvas extends React.Component{
             shaderValue.logoSize.value = settings.logoSize;
             shaderValue.split.value = settings.split;
             shaderValue.k.value = this.props.width / this.props.height;
-            if(settings.logo == 'main'){
+            if(settings.logo === 'main'){
                 shaderValue.logoAlpha.value = 1;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(settings.logo == 'none'){
+            if(settings.logo === 'none'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(settings.logo == 'short'){
+            if(settings.logo === 'short'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 1;
                 shaderValue.borderAlpha.value = 0;
             }
-            if(settings.logo == 'brackets'){
+            if(settings.logo === 'brackets'){
                 shaderValue.logoAlpha.value = 0;
                 shaderValue.bracketAlpha.value = 0;
                 shaderValue.borderAlpha.value = 1;
             }
-            if(this.props.settings.color == 'pink'){
+            if(this.props.settings.color === 'pink'){
                 shaderValue.rColor.value = 254;
                 shaderValue.gColor.value = 37;
                 shaderValue.bColor.value = 167;
             }
-            if(this.props.settings.color == 'blue'){
+            if(this.props.settings.color === 'blue'){
                 shaderValue.rColor.value = 26;
                 shaderValue.gColor.value = 179;
                 shaderValue.bColor.value = 213;
             }
-            if(this.props.settings.color == 'white'){
+            if(this.props.settings.color === 'white'){
                 shaderValue.rColor.value = 256;
                 shaderValue.gColor.value = 256;
                 shaderValue.bColor.value = 256;
@@ -254,7 +252,7 @@ class MyTexture{
                 let l = sprite.r / 2 + Math.cos(time / 200 + i) * sprite.r / 4;
                 let x = sprite.x + Math.cos(a) * l;
                 let y = sprite.y + Math.sin(a) * l;
-                if(j == 0){
+                if(j === 0){
                     ctx.moveTo(x, y);
                 }else {
                     ctx.lineTo(x, y)

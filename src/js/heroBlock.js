@@ -107,7 +107,7 @@ class InteractionCanvas extends React.Component{
         this.texture.magFilter = THREE.LinearMipmapLinearFilter;
         //this.texture.minFilter = THREE.LinearMipmapLinearFilter;
         
-        let alphaMap = new THREE.TextureLoader().load('./images/carpethair2.png');
+        //let alphaMap = new THREE.TextureLoader().load('./images/carpethair2.png');
 
         loader.load('./carpet3.gltf',
             (gltf)=>{

@@ -6,6 +6,7 @@ class PatternBlock extends React.Component{
     constructor(props){
         super(props)
         this.state = {
+            class: '',
             black: 50,
             scale: 50,
             form: 50,
@@ -16,8 +17,24 @@ class PatternBlock extends React.Component{
             logo: 'main',
             scrollCanvas: null,
         }
+        this.Myref = React.createRef()
         this.rangeHandler = this.rangeHandler.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
+    }
+    componentDidMount(){
+        let h = window.innerHeight
+        let offsetTop = this.Myref.current.offsetTop
+        window.onscroll =()=>{
+            let scroll = window.scrollY
+            this.setState({scroll: scroll})
+            if(scroll - h*.7>offsetTop){
+                this.setState({class:'minimize'})
+            } else {
+                if(this.state.class!= ''){
+                    this.setState({class: ''})
+                }
+            }
+        }
     }
     logoColorInGenerator(event){
         this.setState({
@@ -33,11 +50,12 @@ class PatternBlock extends React.Component{
         })
     }
     render(){
+        
         return(
             <div className = 'section nopadding_top'>
                 <div className = 'content'>
-                    <div className = 'column width6 patternBlock'>
-                        <MyCanvas width = '400' height = "400" key = {99} settings = {this.state}/>
+                    <div ref = {this.Myref} className = {'column width6 patternBlock ' + this.state.class}>
+                        <MyCanvas  width = '400' height = "400" key = {99} settings = {this.state}/>
                         <ButtonRow data = {[{text: 'PNG'}]}/>
                     </div>
                     <div className = 'column width6 vertical'>

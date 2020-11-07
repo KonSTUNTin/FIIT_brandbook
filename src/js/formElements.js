@@ -99,6 +99,7 @@ class RangeRow extends React.Component{
                     (item, index) =>{
                         return(
                             <MyRange 
+                                key = {'range' + index}
                                 handler = {this.props.handler}
                                 value = {this.props.generator[item.name]}
                                 name = {item.name}
@@ -123,6 +124,11 @@ class MyRange extends React.Component{
         this.point = React.createRef()
         this.fill = React.createRef()
         this.handler = this.handler.bind(this)
+        
+    }
+    componentDidMount(){
+        this.point.current.style.marginLeft = this.props.value + '%'
+        this.fill.current.style.width = this.props.value + '%'
     }
     componentDidUpdate(){
         this.point.current.style.marginLeft = this.props.value + '%'

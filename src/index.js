@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './stylesheets/index.css';
+import './stylesheets/desktop.css';
 import './stylesheets/mobilentablet.css';
 import './stylesheets/tablet.css';
 import './stylesheets/mobile.css';
