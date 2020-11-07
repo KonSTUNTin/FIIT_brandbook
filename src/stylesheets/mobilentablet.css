@@ -29,7 +29,7 @@
         padding-bottom: var(--x4);
     }
     .RadioRow {
-        margin-bottom: var(--x4);
+        margin-bottom: var(--x2);
     }
     .bracket_examples {
         display: flex;
@@ -38,6 +38,9 @@
    
     .header .content {
         flex-flow: row;
+    }
+    .header{
+        z-index: 20;
     }
     .menuNavigation{
         display: none;
@@ -59,4 +62,26 @@
     .header .button {
         margin-right: 0px;
       }
+    .animate_sign{
+        order: -1;
+    }
+    .active .menuNavigation {
+        margin-top: var(--x2);
+        height: 100vh;
+        display: flex;
+        flex-flow: column;
+        width: 100%
+    }
+    .header.active a.button{
+        display: none;
+    }
+    a.menuUnit {
+        font-size: var(--x2);
+        margin-top: var(--x2);
+    }
+    .concept img {
+        height: auto;
+        width: max-content;
+        margin-bottom: var(--x2);
+    }
 }

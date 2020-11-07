@@ -5,4 +5,14 @@
       .generatorCanvas{
         margin-bottom: var(--x2);
       }
+      .menuNavigation {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .concept img {
+        height: 258px;
+        width: max-content;
+        margin-bottom: var(--x2);
+    }
 }

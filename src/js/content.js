@@ -2,6 +2,7 @@ const brandbookContent = [
     {   
         type: 'static',
         className: 'section mobile_border',
+        navigation: 'conception',
         columns:[
             {
                 h2: 'Концепция',
@@ -24,6 +25,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation: 'major_logo',
         className: 'section gradientBlack',
         columns: [
             {
@@ -78,17 +80,17 @@ const brandbookContent = [
                 buttonRow:[
                     {
                         text: 'PNG',
-                        file: './media/logo_white.svg'
+                        file: './downloads/major_logo.png'
                     },
                     {
                         text: 'SVG',
-                        file: './media/logo_white.svg'
+                        file: './downloads/major_logo.svg'
                     }
                 ]
             },
             {
                 lottie: './lottie/main.json',
-                className: 'column width5 center'
+                className: 'animate_sign column width5 center'
             },
             {
                 text:'Знак содержит и геральдические трактовки.',
@@ -118,6 +120,7 @@ const brandbookContent = [
         ],
     },
     {
+        navigation: 'in_messenger',
         type: 'static',
         className: 'section gradientBlack',
         columns: [
@@ -137,6 +140,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation: 'brackets',
         className: 'section nopadding_bottom center',
         columns: [
             {
@@ -147,10 +151,12 @@ const brandbookContent = [
                         содержимого.',
                 buttonRow:[
                     {
-                        text: 'PNG'
+                        text: 'PNG',
+                        file: './downloads/brackets.png'
                     },
                     {
-                        text: 'SVG'
+                        text: 'SVG',
+                        file: './downloads/brackets.svg'
                     }
                 ],
                 lottie: './lottie/slider.json',
@@ -159,6 +165,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation: 'short_form',
         className: 'section gradient width10',
         columns: [
             {
@@ -175,10 +182,12 @@ const brandbookContent = [
                 или в подписи',
                 buttonRow:[
                     {
-                        text: 'PNG'
+                        text: 'PNG',
+                        file: './downloads/one_bracket.png'
                     },
                     {
-                        text: 'SVG'
+                        text: 'SVG',
+                        file: './downloads/one_bracket.svg'
                     }
                 ]
             },
@@ -190,10 +199,12 @@ const brandbookContent = [
                 Может использоваться как маска для графики.',
                 buttonRow:[
                     {
-                        text: 'PNG'
+                        text: 'PNG',
+                        file: './downloads/f_letter.png'
                     },
                     {
-                        text: 'SVG'
+                        text: 'SVG',
+                        file: './downloads/f_letter.svg'
                     }
                 ],
                 
@@ -204,6 +215,7 @@ const brandbookContent = [
     {
         type: 'static',
         className: 'section',
+        navigation: 'colors',
         columns: [
             {
                 className: 'column width2',
@@ -256,6 +268,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation: 'font',
         className: 'section black',
         columns: [
             {
@@ -265,7 +278,8 @@ const brandbookContent = [
                 text: 'Бесплатная гарнитура. Golos Text от Paratype',
                 buttonRow:[
                     {
-                        text: 'OTF'
+                        text: 'OTF',
+                        file: './downloads/golos.zip'
                     },
                 ],
             },
@@ -273,6 +287,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation:'pattern',
         className: 'section center nopadding_bottom',
         columns: [
             {
@@ -287,6 +302,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        navigation:'mockups',
         className: 'section black',
         columns: [
             {

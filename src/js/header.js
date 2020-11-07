@@ -3,62 +3,80 @@ import Button from './button.js'
 const menuContent = [
     {
         name: 'Концепция',
-        link: '', 
+        link: '#conception', 
     },
     {
         name: 'Основной знак',
-        link: '', 
+        link: '#major_logo', 
+    },
+    {
+        name: 'В одну строку',
+        link: '#in_messenger', 
     },
     {
         name: 'Герб-контейнер',
-        link: '', 
+        link: '#brackets', 
     },
     {
         name: 'Краткая форма',
-        link: '', 
+        link: '#short_form', 
     },
     {
         name: 'Цвета',
-        link: '', 
+        link: '#colors', 
     },
     {
         name: 'Гарнитура',
-        link: '', 
+        link: '#font', 
     },
     {
         name: 'Паттерн',
-        link: '', 
+        link: '#pattern', 
     },
     {
         name: 'Носители',
-        link: '', 
+        link: '#mockups', 
     },
 ]
 
 
 
 class Header extends React.Component{
-    shouldComponentUpdate(){
-        return false
+    constructor(props){
+        super(props)
+        this.state = {
+            class: ''
+        }
+        this.mobileMenuActive = this.mobileMenuActive.bind(this)
+    }
+    mobileMenuActive(){
+        if(this.state.class === ''){
+            this.setState({class: 'active'})
+        }else{
+            this.setState({class: ''})
+        }
     }
     render(){
         return(
-            <div className = 'header'>
+            <div className = {'header ' + this.state.class}>
                 <div className = 'content'>
-                    <div className = 'mobileMenu'> </div>
-                    <div className = 'menuNavigation'>
-                        {
-                            menuContent.map(
-                                (item, index)=>{
-                                    return(
-                                        <a className = 'menuUnit' href = {item.link}>
-                                            {item.name}
-                                        </a>
-                                    )
-                                }
-                            )
-                        }
+                    <div className = 'leftSideMenu'>
+                        <div onClick = {this.mobileMenuActive} className = 'mobileMenu'> </div>
+                        <div className = 'menuNavigation'>
+                            {
+                                menuContent.map(
+                                    (item, index)=>{
+                                        return(
+                                            <a onClick = {this.mobileMenuActive}  className = 'menuUnit' href = {item.link}>
+                                                {item.name}
+                                            </a>
+                                        )
+                                    }
+                                )
+                            }
+                        </div>
                     </div>
+                    
                     <Button file = './media/FIIT.pdf' text = 'Скачать&nbsp;как&nbsp;PDF'/>
                 </div>
             </div>

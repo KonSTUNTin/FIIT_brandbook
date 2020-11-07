@@ -23,17 +23,25 @@ class PatternBlock extends React.Component{
     }
     componentDidMount(){
         let h = window.innerHeight
-        let offsetTop = this.Myref.current.offsetTop
+        let offsetTop = 0
+        let antiloop = 0;
         window.onscroll =()=>{
             let scroll = window.scrollY
             this.setState({scroll: scroll})
-            if(scroll - h*.7>offsetTop){
-                this.setState({class:'minimize'})
-            } else {
-                if(this.state.class!= ''){
-                    this.setState({class: ''})
-                }
+            antiloop = 1
+            if(offsetTop<1){
+                offsetTop = this.Myref.current.offsetTop
             }
+            if((scroll  > offsetTop + h * .5) && this.state.class === '' && antiloop===1){
+                this.setState({class:'minimize'})
+                antiloop = 0
+            }              
+            if((scroll < offsetTop + h * .5) &&this.state.class=== 'minimize' && antiloop===1){
+                this.setState({class: ''})
+                antiloop = 0
+            }
+            
+            
         }
     }
     logoColorInGenerator(event){
@@ -71,30 +79,31 @@ class PatternBlock extends React.Component{
 }
 
 
-const controls_1 = [{
-                        name: 'ratio',
-                        type: 'text',
-                        values: [
-                            {
-                                name: 'generator_ratio_square',
-                                value: "square",
-                                text: "Квадрат",
-                                select: true
-                            },
-                            {
-                                name: 'generator_ratio_youtube',
-                                value: "youtube",
-                                text: "Шапка Youtube",
-                                select: false
-                            },
-                            {
-                                name: 'generator_ratio_vk',
-                                value: "vk",
-                                text: "Шапка VK",
-                                select: false
-                            }
-                        ]
-                    },
+const controls_1 = [
+                    // {
+                    //     name: 'ratio',
+                    //     type: 'text',
+                    //     // values: [
+                    //     //     {
+                    //     //         name: 'generator_ratio_square',
+                    //     //         value: "square",
+                    //     //         text: "Квадрат",
+                    //     //         select: true
+                    //     //     },
+                    //     //     {
+                    //     //         name: 'generator_ratio_youtube',
+                    //     //         value: "youtube",
+                    //     //         text: "Шапка Youtube",
+                    //     //         select: false
+                    //     //     },
+                    //     //     {
+                    //     //         name: 'generator_ratio_vk',
+                    //     //         value: "vk",
+                    //     //         text: "Шапка VK",
+                    //     //         select: false
+                    //     //     }
+                    //     // ]
+                    // },
                     {
                         name: 'color',
                         type: 'color',
@@ -118,24 +127,24 @@ const controls_1 = [{
                                 value: "blue",
                                 select: false
                             },
-                            {
-                                name: 'generator_white_pink',
-                                text: "white_pink",
-                                value: "white_pink",
-                                select: false
-                            },
-                            {
-                                name: 'generator_white_blue',
-                                text: "white_blue",
-                                value: "white_blue",
-                                select: false
-                            },
-                            {   
-                                name: 'generator_pink_blue',
-                                text: "pink_blue",
-                                value: "pink_blue",
-                                select: false
-                            },
+                            // {
+                            //     name: 'generator_white_pink',
+                            //     text: "white_pink",
+                            //     value: "white_pink",
+                            //     select: false
+                            // },
+                            // {
+                            //     name: 'generator_white_blue',
+                            //     text: "white_blue",
+                            //     value: "white_blue",
+                            //     select: false
+                            // },
+                            // {   
+                            //     name: 'generator_pink_blue',
+                            //     text: "pink_blue",
+                            //     value: "pink_blue",
+                            //     select: false
+                            // },
                         ]
                     }
                 ]

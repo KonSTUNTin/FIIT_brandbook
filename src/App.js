@@ -32,7 +32,6 @@ class App extends React.Component{
     render(){
         return(
             <>
-            hello
                 <Header handler = {this.downloadPDF}></Header>
                 <div ref = {this.ref}>
                     <HeroBlock/>
@@ -42,6 +41,7 @@ class App extends React.Component{
                                     <>
                                     {item.type === 'static'&&
                                     <Section
+                                        
                                         key = {'section ' + index}
                                         content = {item}
                                         generator = {this.state}
@@ -67,7 +67,7 @@ class Section extends React.Component{
     render(){
         
         return(
-            <div className = {this.props.content.className}>
+            <div id = {this.props.content.navigation} className = {this.props.content.className}>
                 <div className = 'content'>
                 {
                     this.props.content.columns.map(
