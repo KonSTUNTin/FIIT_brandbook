@@ -6,9 +6,33 @@ class RadioRow extends React.Component{
     render(){
         return(
         <div className = 'radioBlock'>
-            <div className = {'RadioRow ' + this.props.type}>
-                {this.props.children}
-            </div>
+            {this.props.data.map((el,ind)=>{
+                return(
+                    <div className = {'RadioRow ' + el.type} key = {ind}>
+                        {
+                        el.values.map(
+                            (item, index)=>{
+                                return(
+                                    <MyRadio
+                                        //onInput = {this.props.onInput}
+                                        handler = {this.props.handler}
+                                        handlerName = {el.handler}
+                                        text = {item.text}
+                                        name = {el.name}
+                                        type = {el.type}
+                                        key = {index}
+                                        value = {item.value}
+                                        ident = {item.name}
+                                        defaultChecked = {item.select}
+                                    />
+                                )
+                            }
+                        )
+                        }
+                    </div>
+                )
+            })
+            }
         </div>
         )
     }
@@ -55,7 +79,13 @@ class ButtonRow extends React.Component{
     render(){
         return(
             <div className = 'buttonRow'>
-                {this.props.children}
+                {this.props.data.map(
+                    (button, index)=>{
+                        return(
+                            <Button text = {button.text} key = {index} file = {button.file}/>
+                        )
+                    }
+                )}
             </div>
         )
     }
@@ -134,4 +164,4 @@ class MyRange extends React.Component{
     }
 }
 
-export {RadioRow, ButtonRow, RangeRow, MyRadio, MyRange}
+export {RadioRow, ButtonRow, RangeRow}
