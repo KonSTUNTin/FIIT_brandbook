@@ -33,24 +33,24 @@ const brandbookContent = [
                 text: 'Самый самостоятельный знак по-умолчанию.',
                 className: 'column width3 horizontal_center',
                 radioRow: [
-                    {
-                        name: 'language',
-                        type: 'text',
-                        values: [
-                            {
-                                name: 'logo_rus',
-                                value: 'RUS',
-                                text: "RUS",
-                                select: true
-                            },
-                            {
-                                name: 'logo_eng',
-                                value: 'ENG',
-                                text: "ENG",
-                                select: false
-                            },
-                        ]
-                    },
+                    // {
+                    //     name: 'language',
+                    //     type: 'text',
+                    //     values: [
+                    //         {
+                    //             name: 'logo_rus',
+                    //             value: 'RUS',
+                    //             text: "RUS",
+                    //             select: true
+                    //         },
+                    //         {
+                    //             name: 'logo_eng',
+                    //             value: 'ENG',
+                    //             text: "ENG",
+                    //             select: false
+                    //         },
+                    //     ]
+                    // },
                     {
                         name: 'colorAnimation',
                         type: 'color',

@@ -353,7 +353,7 @@ p {
 .heroBlock .content {
   display: flex;
   flex-flow: column;
-  min-height: 80vh;
+  min-height: 60vh;
   justify-content: space-evenly;
 }
 
@@ -435,16 +435,20 @@ label.colorRadio {
   background-color: var(--blue);
 }
 .colorSwatch.white {
+  background-color: var(--white);
+  color: var(--black);
   border:1px solid var(--lightgrey)
 }
 .colorSwatch.pink {
   background-color: var(--pink);
 }
 .colorSwatch.black {
+  border:1px solid var(--lightgrey);
   background-color: var(--black);
   color: var(--white);
 }
 .colorSwatch.darkBlue {
+  border:1px solid var(--lightgrey);
   background-color: var(--darkBlue);
   color: var(--white);
 }
@@ -454,12 +458,10 @@ label.colorRadio {
 }
 .colorSwatch.white_pink{
   background: var(--pink);
-  border:1px solid var(--lightgrey);
   background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
 }
 .colorSwatch.white_blue{
   background: var(--pink);
-  border:1px solid var(--lightgrey);
   background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
 }
 .header {
@@ -556,3 +558,13 @@ a.button {
 .center p{
   text-align: center;
 }
+.center .colorSwatch p{
+  text-align: left;
+}
+.videoSection {
+  width: 100%;
+}
+video {
+  width: 100%;
+}
+

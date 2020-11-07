@@ -30,6 +30,7 @@ class App extends React.Component{
     }
 
     render(){
+        console.log('render')
         return(
             <>
                 <Header handler = {this.downloadPDF}></Header>
