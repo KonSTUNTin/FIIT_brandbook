@@ -1,6 +1,6 @@
 const brandbookContent = [
     {   
-        className: 'section',
+        className: 'section mobile_border',
         columns:[
             {
                 h2: 'Концепция',
@@ -22,7 +22,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section mobile_border gradientBlack',
+        className: 'section gradientBlack',
         columns: [
             {
                 h2: 'Основной знак',
@@ -154,7 +154,7 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section mobile_border gradient width10',
+        className: 'section gradient width10',
         columns: [
             {
                 className: 'column width4',
@@ -265,181 +265,185 @@ const brandbookContent = [
         ]
     },
     {
-        className: 'section nopadding_bottom center',
+        className: 'section center',
         columns: [
             {
                 className: 'column center width12',
                 h2: 'Паттерн',
+                text: 'Фирменный стиль может использовать любой визуал.\
+                Но также мы разработали генератор паттернов.',
             }]
     },
     {
-        className: 'section nopadding_top',
-        columns: [
-            {
-                className: 'column width6',
-                canvasGenerator: true,
-                text: 'Фирменный стиль может использовать любой визуал.\
-                Но также мы разработали генератор паттернов.',
-                buttonRow:[
-                    {
-                        text: 'PNG'
-                    }
-                ]
-            },
-            {
-                className: 'column width6 vertical',
-                radioRow_2: [
-                    {
-                        name: 'ratio',
-                        type: 'text',
-                        values: [
-                            {
-                                name: 'generator_ratio_square',
-                                value: "square",
-                                text: "Квадрат",
-                                select: true
-                            },
-                            {
-                                name: 'generator_ratio_youtube',
-                                value: "youtube",
-                                text: "Шапка Youtube",
-                                select: false
-                            },
-                            {
-                                name: 'generator_ratio_vk',
-                                value: "vk",
-                                text: "Шапка VK",
-                                select: false
-                            }
-                        ]
-                    },
-                    {
-                        name: 'color',
-                        type: 'color',
-                        handler: 'logoColorInGenerator',
-                        values: [
-                            {
-                                name: 'generator_white',
-                                text: "white",
-                                value: "white",
-                                select: false
-                            },
-                            {
-                                name: 'generator_pink',
-                                text: "pink",
-                                value: "pink",
-                                select: true
-                            },
-                            {
-                                name: 'generator_blue',
-                                text: "blue",
-                                value: "blue",
-                                select: false
-                            },
-                            {
-                                name: 'generator_white_pink',
-                                text: "white_pink",
-                                value: "white_pink",
-                                select: false
-                            },
-                            {
-                                name: 'generator_white_blue',
-                                text: "white_blue",
-                                value: "white_blue",
-                                select: false
-                            },
-                            {   
-                                name: 'generator_pink_blue',
-                                text: "pink_blue",
-                                value: "pink_blue",
-                                select: false
-                            },
-                        ]
-                    }
-                ],
-                radioRow_1: [
-                    {
-                        name: 'logo',
-                        type: 'text',
-                        handler: 'logoColorInGenerator',
-                        values: [
-                            {
-                                name: 'generator_logo_without',
-                                value: 'none',
-                                text: "Без логотипа",
-                                select: false
-                            },
-                            {
-                                name: 'generator_logo_main',
-                                value: 'main',
-                                text: "Основной знак",
-                                select: true
-                            },
-                            {
-                                name: 'generator_logo_brackets',
-                                value: 'brackets',
-                                text: "Герб-контейнер",
-                                select: false
-                            },
-                            {
-                                name: 'generator_logo_short',
-                                value: 'short',
-                                text: "Краткая форма",
-                                select: false
-                            },
-                        ]
-                    }],
-                rangeRow_1:{
-                    name: 'Логотип',
-                    values: [
-                        {
-                            text: 'Размер логотипа',
-                            name: 'logoSize',
-                            value: 50,
-                            handler: 'rangeHandler'
-                        }
-                    ]
-                },
-                rangeRow_2:{
-                    values:[
-                    {
-                        text: 'Размер точек',
-                        name: 'black',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    },
-                    {
-                        text: 'Масштаб',
-                        name: 'scale',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    },
-                    {
-                        text: 'Контраст',
-                        name: 'trace',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    },
-                    {
-                        text: 'Форма',
-                        name: 'form',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    },
-                    {
-                        text: 'Разделение',
-                        name: 'split',
-                        value: 50,
-                        handler: 'rangeHandler'
-                    }
-
-                ]}
-            },
-            // {
-            //     className: 'column width3',
-            // },
-        ]
+        patternBlock: true,
     },
+    // {
+    //     className: 'section nopadding_top',
+    //     columns: [
+    //         {
+    //             className: 'column width6 patternBlock',
+    //             canvasGenerator: true,
+    //             buttonRow:[
+    //                 {
+    //                     text: 'PNG'
+    //                 }
+    //             ]
+    //         },
+    //         {
+    //             className: 'column width6 vertical',
+    //             radioRow_2: [
+    //                 {
+    //                     name: 'ratio',
+    //                     type: 'text',
+    //                     values: [
+    //                         {
+    //                             name: 'generator_ratio_square',
+    //                             value: "square",
+    //                             text: "Квадрат",
+    //                             select: true
+    //                         },
+    //                         {
+    //                             name: 'generator_ratio_youtube',
+    //                             value: "youtube",
+    //                             text: "Шапка Youtube",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_ratio_vk',
+    //                             value: "vk",
+    //                             text: "Шапка VK",
+    //                             select: false
+    //                         }
+    //                     ]
+    //                 },
+    //                 {
+    //                     name: 'color',
+    //                     type: 'color',
+    //                     handler: 'logoColorInGenerator',
+    //                     values: [
+    //                         {
+    //                             name: 'generator_white',
+    //                             text: "white",
+    //                             value: "white",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_pink',
+    //                             text: "pink",
+    //                             value: "pink",
+    //                             select: true
+    //                         },
+    //                         {
+    //                             name: 'generator_blue',
+    //                             text: "blue",
+    //                             value: "blue",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_white_pink',
+    //                             text: "white_pink",
+    //                             value: "white_pink",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_white_blue',
+    //                             text: "white_blue",
+    //                             value: "white_blue",
+    //                             select: false
+    //                         },
+    //                         {   
+    //                             name: 'generator_pink_blue',
+    //                             text: "pink_blue",
+    //                             value: "pink_blue",
+    //                             select: false
+    //                         },
+    //                     ]
+    //                 }
+    //             ],
+    //             radioRow_1: [
+    //                 {
+    //                     name: 'logo',
+    //                     type: 'text',
+    //                     handler: 'logoColorInGenerator',
+    //                     values: [
+    //                         {
+    //                             name: 'generator_logo_without',
+    //                             value: 'none',
+    //                             text: "Без логотипа",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_logo_main',
+    //                             value: 'main',
+    //                             text: "Основной знак",
+    //                             select: true
+    //                         },
+    //                         {
+    //                             name: 'generator_logo_brackets',
+    //                             value: 'brackets',
+    //                             text: "Герб-контейнер",
+    //                             select: false
+    //                         },
+    //                         {
+    //                             name: 'generator_logo_short',
+    //                             value: 'short',
+    //                             text: "Краткая форма",
+    //                             select: false
+    //                         },
+    //                     ]
+    //                 }],
+    //             rangeRow_1:{
+    //                 name: 'Логотип',
+    //                 values: [
+    //                     {
+    //                         text: 'Размер логотипа',
+    //                         name: 'logoSize',
+    //                         value: 50,
+    //                         handler: 'rangeHandler'
+    //                     }
+    //                 ]
+    //             },
+    //             rangeRow_2:{
+    //                 name: 'Узор',
+    //                 values:[
+    //                 {
+    //                     text: 'Размер точек',
+    //                     name: 'black',
+    //                     value: 50,
+    //                     handler: 'rangeHandler'
+    //                 },
+    //                 {
+    //                     text: 'Масштаб',
+    //                     name: 'scale',
+    //                     value: 50,
+    //                     handler: 'rangeHandler'
+    //                 },
+    //                 {
+    //                     text: 'Контраст',
+    //                     name: 'trace',
+    //                     value: 50,
+    //                     handler: 'rangeHandler'
+    //                 },
+    //                 {
+    //                     text: 'Форма',
+    //                     name: 'form',
+    //                     value: 50,
+    //                     handler: 'rangeHandler'
+    //                 },
+    //                 {
+    //                     text: 'Разделение',
+    //                     name: 'split',
+    //                     value: 50,
+    //                     handler: 'rangeHandler'
+    //                 }
+
+    //             ]}
+    //         },
+    //         // {
+    //         //     className: 'column width3',
+    //         // },
+    //     ]
+    // },
     {
         className: 'section black',
         columns: [

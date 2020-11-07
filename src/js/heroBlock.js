@@ -3,6 +3,9 @@ import * as THREE from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 
 class HeroBlock extends React.Component{
+    shouldComponentUpdate(){
+        return false
+    }
     render(){
         return(
             <div className = 'section heroBlock gradient nopadding_bottom'>

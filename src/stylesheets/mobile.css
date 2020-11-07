@@ -45,8 +45,8 @@
         margin-top: var(--x4);
     }
     img.aboutGeraldic {
-        width: 20%;
-        height: auto;
+        width: auto;
+        height: 20px;
         margin-right: var(--x2);
         margin-bottom: 0px;
         margin-top: 0px;

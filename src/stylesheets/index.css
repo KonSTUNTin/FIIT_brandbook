@@ -554,11 +554,15 @@ a.button {
 
 .concept img {
   height: 258px;
-  width: auto;
+  width: max-content;
   margin-bottom: var(--x2);
 }
 
 .center a.button {
   margin-right: var(--x);
   margin-left: var(--x);
+}
+
+.center p{
+  text-align: center;
 }

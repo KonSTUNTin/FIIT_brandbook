@@ -2,7 +2,9 @@ import React from 'react'
 
 
 class Picture extends React.Component{
-
+    shouldComponentUpdate(){
+        return false
+    }
     render(){
         return(
             <>

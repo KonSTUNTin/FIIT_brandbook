@@ -8,7 +8,7 @@ import {RadioRow, ButtonRow, RangeRow, MyRadio, MyRange} from './js/formElements
 import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
 import LottieAnimation from './js/lottieAnimation'
 import MyCanvas from './js/myCanvas.js'
-
+import PatternBlock from './js/patternBlock.js'
 
 class App extends React.Component{
     constructor(props){
@@ -21,13 +21,27 @@ class App extends React.Component{
             split: 50,
             logoSize: 50,
             color: 'pink',
-            logo: 'main'
+            logo: 'main',
+            scrollCanvas: null,
         }
+        this.ref = React.createRef();
         this.logoColor = this.logoColor.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
         this.rangeHandler = this.rangeHandler.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
+        this.scrollController = this.scrollController.bind(this)
     }
+    shouldComponentUpdate(){
+        return false
+    }
+    componentDidMount(){
+        window.onscroll = this.scrollController
+    }
+
+    scrollController(){
+        //console.log(window.scrollY)
+    }
+
     logoColor(event){
         document.getElementById('logo_FIIT').setAttribute('class', '')
         document.getElementById('logo_FIIT').classList.add(event.target.value)
@@ -49,17 +63,38 @@ class App extends React.Component{
     render(){
         return(
             <>
-                <Header 
-                    handler = {this.downloadPDF}></Header>
-                <HeroBlock/>
-                <Conception/>
-                <MajorSign/>
+                <Header handler = {this.downloadPDF}></Header>
+                <div ref = {this.ref}>
+                    <HeroBlock/>
+                        {brandbookContent.map(
+                            (item, index)=>{
+                                
+                                return(
+                                    <>
+                                    {item.patternBlock == null&&
+                                    <Section
+                                        key = {index}
+                                        content = {item}
+                                        generator = {this.state}
+                                        handler = {{
+                                                'logoColor': this.logoColor,
+                                                'logoColorInGenerator': this.logoColorInGenerator,
+                                                "rangeHandler": this.rangeHandler
+                                            }}
+                                    />}
+                                    {item.patternBlock == true&&<PatternBlock/>}
+                                    </>
+                                )
+                            }
+                        )}
+                </div>
             </>
         )
   }
 }
 
-class Conception extends React.Component{
+
+class Section extends React.Component{
     render(){
         return(
             <Section class = 'section'>
