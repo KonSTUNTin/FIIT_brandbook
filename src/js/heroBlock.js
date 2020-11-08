@@ -10,7 +10,7 @@ class HeroBlock extends React.Component{
                  <div className = 'videoSection'>
                     {//poster={this.props.data.poster}
                     }
-                    <video  autoPlay="autoplay" playsInline muted loop="loop" >
+                    <video  poster = './poster.jpg' autoPlay="autoplay" playsInline muted loop="loop" >
                         <source src={"./heroVideo.mp4"} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                     </video>
                 </div>

@@ -163,4 +163,8 @@
         font-size: var(--x2);
         margin-top: var(--x2);
     }
+    .footer {
+        flex-flow: column;
+        height: 110px;
+    }
 }
