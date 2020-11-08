@@ -57,13 +57,63 @@ class App extends React.Component{
                                 )
                             }
                         )}
-                        
+                        <Footer></Footer>
                 </div>
             </>
         )
   }
 }
 
+class Footer extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            open: ''
+        }
+        this.open = this.open.bind(this)
+    }
+    open(){
+        console.log('click')
+        if(this.state.open === ''){
+            this.setState({open: 'open'})
+            let scroll = window.scrollY + 300;
+            setTimeout(()=>{
+                window.scrollTo({
+                    top: scroll,
+                    behavior: "smooth"
+                })
+            }, 100)
+           
+        } else {
+            this.setState({open: ''})
+        }
+    }
+    render(){
+        return(
+            <div className = 'section nopadding_bottom'>
+            <div className = 'content'>
+                    <div className = 'column width12'>
+                        <div className = 'footer'>
+                            <a href = 'https://www.jetstyle.ru' target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
+                            
+                                <div onClick = {this.open} className = 'link'>
+                                    Смотреть варианты, которые не пошли в релиз
+                                </div>
+                            
+                        </div>
+                        <div className = {'processClip ' + this.state.open}>
+                            <img src = './images/process/Slice 1.jpg'></img>
+                            <img src = './images/process/Slice 2.jpg'></img>
+                            <img src = './images/process/Slice 3.jpg'></img>
+                            <img src = './images/process/Slice 4.jpg'></img>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
 
 class Section extends React.Component{
     render(){

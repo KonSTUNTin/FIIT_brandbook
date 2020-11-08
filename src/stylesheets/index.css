@@ -279,16 +279,6 @@ div#ControlsPanel {
   width: 60%;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0px;
-  display: flex;
-  width: 60%;
-  align-items: inherit;
-  justify-content: space-evenly;
-  background-color: var(--darkBlue);
-  padding: var(--x2);
-}
 img {
   max-width: 100%;
   max-height: 500px;
@@ -575,4 +565,42 @@ div.person {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.processClip img {
+  width: 100%;
+  max-height: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.processClip {
+  height: 0px;
+  
+  overflow: hidden;
+}
+.processClip.open{
+  display: contents;
+  height: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--x4);
+}
+
+.link {
+  color: var(--pink);
+  cursor: pointer;
+  transition: color 500ms;
+}
+
+.link:hover{
+  color: var(--white);
+}
+
+.footer img {
+  margin-top: 0px;
 }

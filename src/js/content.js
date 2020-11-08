@@ -11,14 +11,14 @@ const brandbookContent = [
             {
                 img: './images/code.png',
                 className: 'column width4 arrow border concept',
-                h3: 'Фигурная скобка',
-                text: 'Используется как в математике, так и в программинге (JS, Python).'
+                h3: 'Берем фигурную скобку',
+                text: 'Такая скобка используется как в математике, так\u00A0и\u00A0в\u00A0программинге (JS, Python).'
             },
             {
                 className: 'column width4 border concept',
                 img: './images/shield.png',
-                h3: 'Перевернутая скобка',
-                text: 'Дает основу для геральдического символа с любым содержимым, по ситуации.'
+                h3: 'Переворачиваем',
+                text: 'Получается основа для\u00A0геральдического символа с\u00A0любым содержимым, по\u00A0ситуации.'
             },
 
         ]
@@ -30,7 +30,7 @@ const brandbookContent = [
         columns: [
             {
                 h2: 'Основной знак',
-                text: 'Самый самостоятельный знак по-умолчанию.',
+                text: 'Самый самостоятельный знак по\u2011умолчанию.',
                 className: 'column width3 horizontal_center',
                 radioRow: [
                     // {
@@ -93,26 +93,26 @@ const brandbookContent = [
                 className: 'animate_sign column width5 center'
             },
             {
-                text:'Знак содержит и геральдические трактовки.',
+                text:'Знак содержит и\u00A0геральдические трактовки.',
                 className: 'column width4 horizontal_center',
                 aboutGeraldic: [
                     {
                         img:'./images/1_heraldic.svg',
                         title: 'Уробoрос',
                         text: 'Репрезентация циклической природы жизни:\
-                        чередования созидания и разрушения, жизни и смерти.'
+                        чередования созидания и\u00A0разрушения, жизни и\u00A0смерти.'
                     },
                     {
                         img:'./images/2_heraldic.svg',
                         title: 'Молния',
                         text: 'Начало революционного шторма.\
-                        Молния, озаряющая мрак, также символ борьбы света с тьмой,\
+                        Молния, озаряющая мрак, также\u00A0символ борьбы света с\u00A0тьмой,\
                         символ революционной мысли.'
                     },
                     {
                         img:'./images/3_heraldic.svg',
                         title: 'Костыль',
-                        text: 'Одна из почетных фигур'
+                        text: 'Одна из\u00A0почетных фигур'
                     }
                 ]
                 
@@ -130,7 +130,7 @@ const brandbookContent = [
             {
                 className: 'column width10 center',
                 img: './images/chat.png',
-                text:'Знак также можно напечатать в мессенджере'
+                text:'Знак также можно напечатать в\u00A0мессенджере'
             },
             {
                 className: 'column width1',
@@ -145,9 +145,9 @@ const brandbookContent = [
         columns: [
             {
                 className: 'column width12 center',
-                h2: 'Герб-контейнер',
+                h2: 'Герб\u2011контейнер',
                 text: 'Самостоятельный символ.\
-                        Является контейнером для любого\
+                        Является контейнером для\u00A0любого\
                         содержимого.',
                 buttonRow:[
                     {
@@ -180,9 +180,9 @@ const brandbookContent = [
                 img: [
                     './images/bracketExample1.png',
                 ],
-                text: 'Логотип-скобка.\
-                Используется в графике,\
-                или в подписи',
+                text: 'Логотип\u2011скобка.\
+                Используется в\u00A0графике,\
+                или\u00A0в\u00A0подписи',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -198,8 +198,8 @@ const brandbookContent = [
                 className: 'column width4 concept',  
                 img: './images/Fletterexample.png',          
                 text: 'Буква Ф,\
-                Зарифмована с формой нижней скобки.\
-                Может использоваться как маска для графики.',
+                Зарифмована с\u00A0формой нижней скобки.\
+                Может использоваться как\u00A0маска для\u00A0графики.',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -278,7 +278,7 @@ const brandbookContent = [
                 className: 'column width12 center',
                 lottie: './lottie/aboutfont/data.json',
                 h2: 'Гарнитура',
-                text: 'Свободная гарнитура Golos Text от Paratype',
+                text: 'Свободная гарнитура Golos\u00A0Text от\u00A0Paratype',
                 buttonRow:[
                     {
                         text: 'OTF',
@@ -297,7 +297,7 @@ const brandbookContent = [
                 className: 'column center width12',
                 h2: 'Паттерн',
                 text: 'Фирменный стиль может использовать любой визуал.\
-                Но также мы разработали генератор паттернов.',
+                Но\u00A0также мы\u00A0разработали генератор паттернов.',
             }]
     },
     {
@@ -309,20 +309,17 @@ const brandbookContent = [
         className: 'section black mobile_center',
         columns: [
             {
-                className: 'column width3',
                 h2: 'Носители',
-            },
-            {
-                className: 'column width9',
+                className: 'column width12 center',
                 img: [
-                    './images/inLife1.png',
-                    './images/inLife2.png',
-                    './images/inLife3.png',
-                    './images/inLife4.png',
-                    './images/inLife5.png',
-                    './images/inLife6.png',
-                    './images/inLife7.png',
-                    './images/inLife8.png',
+                    './images/inLife1.jpg',
+                    './images/inLife2.jpg',
+                    './images/inLife3.jpg',
+                    './images/inLife4.jpg',
+                    './images/inLife5.jpg',
+                    './images/inLife6.jpg',
+                    './images/inLife7.jpg',
+                    './images/inLife8.jpg',
                 ]//'./images/inLife1.png',
             },
         ]
@@ -345,12 +342,12 @@ const brandbookContent = [
                 person_0:{
                         photo: './images/Lesha.png',
                         name: 'Алексей Кулаков',
-                        role: 'Арт-директор',
+                        role: 'Арт\u2011директор',
                 },
                 person_1: {
                     photo: './images/Vanya.png',
                     name: 'Иван Торопов',
-                    role: 'Автор скобки-герба, дизайнер',
+                    role: 'Автор скобки\u2011герба, дизайнер',
                 },
                 person_2: {
                     photo: './images/Kostya.png',
@@ -360,7 +357,7 @@ const brandbookContent = [
                 person_3: {
                     photo: './images/Lyasya.png',
                     name: 'Ляйсан Байбулова',
-                    role: 'Иллюстратор, 3D-дизайнер',
+                    role: 'Иллюстратор, 3D\u2011дизайнер',
                 },
             }
         ]
