@@ -22,27 +22,27 @@ class PatternBlock extends React.Component{
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
     }
     componentDidMount(){
-        let h = window.innerHeight
-        let offsetTop = 0
-        let antiloop = 0;
-        window.onscroll =()=>{
-            let scroll = window.scrollY
-            this.setState({scroll: scroll})
-            antiloop = 1
-            if(offsetTop<1){
-                offsetTop = this.Myref.current.offsetTop
-            }
-            if((scroll  > offsetTop + h * .5) && this.state.class === '' && antiloop===1){
-                this.setState({class:'minimize'})
-                antiloop = 0
-            }              
-            if((scroll < offsetTop + h * .5) &&this.state.class=== 'minimize' && antiloop===1){
-                this.setState({class: ''})
-                antiloop = 0
-            }
+        // let h = window.innerHeight
+        // let offsetTop = 0
+        // let antiloop = 0;
+        // window.onscroll =()=>{
+        //     let scroll = window.scrollY
+        //     this.setState({scroll: scroll})
+        //     antiloop = 1
+        //     if(offsetTop<1){
+        //         offsetTop = this.Myref.current.offsetTop
+        //     }
+        //     if((scroll  > offsetTop + h * .5) && this.state.class === '' && antiloop===1){
+        //         this.setState({class:'minimize'})
+        //         antiloop = 0
+        //     }              
+        //     if((scroll < offsetTop + h * .5) &&this.state.class=== 'minimize' && antiloop===1){
+        //         this.setState({class: ''})
+        //         antiloop = 0
+        //     }
             
             
-        }
+        // }
     }
     logoColorInGenerator(event){
         this.setState({
@@ -66,7 +66,7 @@ class PatternBlock extends React.Component{
                         <MyCanvas  width = '400' height = "400" key = {99} settings = {this.state}/>
                         <ButtonRow data = {[{text: 'PNG'}]}/>
                     </div>
-                    <div className = 'column width6 vertical'>
+                    <div className = 'column width6 vertical controls_pattern'>
                         <RadioRow data = {controls_1} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>
                         <RadioRow data = {controls_2} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>
                         <RangeRow name = 'Логотип' data = {controls_3} handler = {{"rangeHandler": this.rangeHandler}} generator = {this.state}/>

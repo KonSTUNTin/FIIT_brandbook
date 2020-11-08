@@ -36,6 +36,8 @@
     .f_letter .content {
         align-items: center;
     }
-    
+    .heroBlock {
+        position: relative;
+    }
     
 }

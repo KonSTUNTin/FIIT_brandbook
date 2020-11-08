@@ -1,7 +1,7 @@
 const brandbookContent = [
     {   
         type: 'static',
-        className: 'section mobile_border',
+        className: 'section mobile_border mobile_center',
         navigation: 'conception',
         columns:[
             {
@@ -26,7 +26,7 @@ const brandbookContent = [
     {
         type: 'static',
         navigation: 'major_logo',
-        className: 'section gradientBlack',
+        className: 'section gradientBlack mobile_center',
         columns: [
             {
                 h2: 'Основной знак',
@@ -159,14 +159,17 @@ const brandbookContent = [
                         file: './downloads/brackets.svg'
                     }
                 ],
-                lottie: './lottie/slider.json',
+                lottie: [
+                    './lottie/slider.json',
+                    './lottie/mobile_brackets/data.json'
+                ]
             },
         ]
     },
     {
         type: 'static',
         navigation: 'short_form',
-        className: 'section gradient width10',
+        className: 'section gradient width10 mobile_center',
         columns: [
             {
                 className: 'column width4',
@@ -214,14 +217,14 @@ const brandbookContent = [
     },
     {
         type: 'static',
-        className: 'section',
+        className: 'section mobile_center',
         navigation: 'colors',
         columns: [
             {
                 className: 'column width2',
             },
             {
-                className: 'column width8 center',
+                className: 'column width8 center ',
                 h2: 'Цвета',
                 colorSwatches: [
                     {
@@ -269,7 +272,7 @@ const brandbookContent = [
     {
         type: 'static',
         navigation: 'font',
-        className: 'section black',
+        className: 'section black mobile_center',
         columns: [
             {
                 className: 'column width12 center',
@@ -288,7 +291,7 @@ const brandbookContent = [
     {
         type: 'static',
         navigation:'pattern',
-        className: 'section center nopadding_bottom',
+        className: 'section center nopadding_bottom ',
         columns: [
             {
                 className: 'column center width12',
@@ -303,7 +306,7 @@ const brandbookContent = [
     {
         type: 'static',
         navigation:'mockups',
-        className: 'section black',
+        className: 'section black mobile_center',
         columns: [
             {
                 className: 'column width3',

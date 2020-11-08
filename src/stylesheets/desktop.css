@@ -15,4 +15,28 @@
         width: max-content;
         margin-bottom: var(--x2);
     }
+    .heroBlock{
+        max-height: 630px;
+        overflow: hidden;
+        position: relative;
+    }
+    .videoSection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+    }
+    .column.center{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .center p{
+        text-align: center;
+    }
+    .center a.button {
+        margin-right: var(--x);
+        margin-left: var(--x);
+      }
 }

@@ -10,12 +10,22 @@ class LottieAnimation extends React.Component{
         return false
     }
     componentDidMount(){
+        let path 
+        if(Array.isArray(this.props.path)){
+            if(window.innerWidth < 820){
+                path = this.props.path[1]
+            } else {
+                path = this.props.path[0]
+            }
+        } else {
+            path = this.props.path
+        }
         lottie.loadAnimation({
             container: this.ref.current, // the dom element that will contain the animation
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: this.props.path // the path to the animation json
+            path: path // the path to the animation json
         });
     }
     render(){

@@ -55,7 +55,7 @@
         z-index: 9;
         background-color: var( --darkBlue);
     }
-    .minimize .generatorCanvas{
+    canvas.generatorCanvas{
         width: 25vh !important;
         height: 25vh !important;
     }
@@ -84,4 +84,5 @@
         width: max-content;
         margin-bottom: var(--x2);
     }
+    
 }

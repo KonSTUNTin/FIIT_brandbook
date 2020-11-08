@@ -35,6 +35,7 @@
     .column {
         display: flex;
         padding-right: 0px;
+        padding-left: 0px;
         flex-flow: column;
         width: 100%
     }
@@ -47,7 +48,6 @@
     img.aboutGeraldic {
         width: auto;
         height: 20px;
-        margin-right: var(--x2);
         margin-bottom: 0px;
         margin-top: 0px;
     }
@@ -92,10 +92,6 @@
         padding-bottom: var(--x4);
         padding-top: var(--x4);
     }
-    canvas.generatorCanvas {
-        width: 100% !important;
-        height: auto !important;
-    }
     .RadioRow{
         margin-right: 0px;
     }
@@ -133,5 +129,34 @@
     .bracket_examples {
         display: flex;
         align-items: center;
+    }
+    video {
+        width: auto;
+        height: 100%;
+    }
+    .videoSection {
+        width: auto;
+        height: 100%;
+    }
+    .heroBlock{
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+    }
+    .mobile_center .column{
+        align-items: center;
+    }
+    .mobile_center p {
+        text-align: center;
+    }
+    .mobile_center .radioBlock {
+        align-items: center;
+    }
+    .mobile_center .button {
+        margin-right: var(--x);
+        margin-left: var(--x);
+    }
+    .mobile_center .heraldicString {
+        justify-content: center;
     }
 }

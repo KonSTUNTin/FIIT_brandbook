@@ -88,6 +88,9 @@ code {
 .width9 {
   flex: 9;
 }
+.width12 {
+  flex: 12;
+}
 
 div#root {
   display: flex;
@@ -306,11 +309,7 @@ img.examples {
 .section.black{
   background-color: var(--black);
 }
-.column.center{
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
+
 .aboutGeraldic {
   display: flex;
   margin-bottom: var(--x1);
@@ -350,11 +349,14 @@ p {
     position: relative;
 }
 
-.heroBlock .content {
+.heroBlock .content .column {
   display: flex;
   flex-flow: column;
-  min-height: 60vh;
+  height: 100%;
   justify-content: space-evenly;
+}
+.heroBlock .content {
+  height: 100%;
 }
 
 img.jetLogo {
@@ -422,7 +424,8 @@ label.colorRadio {
   width: calc(24% - var(--x6));
   margin-bottom: var(--x2);
   height: var(--x6);
-  margin-right: var(--x2);
+  margin-right: var(--x);
+  margin-left: var(--x);
   padding: var(--x2);
   border-radius: var(--x);
 }
@@ -550,14 +553,6 @@ a.button {
   align-items: center;
 }
 
-.center a.button {
-  margin-right: var(--x);
-  margin-left: var(--x);
-}
-
-.center p{
-  text-align: center;
-}
 .center .colorSwatch p{
   text-align: left;
 }
@@ -566,5 +561,8 @@ a.button {
 }
 video {
   width: 100%;
+}
+.controls_pattern {
+  overflow: hidden;
 }
 
