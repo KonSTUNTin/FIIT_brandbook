@@ -4,7 +4,7 @@ import React from 'react';
 class Button extends React.Component{
   render(){
     return(
-      <a href = {this.props.file} download className='button'>
+      <a onClick = {this.props.handler} href = {this.props.file} download className='button'>
         {this.props.text}
       </a>
     )

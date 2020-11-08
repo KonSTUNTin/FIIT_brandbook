@@ -13,11 +13,11 @@ class MyCanvas extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            width: this.props.height,
-            height: this.props.width,
+            width: 1024,
+            height: 1024,
             time: 0
         }
-        this.ref = React.createRef()
+        this.ref = this.props.myref
         this.animate = this.animate.bind(this);
         this.animate()
     }
@@ -27,8 +27,8 @@ class MyCanvas extends React.Component{
         this.setState({time: time})
     }
     async componentDidMount(){
-        let w = this.props.width;
-        let h = this.props.height;
+        let w = this.state.width;
+        let h = this.state.height;
         this.scene = new THREE.Scene();
         this.renderer = new THREE.WebGLRenderer({
             canvas: this.ref.current,
@@ -190,7 +190,7 @@ class MyCanvas extends React.Component{
     }
     render(){
         return(
-        <canvas className = 'generatorCanvas' width = {this.props.width} height = {this.props.height} ref = {this.ref}/>
+        <canvas ref = {this.props.myref} className = 'generatorCanvas' width = {this.props.width} height = {this.props.height}/>
         )
     }
 }

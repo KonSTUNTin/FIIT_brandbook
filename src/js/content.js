@@ -338,35 +338,26 @@ const brandbookContent = [
     },
     {
         type: 'static',
-        className: 'section gradient nopadding_top',
+        className: 'section gradient',
         columns: [
             {
-                className: 'column width3',
-                person:{
+                className: 'column width12 persons',
+                person_0:{
                         photo: './images/Lesha.png',
                         name: 'Алексей Кулаков',
                         role: 'Арт-директор',
                 },
-            },
-            {   
-                className: 'column width3',
-                person: {
+                person_1: {
                     photo: './images/Vanya.png',
                     name: 'Иван Торопов',
                     role: 'Автор скобки-герба, дизайнер',
                 },
-            },
-            {   
-                className: 'column width3',
-                person: {
+                person_2: {
                     photo: './images/Kostya.png',
                     name: 'Константин Остроухов',
                     role: 'Дизайнер, разработчик',
                 },
-            },
-            {   
-                className: 'column width3',
-                person: {
+                person_3: {
                     photo: './images/Lyasya.png',
                     name: 'Ляйсан Байбулова',
                     role: 'Иллюстратор, 3D-дизайнер',

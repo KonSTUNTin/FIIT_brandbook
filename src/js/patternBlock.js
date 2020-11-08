@@ -1,11 +1,13 @@
 import React from 'react'
 import MyCanvas from './myCanvas.js'
 import {RadioRow, ButtonRow, RangeRow} from './formElements.js'
+import Button from './button.js'
 
 class PatternBlock extends React.Component{
     constructor(props){
         super(props)
         this.state = {
+            canvasFile: '',
             class: '',
             black: 50,
             scale: 50,
@@ -17,10 +19,32 @@ class PatternBlock extends React.Component{
             logo: 'main',
             scrollCanvas: null,
         }
-        this.Myref = React.createRef()
+        this.CanvasRef = React.createRef();
+        this.Myref = React.createRef();
         this.rangeHandler = this.rangeHandler.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
+        this.saveImage = this.saveImage.bind(this)
     }
+    saveImage(){ 
+        // console.log('save')
+        // console.log(this.CanvasRef.current)
+        let link
+        this.CanvasRef.current.toBlob(
+                function(blob) { 
+                    // после того, как Blob создан, загружаем его 
+                    link = document.createElement('a'); 
+                    link.download = 'example.png'; 
+                    link.href = URL.createObjectURL(blob); 
+                    //let href = URL.createObjectURL(blob)
+                    
+                    //console.log(href)
+                    link.click(); 
+                    // удаляем внутреннюю ссылку на Blob, что позволит браузеру очистить память 
+                    URL.revokeObjectURL(link.href); 
+                }, 'image/png'); 
+                //await this.setState({canvasFile: link})
+                
+            }
     componentDidMount(){
         // let h = window.innerHeight
         // let offsetTop = 0
@@ -63,8 +87,9 @@ class PatternBlock extends React.Component{
             <div className = 'section nopadding_top'>
                 <div className = 'content'>
                     <div ref = {this.Myref} className = {'column width6 patternBlock ' + this.state.class}>
-                        <MyCanvas  width = '400' height = "400" key = {99} settings = {this.state}/>
-                        <ButtonRow data = {[{text: 'PNG'}]}/>
+                        <MyCanvas myref = {this.CanvasRef}  width = '1024' height = "1024" key = {99} settings = {this.state}/>
+                        <ButtonRow onClick = {this.saveImage} data = {[{text: 'PNG', handler: this.saveImage}]}/>
+                        
                     </div>
                     <div className = 'column width6 vertical controls_pattern'>
                         <RadioRow data = {controls_1} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>

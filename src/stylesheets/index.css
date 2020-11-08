@@ -326,7 +326,7 @@ img.aboutGeraldic {
 img.person {
   width: 100px;
   height: 100px;
-  margin-right: var(--x4);
+  margin-right: var(--x2);
 }
 
 .person {
@@ -480,7 +480,7 @@ label.colorRadio {
 }
 a.menuUnit {
   text-decoration: none;
-  margin-right: var(--x4);
+  margin-right: var(--x2);
   color: var(--pink);
   transition: color 500ms;
 }
@@ -493,7 +493,6 @@ a.menuUnit:hover {
   justify-content: space-between;
 }
 .heroBlock .content{
-  pointer-events: none;
   position: absolute;
   z-index: 3;
 }
@@ -566,3 +565,14 @@ video {
   overflow: hidden;
 }
 
+div.person {
+  margin-bottom: var(--x2);
+  margin-right: var(--x2);
+  flex-basis: calc(25% - var(--x2));
+  min-width: 250px;
+}
+.persons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
