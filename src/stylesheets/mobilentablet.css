@@ -75,14 +75,18 @@
     .header.active a.button{
         display: none;
     }
-    a.menuUnit {
-        font-size: var(--x2);
-        margin-top: var(--x2);
-    }
+   
     .concept img {
         height: auto;
         width: max-content;
         margin-bottom: var(--x2);
     }
-    
+    .column {
+        display: flex;
+        flex-flow: column;
+    }
+    .concept img {
+        align-self: center;
+        justify-self: center;
+    }
 }

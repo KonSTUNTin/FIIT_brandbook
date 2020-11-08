@@ -14,7 +14,7 @@ class HeroBlock extends React.Component{
                             Логотип<br/>и&nbsp;фирменный<br/>стиль ФИИТ
                         </h1>
                         <div className = 'heroBlockBottomLine'>
-                            <img className = 'jetLogo' src = './logoJS.png'/>
+                            <img className = 'jetLogo' src = './logoJS.svg'/>
                             <div className = 'socialIcons'>
 
                             </div>

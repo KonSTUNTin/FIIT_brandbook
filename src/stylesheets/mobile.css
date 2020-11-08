@@ -159,4 +159,8 @@
     .mobile_center .heraldicString {
         justify-content: center;
     }
+    a.menuUnit {
+        font-size: var(--x2);
+        margin-top: var(--x2);
+    }
 }

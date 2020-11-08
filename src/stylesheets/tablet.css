@@ -39,5 +39,8 @@
     .heroBlock {
         position: relative;
     }
-    
+    a.menuUnit {
+        font-size: var(--x6);
+        margin-top: var(--x6);
+    }
 }

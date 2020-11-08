@@ -122,7 +122,7 @@ const brandbookContent = [
     {
         navigation: 'in_messenger',
         type: 'static',
-        className: 'section gradientBlack',
+        className: 'section gradientBlack mobile_center',
         columns: [
             {
                 className: 'column width1',
@@ -141,7 +141,7 @@ const brandbookContent = [
     {
         type: 'static',
         navigation: 'brackets',
-        className: 'section nopadding_bottom center',
+        className: 'section nopadding_bottom center mobile_center',
         columns: [
             {
                 className: 'column width12 center',
@@ -278,7 +278,7 @@ const brandbookContent = [
                 className: 'column width12 center',
                 lottie: './lottie/aboutfont/data.json',
                 h2: 'Гарнитура',
-                text: 'Бесплатная гарнитура. Golos Text от Paratype',
+                text: 'Свободная гарнитура Golos Text от Paratype',
                 buttonRow:[
                     {
                         text: 'OTF',
@@ -329,11 +329,19 @@ const brandbookContent = [
     },
     {
         type: 'static',
-        className: 'section gradient bottom',
+        className: 'section gradient center nopadding_bottom',
+        columns: [
+            {
+                className: 'column width12 center',
+                h2: 'Команда'
+            }]
+    },
+    {
+        type: 'static',
+        className: 'section gradient nopadding_top',
         columns: [
             {
                 className: 'column width3',
-                h2: 'Команда',
                 person:{
                         photo: './images/Lesha.png',
                         name: 'Алексей Кулаков',
