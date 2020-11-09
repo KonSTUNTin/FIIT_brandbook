@@ -97,7 +97,7 @@ class Footer extends React.Component{
                             <a href = 'https://www.jetstyle.ru' target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
                             
                                 <div onClick = {this.open} className = 'link'>
-                                    Смотреть варианты, которые не пошли в релиз
+                                    Смотреть варианты, которые не&nbsp;пошли в&nbsp;релиз
                                 </div>
                             
                         </div>

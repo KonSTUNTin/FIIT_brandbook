@@ -167,4 +167,7 @@
         flex-flow: column;
         height: 110px;
     }
+    .link{
+        text-align: center;
+    }
 }
