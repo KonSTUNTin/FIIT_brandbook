@@ -2,6 +2,15 @@ const brandbookContent = [
     {   
         type: 'static',
         className: 'section mobile_border mobile_center',
+        columns:[
+            {   
+                className: 'column width12',
+                h2: 'ФИИТ — это новое учебное заведение на базе УРФУ.\u000a Оно ставит перед собой инновационные задачи, а мы сделали для него инновационный логотип и фирменный стиль.'}
+        ]
+    },
+    {   
+        type: 'static',
+        className: 'section mobile_border mobile_center',
         navigation: 'conception',
         columns:[
             {
