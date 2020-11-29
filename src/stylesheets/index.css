@@ -40,6 +40,10 @@
   font-family: 'Golos_Bold';
   src: url('../fonts/Golos Text_Bold.ttf')  format('truetype');
 }
+@font-face {
+  font-family: 'Golos_Black';
+  src: url('../fonts/Golos Text_Black.ttf')  format('truetype');
+}
 body {
   font-family: "Golos_Regular";
   font-size: var(--regularTextStyle);
@@ -112,8 +116,8 @@ div#root {
 }
 h1 {
   font-size: var(--h1TextStyle);
-  font-family: "Golos_Bold";
-  line-height: 125%;
+  font-family: "Golos_Black";
+  line-height: 120%;
   max-width: 80%;
   text-transform: uppercase;
 }
@@ -140,7 +144,7 @@ h1:after {
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1001;
-  transform: translateY(10px);
+  transform: translateY(19px);
 }
 .mobileMenu {
   height: var(--x4);
@@ -163,6 +167,9 @@ h1:after {
   transform: translate(50px, -27px);
 }
 
+div#jetHero{
+  display: none;
+}
 .js {
   padding-right: 30px;
 }
@@ -287,7 +294,10 @@ img.examples {
   width: 100%;
   max-height: none;
   height: auto;
+  margin-bottom: var(--x4);
+  border-radius: var(--x2);
 }
+
 .section.lightgrey{
   background-color: var(--lightgrey);
   color: var(--black);
@@ -306,9 +316,8 @@ img.examples {
 }
 
 img.aboutGeraldic {
-  width: 20px;
-  height: 20px;
-  margin-left: var(--x);
+  width: 60px;
+  height: 70px;
 }
 .bottom .content {
   align-items: flex-end;
@@ -351,12 +360,13 @@ p {
 
 img.jetLogo {
   width: 70px;
+  height: 62px;
 }
 .RadioRow {
   display: flex;
   margin-right: var(--x2);
-  margin-bottom: var(--x2);
-  border: 1px solid var(--white);
+  margin-bottom: var(--x3);
+  /* border: 1px solid var(--white); */
   border-radius: 80px;
   width: max-content;
 }
@@ -410,7 +420,7 @@ label.colorRadio {
   justify-content: center;
 }
 .colorSwatch {
-  cursor: pointer;
+  /* cursor: pointer; */
   width: calc(24% - var(--x6));
   margin-bottom: var(--x2);
   height: var(--x6);
@@ -466,13 +476,26 @@ label.colorRadio {
   position: fixed;
   width: 100%;
   z-index: 5;
+  left: 0px;
+  margin: 0px;
   background: var(--darkBlue) /*linear-gradient(0deg, rgba(0,0,0,0) 0%, var(--darkBlue) 40%);*/
 }
+
+.jet-sticky.jet-sticky--is-active {
+  display: none;
+}
+
+.column .footer {
+  background-color: #11102c;
+}
+
 a.menuUnit {
   text-decoration: none;
   margin-right: var(--x2);
   color: var(--pink);
   transition: color 500ms;
+  font-family: "Golos_Regular";
+  font-size: 16px;
 }
 a.menuUnit:hover {
   color: var(--white);
@@ -607,4 +630,7 @@ div.person {
 
 .LottieAnimation{
   width: 100%
+}
+div#root {
+  padding-bottom: var(--x4);
 }

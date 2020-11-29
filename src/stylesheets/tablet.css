@@ -12,6 +12,10 @@
         font-size: var(--h3TabletTextStyle);
         margin-bottom: var(--x);
     }
+    .bigText p {
+        font-size: var(--h3TabletTextStyle);
+        line-height: 150%;
+    }
     p, label, .rangeName, .rangeValue {
         font-size: var(--regularTabletTextStyle);
     }
@@ -40,7 +44,13 @@
         position: relative;
     }
     a.menuUnit {
-        font-size: var(--x6);
+        font-size: var(--x4);
         margin-top: var(--x6);
+    }
+    img.aboutGeraldic {
+        margin-right: var(--x3);
+      }
+    img.examples {
+        margin-bottom: var(--x2);
     }
 }

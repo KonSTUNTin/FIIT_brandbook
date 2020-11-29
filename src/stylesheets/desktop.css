@@ -43,5 +43,15 @@
         width: 512px !important;
         height: 512px !important;
     }
-     
+    img.aboutGeraldic {
+        margin-right: var(--x3);
+      }
+    .bigText p {
+        font-size: var(--x2);
+        line-height: 150%;
+        margin-bottom: var(--x4);
+    }
+    .section.command {
+        padding-top: var(--x2);
+    }
 }

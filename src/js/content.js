@@ -1,16 +1,22 @@
 const brandbookContent = [
     {   
         type: 'static',
-        className: 'section mobile_border mobile_center',
+        className: 'section black mobile_center',
         columns:[
             {   
-                className: 'column width12',
-                h2: 'ФИИТ — это новое учебное заведение на базе УРФУ.\u000a Оно ставит перед собой инновационные задачи, а мы сделали для него инновационный логотип и фирменный стиль.'}
+                className: 'column width8 bigText',
+                text_1: 'ФИИТ\u00A0— Фундаментальная информатика и\u00A0информационные технологии\u00A0— это\u00A0новое образовательное направление на\u00A0базе УрФУ.\
+                    Оно\u00A0запущено в\u00A02019\u00A0году компанией Контур при\u00A0поддержке Naumen, JetStyle и\u00A0других представителей IT\u2011отрасли Екатеринбурга.',
+                text_2: 'Цель\u00A0ФИИТ\u00A0— обучать разработчиков программных продуктов по\u2011новому. А\u00A0мы\u00A0придумали, как\u00A0ФИИТ выглядеть,\u00A0— сделали логотип и\u00A0фирменный стиль.'
+            },
+            {
+                className: 'column width4 '
+            },
         ]
     },
     {   
         type: 'static',
-        className: 'section mobile_border mobile_center',
+        className: 'section mobile_border nopadding_bottom mobile_center',
         navigation: 'conception',
         columns:[
             {
@@ -27,7 +33,7 @@ const brandbookContent = [
                 className: 'column width4 border concept',
                 img: './images/shield.png',
                 h3: 'Переворачиваем',
-                text: 'Получается основа для\u00A0геральдического символа с\u00A0любым содержимым, по\u00A0ситуации.'
+                text: 'Получается основа для\u00A0геральдического символа с\u00A0любым содержимым.'
             },
 
         ]
@@ -39,27 +45,16 @@ const brandbookContent = [
         columns: [
             {
                 h2: 'Основной знак',
-                text: 'Самый самостоятельный знак по\u2011умолчанию.',
+                className: 'column width3 horizontal_center',
+            },
+            {
+                lottie: './lottie/main.json',
+                className: 'animate_sign column width5 center'
+            },
+            {
+                text: 'По\u2011умолчанию является самостоятельным.',
                 className: 'column width3 horizontal_center',
                 radioRow: [
-                    // {
-                    //     name: 'language',
-                    //     type: 'text',
-                    //     values: [
-                    //         {
-                    //             name: 'logo_rus',
-                    //             value: 'RUS',
-                    //             text: "RUS",
-                    //             select: true
-                    //         },
-                    //         {
-                    //             name: 'logo_eng',
-                    //             value: 'ENG',
-                    //             text: "ENG",
-                    //             select: false
-                    //         },
-                    //     ]
-                    // },
                     {
                         name: 'colorAnimation',
                         type: 'color',
@@ -97,41 +92,69 @@ const brandbookContent = [
                     }
                 ]
             },
-            {
-                lottie: './lottie/main.json',
-                className: 'animate_sign column width5 center'
-            },
-            {
-                text:'Знак содержит и\u00A0геральдические трактовки.',
-                className: 'column width4 horizontal_center',
-                aboutGeraldic: [
-                    {
-                        img:'./images/1_heraldic.svg',
-                        title: 'Уробoрос',
-                        text: 'Репрезентация циклической природы жизни:\
-                        чередования созидания и\u00A0разрушения, жизни и\u00A0смерти.'
-                    },
-                    {
-                        img:'./images/2_heraldic.svg',
-                        title: 'Молния',
-                        text: 'Начало революционного шторма.\
-                        Молния, озаряющая мрак, также\u00A0символ борьбы света с\u00A0тьмой,\
-                        символ революционной мысли.'
-                    },
-                    {
-                        img:'./images/3_heraldic.svg',
-                        title: 'Костыль',
-                        text: 'Одна из\u00A0почетных фигур'
-                    }
-                ]
+           ]
+        },
+        {
+            type: 'static',
+            className: 'section center nopadding_bottom mobile_center ',
+            columns: [
+                {
+                    h2: 'Геральдика',
+                    className: 'column width12 center horizontal_center',
+                    text:'Разделенный четверочастно французский щит, серебро на лазури.',
+                    img:'./images/shields.png',
+                }
+            ],
+           
+        },
+        {
+            type: 'static',
+            navigation: 'major_logo',
+            className: 'section mobile_center ',
+            columns: [
+                {
+                    className: 'column width4 heraldicLine',
+                    aboutGeraldic: [
+                        {
+                            img:'./images/geraldic01.png',
+                            title: 'Уробoрос',
+                            text: 'Репрезентация циклической природы жизни:\
+                            чередования созидания и\u00A0разрушения, жизни и\u00A0смерти.'
+                        }
+                    ]
+                    
+                },
+                {
+                    className: 'column width4 heraldicLine',
+                    aboutGeraldic: [
+                        {
+                            img:'./images/geraldic02.png',
+                            title: 'Молния',
+                            text: 'Начало революционного шторма.\
+                            Молния, озаряющая мрак, также\u00A0символ борьбы света с\u00A0тьмой,\
+                            символ революционной мысли.'
+                        }
+                    ]
+                    
+                },
+                {
+                    className: 'column width4 heraldicLine',
+                    aboutGeraldic: [
+                        {
+                            img:'./images/geraldic03.png',
+                            title: 'Костыль',
+                            text: 'Одна из\u00A0почетных фигур.'
+                        }
+                    ]
+                    
+                },
                 
-            },
         ],
     },
     {
         navigation: 'in_messenger',
         type: 'static',
-        className: 'section gradientBlack mobile_center',
+        className: 'section gradient mobile_center',
         columns: [
             {
                 className: 'column width1',
@@ -139,7 +162,7 @@ const brandbookContent = [
             {
                 className: 'column width10 center',
                 img: './images/chat.png',
-                text:'Знак также можно напечатать в\u00A0мессенджере'
+                text:'Знак также можно напечатать в\u00A0мессенджере.'
             },
             {
                 className: 'column width1',
@@ -189,9 +212,7 @@ const brandbookContent = [
                 img: [
                     './images/bracketExample1.png',
                 ],
-                text: 'Логотип\u2011скобка.\
-                Используется в\u00A0графике,\
-                или\u00A0в\u00A0подписи',
+                text: 'Логотип-скобка: может\u00A0использоваться в\u00A0графике или\u00A0подписях',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -206,9 +227,7 @@ const brandbookContent = [
             {
                 className: 'column width4 concept',  
                 img: './images/Fletterexample.png',          
-                text: 'Буква Ф,\
-                Зарифмована с\u00A0формой нижней скобки.\
-                Может использоваться как\u00A0маска для\u00A0графики.',
+                text: 'Буква\u00A0«Ф»: зарифмована с\u00A0формой нижней скобки, может\u00A0использоваться как\u00A0маска для\u00A0графики.',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -242,12 +261,12 @@ const brandbookContent = [
                     {
                         name: '#FFFFFF',
                         class: 'white',
-                        rgb: 'rgb(255, 255, 255)'
+                        rgb: 'RGB\u00A0(255, 255, 255)'
                     },
                     {
                         name: '#1AB3D5',
                         class: 'blue',
-                        rgb: 'rgb(26, 179, 213)'
+                        rgb: 'RGB\u00A0(26, 179, 213)'
                     },
                     {
                         class: 'white_pink',
@@ -255,12 +274,12 @@ const brandbookContent = [
                     {
                         name: '#000000',
                         class: 'black',
-                        rgb: 'rgb(3, 8, 27)'
+                        rgb: 'RGB\u00A0(3, 8, 27)'
                     },
                     {
                         name: '#FE25A7',
                         class: 'pink',
-                        rgb: 'rgb(254, 37, 167)'
+                        rgb: 'RGB\u00A0(254, 37, 167)'
                     },
                     {
                         class: 'white_blue',
@@ -268,7 +287,7 @@ const brandbookContent = [
                     {
                         name: '#110F2C',
                         class: 'darkBlue',
-                        rgb: 'rgb(17, 15, 44)'
+                        rgb: 'RGB\u00A0(17, 15, 44)'
                     },
                     
                 ], 
@@ -287,7 +306,7 @@ const brandbookContent = [
                 className: 'column width12 center',
                 lottie: './lottie/aboutfont/data.json',
                 h2: 'Гарнитура',
-                text: 'Свободная гарнитура Golos\u00A0Text от\u00A0Paratype',
+                text: 'Свободная гарнитура Golos\u00A0Text от\u00A0Paratype.',
                 buttonRow:[
                     {
                         text: 'OTF',
@@ -305,8 +324,7 @@ const brandbookContent = [
             {
                 className: 'column center width12',
                 h2: 'Паттерн',
-                text: 'Фирменный стиль может использовать любой визуал.\
-                Но\u00A0также мы\u00A0разработали генератор паттернов.',
+                text: 'Фирменный стиль может\u00A0использовать любой визуал. Но\u00A0мы\u00A0разработали генератор паттернов\u00A0— попробуйте прямо\u00A0сейчас!',
             }]
     },
     {
@@ -344,7 +362,7 @@ const brandbookContent = [
     },
     {
         type: 'static',
-        className: 'section gradient',
+        className: 'section gradient command',
         columns: [
             {
                 className: 'column width12 persons',
@@ -356,7 +374,7 @@ const brandbookContent = [
                 person_1: {
                     photo: './images/Vanya.png',
                     name: 'Иван Торопов',
-                    role: 'Автор скобки\u2011герба, дизайнер',
+                    role: 'Автор идеи скобки\u2011герба, дизайнер',
                 },
                 person_2: {
                     photo: './images/Kostya.png',

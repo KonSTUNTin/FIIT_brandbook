@@ -10,6 +10,10 @@
         font-size: var(--h3MobileTextStyle);
         margin-bottom: var(--x);
     }
+    .bigText p {
+        font-size: var(--h2MobileTextStyle);
+        line-height: 150%;
+    }
     img {
         margin-top: var(--x2);
     }
@@ -41,14 +45,15 @@
     }
     div.aboutGeraldic {
         display: flex;
-        align-items: end;
+        align-items: center;
+        flex-flow: column;
         margin-bottom: 0px;
-        margin-top: var(--x);
+        margin-top: var(--x2);
     }
     img.aboutGeraldic {
         width: auto;
-        height: 20px;
-        margin-bottom: 0px;
+        height: 120px;
+        margin-bottom: var(--x2);
         margin-top: 0px;
     }
     .radioBlock {
@@ -169,5 +174,11 @@
     }
     .link{
         text-align: center;
+    }
+    img.examples {
+        margin-bottom: 0px;
+    }
+    .section.command {
+        padding-top: 0px;
     }
 }

@@ -10,10 +10,6 @@ const menuContent = [
         link: '#major_logo', 
     },
     {
-        name: 'В одну строку',
-        link: '#in_messenger', 
-    },
-    {
         name: 'Герб-контейнер',
         link: '#brackets', 
     },
@@ -60,7 +56,7 @@ class Header extends React.Component{
         return(
             <div className = {'header ' + this.state.class}>
                 <div className = 'content'>
-                    <div className = 'leftSideMenu'>
+                    <div className = 'leftSideMenu column'>
                         <div onClick = {this.mobileMenuActive} className = 'mobileMenu'> </div>
                         <div className = 'menuNavigation'>
                             {

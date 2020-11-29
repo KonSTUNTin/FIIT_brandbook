@@ -12,8 +12,8 @@ class PatternBlock extends React.Component{
             black: 50,
             scale: 50,
             form: 50,
-            trace: 50,
-            split: 50,
+            trace: 83,
+            split: 5,
             logoSize: 50,
             color: 'pink',
             logo: 'main',
@@ -135,17 +135,18 @@ const controls_1 = [
                         handler: 'logoColorInGenerator',
                         values: [
                             {
-                                name: 'generator_white',
-                                text: "white",
-                                value: "white",
-                                select: false
-                            },
-                            {
                                 name: 'generator_pink',
                                 text: "pink",
                                 value: "pink",
                                 select: true
                             },
+                            {
+                                name: 'generator_white',
+                                text: "white",
+                                value: "white",
+                                select: false
+                            },
+                            
                             {
                                 name: 'generator_blue',
                                 text: "blue",
@@ -179,12 +180,12 @@ const controls_2 = [{
                         type: 'text',
                         handler: 'logoColorInGenerator',
                         values: [
-                            {
-                                name: 'generator_logo_without',
-                                value: 'none',
-                                text: "Без логотипа",
-                                select: false
-                            },
+                            // {
+                            //     name: 'generator_logo_without',
+                            //     value: 'none',
+                            //     text: "Без логотипа",
+                            //     select: false
+                            // },
                             {
                                 name: 'generator_logo_main',
                                 value: 'main',
