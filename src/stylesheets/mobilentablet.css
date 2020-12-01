@@ -92,4 +92,7 @@
     #conception .concept {
         margin-bottom: var(--x4);
     }
+    .bigShield img {
+        max-height: 30vh;
+    }
 }

@@ -181,4 +181,7 @@
     .section.command {
         padding-top: 0px;
     }
+    .shield{
+        display: none;
+    }
 }

@@ -53,4 +53,7 @@
     img.examples {
         margin-bottom: var(--x2);
     }
+    .shield{
+        display: none;
+    }
 }

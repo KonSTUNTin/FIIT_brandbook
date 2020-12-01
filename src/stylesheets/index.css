@@ -21,12 +21,13 @@
   --h3TabletTextStyle: 16px;
   --regularTabletTextStyle: 16px;
   
-  --x: 10px;
-  --x2: 20px;
-  --x3: 30px;
-  --x4: 40px;
-  --x6: 60px;
-  --x8: 80px;
+  --x: 8px;
+  --x1_5: 12px;
+  --x2: 16px;
+  --x3: 24px;
+  --x4: 32px;
+  --x6: 48px;
+  --x8: 64px;
 }
 *{
   margin: 0px;
@@ -70,6 +71,9 @@ code {
 .width2 {
   flex: 2;
 }
+.width2_5 {
+  flex: 2.5;
+}
 .width1 {
   flex: 1;
 }
@@ -94,6 +98,9 @@ code {
 }
 .width12 {
   flex: 12;
+}
+h4{
+  font-family: 'Golos_Bold'
 }
 
 div#root {
@@ -633,4 +640,22 @@ div.person {
 }
 div#root {
   padding-bottom: var(--x4);
+}
+.shield {
+  display: flex;
+  align-items: center;
+}
+.shield p {
+  color: var(--blue);
+}
+.shield img {
+  width: 60px;
+  height: 72px;
+  margin-bottom: var(--x2);
+  margin-right: var( --x2);
+}
+.shield p {
+  color: var(--blue);
+  font-size: var(--x1_5);
+  line-height: var(--x2);
 }

@@ -186,12 +186,27 @@ class Column extends React.Component{
                             {el.indexOf('lottie')>-1&&
                             <LottieAnimation path = {this.props.content[el]} key = {'lottie' + index}/>
                             }
+                            {el.indexOf('shield')>-1&&
+                            <Shield data = {this.props.content[el]} key = {'shield' + index}/>
+                            }
                             
                         </>
                     )
                 }
             )}
         </div>
+        )
+    }
+}
+
+
+class Shield extends React.Component{
+    render(){
+        return(
+            <div className = 'shield'>
+                <img src = {this.props.data.img}></img>
+                <p>{this.props.data.text}</p>
+            </div>
         )
     }
 }

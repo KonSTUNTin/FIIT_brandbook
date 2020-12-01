@@ -3,6 +3,9 @@ const brandbookContent = [
         type: 'static',
         className: 'section black mobile_center',
         columns:[
+            {
+                className: 'column width2 '
+            },
             {   
                 className: 'column width8 bigText',
                 text_1: 'ФИИТ\u00A0— Фундаментальная информатика и\u00A0информационные технологии\u00A0— это\u00A0новое образовательное направление на\u00A0базе УрФУ.\
@@ -10,7 +13,7 @@ const brandbookContent = [
                 text_2: 'Цель\u00A0ФИИТ\u00A0— обучать разработчиков программных продуктов по\u2011новому. А\u00A0мы\u00A0придумали, как\u00A0ФИИТ выглядеть,\u00A0— сделали логотип и\u00A0фирменный стиль.'
             },
             {
-                className: 'column width4 '
+                className: 'column width2 '
             },
         ]
     },
@@ -102,8 +105,83 @@ const brandbookContent = [
                     h2: 'Геральдика',
                     className: 'column width12 center horizontal_center',
                     text:'Разделенный четверочастно французский щит, серебро на лазури.',
-                    img:'./images/shields.png',
+                    // img:'./images/shields.png',
                 }
+            ],
+           
+        },
+        {
+            type: 'static',
+            className: 'section nopadding_bottom mobile_center ',
+            columns: [
+                {
+                    className: 'column width2 horizontal_center',
+                    shield_0: {
+                        text: 'Немецкий, красный',
+                        img: './images/shield_0.png'
+                    },
+                    shield_1: {
+                        text: 'Итальянский, пурпуровый',
+                        img: './images/shield_1.png'
+                    },
+                    shield_2: {
+                        text: 'Квадратный, беличий «мех»',
+                        img: './images/shield_2.png'
+                    }
+                    // img:'./images/shields.png',
+                },
+                {
+                    className: 'column width2 horizontal_center ',
+                    shield_0: {
+                        text: 'Французский, чешуйчатый',
+                        img: './images/shield_3.png'
+                    },
+                    shield_1: {
+                        text: 'Польский, противобеличий «мех»',
+                        img: './images/shield_4.png'
+                    },
+                    shield_2: {
+                        text: 'Косоугольный, противогорно-стаевый «мех»',
+                        img: './images/shield_5.png'
+                    }
+                    // img:'./images/shields.png',
+                },
+                {
+                    className: 'column width3 bigShield',
+                    img:'./images/shield_00.png',
+                },
+                {
+                    className: 'column width2 horizontal_center ',
+                    shield_0: {
+                        text: 'Древний (варяжский), золото',
+                        img: './images/shield_6.png'
+                    },
+                    shield_1: {
+                        text: 'Английский, голубой',
+                        img: './images/shield_7.png'
+                    },
+                    shield_2: {
+                        text: 'Испанский, чёрный',
+                        img: './images/shield_8.png'
+                    }
+                    // img:'./images/shields.png',
+                },
+                {
+                    className: 'column width2 horizontal_center ',
+                    shield_0: {
+                        text: 'Немецкий, серебро',
+                        img: './images/shield_9.png'
+                    },
+                    shield_1: {
+                        text: 'Английский, зелёный',
+                        img: './images/shield_10.png'
+                    },
+                    shield_2: {
+                        text: 'Византийский, горностаевый «мех»',
+                        img: './images/shield_11.png'
+                    }
+                    // img:'./images/shields.png',
+                },
             ],
            
         },
@@ -347,6 +425,7 @@ const brandbookContent = [
                     './images/inLife6.jpg',
                     './images/inLife7.jpg',
                     './images/inLife8.jpg',
+                    './images/inLife9.jpg',
                 ]//'./images/inLife1.png',
             },
         ]
