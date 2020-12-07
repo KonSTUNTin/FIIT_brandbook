@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './button.js'
+
 const menuContent = [
     {
         name: 'Концепция',
@@ -8,6 +9,10 @@ const menuContent = [
     {
         name: 'Основной знак',
         link: '#major_logo', 
+    },
+    {
+        name: 'Геральдика',
+        link: '#geraldic', 
     },
     {
         name: 'Герб-контейнер',

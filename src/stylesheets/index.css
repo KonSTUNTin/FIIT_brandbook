@@ -659,3 +659,6 @@ div#root {
   font-size: var(--x1_5);
   line-height: var(--x2);
 }
+a {
+  font-family: "Golos_Regular";
+}
