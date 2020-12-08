@@ -4,39 +4,39 @@ import Button from './button.js'
 const menuContent = [
     {
         name: 'Концепция',
-        link: '#conception', 
+        link: 'conception', 
     },
     {
         name: 'Основной знак',
-        link: '#major_logo', 
+        link: 'major_logo', 
     },
     {
         name: 'Геральдика',
-        link: '#geraldic', 
+        link: 'geraldic', 
     },
     {
         name: 'Герб-контейнер',
-        link: '#brackets', 
+        link: 'brackets', 
     },
     {
         name: 'Краткая форма',
-        link: '#short_form', 
+        link: 'short_form', 
     },
     {
         name: 'Цвета',
-        link: '#colors', 
+        link: 'colors', 
     },
     {
         name: 'Гарнитура',
-        link: '#font', 
+        link: 'font', 
     },
     {
         name: 'Паттерн',
-        link: '#pattern', 
+        link: 'pattern', 
     },
     {
         name: 'Носители',
-        link: '#mockups', 
+        link: 'mockups', 
     },
 ]
 
@@ -68,7 +68,7 @@ class Header extends React.Component{
                                 menuContent.map(
                                     (item, index)=>{
                                         return(
-                                            <a onClick = {this.mobileMenuActive}  className = 'menuUnit' href = {item.link}>
+                                            <a onClick = {this.mobileMenuActive}  className = 'menuUnit' href = {window.location.origin + window.location.pathname + '#' + item.link}>
                                                 {item.name}
                                             </a>
                                         )

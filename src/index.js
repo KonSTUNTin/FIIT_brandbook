@@ -7,6 +7,7 @@ import './stylesheets/tablet.css';
 import './stylesheets/mobile.css';
 import App from './App';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

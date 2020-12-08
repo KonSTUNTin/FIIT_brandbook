@@ -20,7 +20,7 @@ class LottieAnimation extends React.Component{
         } else {
             path = this.props.path
         }
-        lottie.setLocationHref(document.location.href)
+        lottie.setLocationHref(window.location.origin + window.location.pathname)
         lottie.loadAnimation({
             container: this.ref.current, // the dom element that will contain the animation
             renderer: 'svg',
