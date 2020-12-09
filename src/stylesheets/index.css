@@ -45,7 +45,7 @@
   font-family: 'Golos_Black';
   src: url('../fonts/Golos Text_Black.ttf')  format('truetype');
 }
-body {
+#root {
   font-family: "Golos_Regular";
   font-size: var(--regularTextStyle);
   line-height: 150%;
@@ -272,6 +272,7 @@ div#ControlsPanel {
 }
 
 .button {
+  height:27px;
   padding: var(--x) var(--x2);
   background-color: var( --pink);
   border-radius: var(--x4);
@@ -387,18 +388,22 @@ img.jetLogo {
 
 label.colorRadio:before {
   content: '';
+  border: 1px solid var(--black);
   display: block;
   height: var(--x2);
   width: var(--x2);
+  transition: border 500ms;
   transform: translateY(2px);
   border-radius: 30px;
 }
 
 label.colorRadio.pink:before{
   background-color: var(--pink);
+  border: 1px solid var(--pink);
 }
 label.colorRadio.blue:before{
   background-color: var(--blue);
+  border: 1px solid var(--blue);
 }
 label.colorRadio.white:before{
   background-color: var(--white);
@@ -428,12 +433,13 @@ label.colorRadio {
 }
 .colorSwatch {
   /* cursor: pointer; */
-  width: calc(24% - var(--x6));
+  width: calc(33% - var(--x6));
   margin-bottom: var(--x2);
   height: var(--x6);
   margin-right: var(--x);
   margin-left: var(--x);
   padding: var(--x2);
+  overflow: hidden;
   border-radius: var(--x);
 }
 .colorSwatches {
@@ -470,6 +476,10 @@ label.colorRadio {
   background: var(--pink);
   background: linear-gradient(90deg, var(--white) 0%, var(--pink) 100%);
 }
+.colorSwatch.purple{
+  background: #A30CFF;
+}
+
 .colorSwatch.white_blue{
   background: var(--pink);
   background: linear-gradient(90deg, var(--white) 0%, var(--blue) 100%);
@@ -661,4 +671,7 @@ div#root {
 }
 a {
   font-family: "Golos_Regular";
+}
+.bigShield {
+  align-items: center;
 }

@@ -11,7 +11,7 @@
         margin-bottom: var(--x);
     }
     .bigText p {
-        font-size: var(--h2MobileTextStyle);
+        font-size: var(--regularMobileTextStyle);
         line-height: 150%;
     }
     img {
@@ -52,7 +52,7 @@
     }
     img.aboutGeraldic {
         width: auto;
-        height: 120px;
+        height: 70px;
         margin-bottom: var(--x2);
         margin-top: 0px;
     }
@@ -74,7 +74,9 @@
         background-color: var(--darkBlue);
         color: var(--white);
     }
-
+    .concept img {
+        margin-bottom: var(--x2);
+    }
     
     .text label:before {
         content: '';

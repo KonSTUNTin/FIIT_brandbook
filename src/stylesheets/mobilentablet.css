@@ -10,7 +10,7 @@
         width: 44%;
     }
     .colorSwatch {
-        width: calc(49% - var(--x6));
+        width: 100%;
     }
     .tablet_none {
         display: none;

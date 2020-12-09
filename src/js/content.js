@@ -55,7 +55,7 @@ const brandbookContent = [
                 className: 'animate_sign column width5 center'
             },
             {
-                text: 'По\u2011умолчанию является самостоятельным.',
+                text: 'По\u00A0умолчанию является самостоятельным.',
                 className: 'column width3 horizontal_center',
                 radioRow: [
                     {
@@ -105,7 +105,7 @@ const brandbookContent = [
                 {
                     h2: 'Геральдика',
                     className: 'column width12 center horizontal_center',
-                    text:'Разделенный четверочастно французский щит, серебро на лазури.',
+                    text:'Разделенный четверочастно французский щит, серебро на\u00A0лазури.',
                     // img:'./images/shields.png',
                 }
             ],
@@ -288,10 +288,8 @@ const brandbookContent = [
             },
             {   
                 className: 'column width4 concept',
-                img: [
-                    './images/bracketExample1.png',
-                ],
-                text: 'Логотип-скобка: может\u00A0использоваться в\u00A0графике или\u00A0подписях',
+                img: './images/bracketExample1.png',
+                text: 'Логотип-скобка: может\u00A0использоваться в\u00A0графике или\u00A0подписях.',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -334,39 +332,41 @@ const brandbookContent = [
                 className: 'column width8 center ',
                 h2: 'Цвета',
                 colorSwatches: [
-                    {
-                        class: 'pink_blue',
-                    },
+                    // {
+                    //     class: 'pink_blue',
+                    // },
                     {
                         name: '#FFFFFF',
                         class: 'white',
-                        rgb: 'RGB\u00A0(255, 255, 255)'
+                        rgb: 'RGB\u00A0(255,\u00A0255,\u00A0255)'
                     },
                     {
                         name: '#1AB3D5',
                         class: 'blue',
-                        rgb: 'RGB\u00A0(26, 179, 213)'
+                        rgb: 'RGB\u00A0(26,\u00A0179,\u00A0213)'
                     },
                     {
-                        class: 'white_pink',
+                        class: 'purple',
+                        name: '#A30CFF',
+                        rgb: 'RGB\u00A0(163,\u00A012,\u00A0255)'
                     },
                     {
                         name: '#000000',
                         class: 'black',
-                        rgb: 'RGB\u00A0(3, 8, 27)'
+                        rgb: 'RGB\u00A0(3,\u00A08,\u00A027)'
                     },
                     {
                         name: '#FE25A7',
                         class: 'pink',
-                        rgb: 'RGB\u00A0(254, 37, 167)'
+                        rgb: 'RGB\u00A0(254,\u00A037,\u00A0167)'
                     },
-                    {
-                        class: 'white_blue',
-                    },
+                    // {
+                    //     class: 'white_blue',
+                    // },
                     {
                         name: '#110F2C',
                         class: 'darkBlue',
-                        rgb: 'RGB\u00A0(17, 15, 44)'
+                        rgb: 'RGB\u00A0(17,\u00A015,\u00A044)'
                     },
                     
                 ], 
@@ -426,7 +426,6 @@ const brandbookContent = [
                     './images/inLife6.jpg',
                     './images/inLife7.jpg',
                     './images/inLife8.jpg',
-                    './images/inLife9.jpg',
                 ]//'./images/inLife1.png',
             },
         ]
@@ -454,7 +453,7 @@ const brandbookContent = [
                 person_1: {
                     photo: './images/Vanya.png',
                     name: 'Иван Торопов',
-                    role: 'Автор идеи скобки\u2011герба, дизайнер',
+                    role: 'Автор идеи, дизайнер',
                 },
                 person_2: {
                     photo: './images/Kostya.png',
