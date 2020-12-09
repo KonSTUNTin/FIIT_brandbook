@@ -30,7 +30,7 @@ const brandbookContent = [
                 img: './images/code.png',
                 className: 'column width4 arrow border concept',
                 h3: 'Берем фигурную скобку',
-                text: 'Такая скобка используется как в математике, так\u00A0и\u00A0в\u00A0программинге (JS, Python).'
+                text: 'Такая скобка используется как в математике, так\u00A0и\u00A0в\u00A0программинге (JS, С#).'
             },
             {
                 className: 'column width4 border concept',
@@ -448,7 +448,7 @@ const brandbookContent = [
                 person_0:{
                         photo: './images/Lesha.png',
                         name: 'Алексей Кулаков',
-                        role: 'Арт\u2011директор',
+                        role: 'Арт\u2011директор, дизайнер',
                 },
                 person_1: {
                     photo: './images/Vanya.png',
@@ -458,7 +458,7 @@ const brandbookContent = [
                 person_2: {
                     photo: './images/Kostya.png',
                     name: 'Константин Остроухов',
-                    role: 'Дизайнер, разработчик',
+                    role: 'Дизайнер, разработчик генератора паттернов, готовил кейс',
                 },
                 person_3: {
                     photo: './images/Lyasya.png',
