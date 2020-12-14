@@ -186,4 +186,10 @@
     .shield{
         display: none;
     }
+    .fiitLoader {
+        font-size: var(--h1MobileTextStyle);
+        background-size: 78px;
+        background-repeat: no-repeat;
+        background-position: 50% 50.5%;
+    }
 }

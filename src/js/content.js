@@ -1,7 +1,7 @@
 const brandbookContent = [
     {   
         type: 'static',
-        className: 'section black mobile_center',
+        className: 'section gradient mobile_center',
         columns:[
             {
                 className: 'column width2 '
@@ -51,7 +51,7 @@ const brandbookContent = [
                 className: 'column width3 horizontal_center',
             },
             {
-                lottie: './lottie/main.json',
+                lottie: './lottie/new.json',
                 className: 'animate_sign column width5 center'
             },
             {
@@ -222,7 +222,7 @@ const brandbookContent = [
                         {
                             img:'./images/geraldic03.png',
                             title: 'Костыль',
-                            text: 'Одна из\u00A0почетных фигур.'
+                            text: 'Одна из\u00A0почетных фигур. Весьма уважаемый способ, применяемый программистами, но\u00A0не\u00A0только! Считается защищающим жизнь символом удачи.'
                         }
                     ]
                     
@@ -351,7 +351,7 @@ const brandbookContent = [
                         rgb: 'RGB\u00A0(163,\u00A012,\u00A0255)'
                     },
                     {
-                        name: '#000000',
+                        name: '#03081B',
                         class: 'black',
                         rgb: 'RGB\u00A0(3,\u00A08,\u00A027)'
                     },
@@ -422,7 +422,7 @@ const brandbookContent = [
                     './images/inLife2.jpg',
                     './images/inLife3.jpg',
                     './images/inLife4.jpg',
-                    './images/inLife5.jpg',
+                    './images/inLife5.png',
                     './images/inLife6.jpg',
                     './images/inLife7.jpg',
                     './images/inLife8.jpg',

@@ -54,4 +54,7 @@
     .section.command {
         padding-top: var(--x2);
     }
+    .fiitLoader {
+        font-size: var(--h1TextStyle);
+    }
 }

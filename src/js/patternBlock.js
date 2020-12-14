@@ -45,29 +45,7 @@ class PatternBlock extends React.Component{
                 //await this.setState({canvasFile: link})
                 
             }
-    componentDidMount(){
-        // let h = window.innerHeight
-        // let offsetTop = 0
-        // let antiloop = 0;
-        // window.onscroll =()=>{
-        //     let scroll = window.scrollY
-        //     this.setState({scroll: scroll})
-        //     antiloop = 1
-        //     if(offsetTop<1){
-        //         offsetTop = this.Myref.current.offsetTop
-        //     }
-        //     if((scroll  > offsetTop + h * .5) && this.state.class === '' && antiloop===1){
-        //         this.setState({class:'minimize'})
-        //         antiloop = 0
-        //     }              
-        //     if((scroll < offsetTop + h * .5) &&this.state.class=== 'minimize' && antiloop===1){
-        //         this.setState({class: ''})
-        //         antiloop = 0
-        //     }
-            
-            
-        // }
-    }
+
     logoColorInGenerator(event){
         this.setState({
             [event.target.name]: event.target.value
@@ -86,7 +64,7 @@ class PatternBlock extends React.Component{
         return(
             <div className = 'section nopadding_top'>
                 <div className = 'content'>
-                    <div ref = {this.Myref} className = {'column width6 patternBlock ' + this.state.class}>
+                    <div ref = {this.Myref} className = {'column width6 patternBlock center ' + this.state.class}>
                         <MyCanvas myref = {this.CanvasRef}  width = '1024' height = "1024" key = {99} settings = {this.state}/>
                         <ButtonRow onClick = {this.saveImage} data = {[{text: 'PNG', handler: this.saveImage}]}/>
                         
@@ -105,30 +83,7 @@ class PatternBlock extends React.Component{
 
 
 const controls_1 = [
-                    // {
-                    //     name: 'ratio',
-                    //     type: 'text',
-                    //     // values: [
-                    //     //     {
-                    //     //         name: 'generator_ratio_square',
-                    //     //         value: "square",
-                    //     //         text: "Квадрат",
-                    //     //         select: true
-                    //     //     },
-                    //     //     {
-                    //     //         name: 'generator_ratio_youtube',
-                    //     //         value: "youtube",
-                    //     //         text: "Шапка Youtube",
-                    //     //         select: false
-                    //     //     },
-                    //     //     {
-                    //     //         name: 'generator_ratio_vk',
-                    //     //         value: "vk",
-                    //     //         text: "Шапка VK",
-                    //     //         select: false
-                    //     //     }
-                    //     // ]
-                    // },
+                   
                     {
                         name: 'color',
                         type: 'color',
@@ -153,24 +108,7 @@ const controls_1 = [
                                 value: "blue",
                                 select: false
                             },
-                            // {
-                            //     name: 'generator_white_pink',
-                            //     text: "white_pink",
-                            //     value: "white_pink",
-                            //     select: false
-                            // },
-                            // {
-                            //     name: 'generator_white_blue',
-                            //     text: "white_blue",
-                            //     value: "white_blue",
-                            //     select: false
-                            // },
-                            // {   
-                            //     name: 'generator_pink_blue',
-                            //     text: "pink_blue",
-                            //     value: "pink_blue",
-                            //     select: false
-                            // },
+                    
                         ]
                     }
                 ]

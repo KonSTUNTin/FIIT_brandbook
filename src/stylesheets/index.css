@@ -56,6 +56,31 @@
   background-color: var( --darkBlue);
 }
 
+
+.fiitLoader {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 900;
+  top: 0px;
+  left: 0px;
+  font-family: 'Golos_Bold';
+  background-image: url("../brackets.svg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 50% 52%;
+}
+
+
+.Fiit_Container.noScroll {
+  height:100vh;
+  overflow: hidden;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

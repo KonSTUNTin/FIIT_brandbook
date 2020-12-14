@@ -12,12 +12,54 @@ import PatternBlock from './js/patternBlock.js'
 class App extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            loaded: 0,
+            show: 1
+        }
+        this.loadHandler = this.loadHandler.bind(this)
+    }
+    loadHandler(){
+        let loaded = this.state.loaded + 1
+        this.setState({loaded:loaded})
+        if(this.state.loaded === 13){
+            this.setState({show: 0})
+        }
+    }
+    render(){
+       
+        return(
+            <>
+                {(this.state.show===1)&&<Loader data = {this.state.loaded}/>}
+                <Layout data = {(this.state.show===1)?'noScroll':''} handler = {this.loadHandler}/>
+            </>
+        )
+    }
+}
+
+class Loader extends React.Component{
+    render(){
+        return(
+            <div className = 'fiitLoader'>{Math.round(this.props.data / 14 * 100)}%</div>            
+        )
+    }
+}
+
+class Layout extends React.Component{
+    constructor(props){
+        super(props)
         //this.ref = React.createRef();
+        this.scroll = 'noScroll';
         this.logoColor = this.logoColor.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
     }
-    shouldComponentUpdate(){
-        return false
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.scroll===nextProps.data){
+            return false
+        } else {
+            this.scroll = ''
+            return true
+        }
+        
     }
    
 
@@ -32,7 +74,7 @@ class App extends React.Component{
     render(){
         console.log('render')
         return(
-            <>
+            <div className = {"Fiit_Container " + this.props.data}>
                 <Header handler = {this.downloadPDF}></Header>
                 <div ref = {this.ref}>
                     <HeroBlock/>
@@ -42,7 +84,7 @@ class App extends React.Component{
                                     <>
                                     {item.type === 'static'&&
                                     <Section
-                                        
+                                        handlerLoad = {this.props.handler}
                                         key = {'section ' + index}
                                         content = {item}
                                         generator = {this.state}
@@ -59,7 +101,7 @@ class App extends React.Component{
                         )}
                         <Footer></Footer>
                 </div>
-            </>
+            </div>
         )
   }
 }
@@ -73,7 +115,6 @@ class Footer extends React.Component{
         this.open = this.open.bind(this)
     }
     open(){
-        console.log('click')
         if(this.state.open === ''){
             this.setState({open: 'open'})
             let scroll = window.scrollY + 300;
@@ -116,6 +157,9 @@ class Footer extends React.Component{
 }
 
 class Section extends React.Component{
+    shouldComponentUpdate(){
+        return false
+    }
     render(){
         
         return(
@@ -126,6 +170,7 @@ class Section extends React.Component{
                         (item, index)=>{
                             return(
                                 <Column content = {item}
+                                handlerLoad = {this.props.handlerLoad}
                                 key = {'column' + index}
                                 generator = {this.props.generator}
                                 handler = {this.props.handler}
@@ -166,7 +211,7 @@ class Column extends React.Component{
                             </p>
                             }
                             {el.indexOf('img')>-1&&
-                                <Picture data = {this.props.content[el]} key = { 'img' + index}/>
+                                <Picture data = {this.props.content[el]} key = { 'img' + index} handlerLoad = {this.props.handlerLoad}/>
                             }
                             {el.indexOf('aboutGeraldic')>-1&&
                                 <GeraldicBlock data = {this.props.content[el]} key = { 'ag' + index}/>
