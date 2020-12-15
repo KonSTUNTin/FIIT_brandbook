@@ -35,6 +35,10 @@ const menuContent_ru = [
         link: 'pattern', 
     },
     {
+        name: 'Отзывы',
+        link: 'testimonials', 
+    },
+    {
         name: 'Носители',
         link: 'mockups', 
     },
@@ -74,9 +78,14 @@ const menuContent_en = [
         link: 'pattern', 
     },
     {
+        name: 'Testimonials',
+        link: 'testimonials', 
+    },
+    {
         name: 'Mediums',
         link: 'mockups', 
     },
+   
 ]
 
 

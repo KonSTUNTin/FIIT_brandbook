@@ -429,6 +429,79 @@ const brandbookContent = [
     },
     {
         type: 'static',
+        className: 'section',
+        navigation: 'testimonials',
+        columns: [
+            {
+                className: 'column width2',
+            },
+            {
+                className: 'column width8 center',
+                h2: 'Testimonials',
+                reviews: [
+                    {
+                        text:'You say: “Guys,\u00A0make\u00A0it\u00A0cool”. And\u00A0you\u00A0get the\u00A0answer:  “Here\u00A0you\u00A0go! All\u00A0done”',
+                        full_text: 'Я помню, что главная моя эмоция это, наверное, восторг, потому что я не ожидала, что…\
+                        Но лучше начать с начала. Когда я шла разговаривать с Аней, я вообще не была уверена, \
+                        что JetStyle будет интересно заниматься нашей задачей, мы не знали, найдем ли отклик. \
+                        Были мысли в формате: «Ну, давайте попробуем сходить, поговорим, поймем, \
+                        насколько ребята будут готовы потратить на это свое время».\
+                        Потому что мы же понимали — это инфраструктурный проект, \
+                        на длинную перспективу рассчитанный, у многих есть скепсис относительно всего этого.',
+                        author: 'Ekaterina Voronova',
+                        foto: './images/Katya.png',
+                        role: 'Head of educational programmes, SKB Kontur'
+                    },
+                    {
+                        text:'In general, it\u00A0was a\u00A0very pleasant experience to\u00A0work with\u00A0people who\u00A0are on\u00A0the\u00A0same\u00A0wavelength with\u00A0us and\u00A0practically read our\u00A0minds)',
+                        full_text: 'Получилось красиво, аккуратно и современно. Но это как раз было предсказуемо. Что меня действительно приятно удивило, так это то, насколько идейным получился результат.\
+                        Превратить программистские скобочки в герб, а буквы ФИИТ в гербовые символы — идея, от которой мы были в восторге!\
+                        Ирония, которая проглядывает в фирменном стиле (вы ведь заметили костыль в гербе, да?), тоже попала в самую цель. \
+                        Ведь если студенты видят, что шутить над ФИИТ можно, они раскрепощаются, начинают легче давать обратную связь\
+                        и активнее участвовать в жизни образовательной программы. Для нас это важно.\
+                        Когда мы шли в JetStyle, у меня была всего одна мысль: предложить сделать не статичный логотип\
+                        , а что-то генеративное. Что-то, что может меняться, подстраиваться. Что можно и нужно программировать.\
+                        Ведь ФИИТ — это образовательное направление про программирование.\
+                        Значит и логотип должен быть программируемым )\
+                        Каково же было мое удивление, когда мне эту идею даже не пришлось озвучивать.\
+                        В JetStyle сами ее предложили почти сразу и сами все сделали. Удивительная магия! )\
+                        In general, it was a very pleasant experience to work with people who are on the same wavelength with us and practically read our minds)',
+                        author: 'Pavel Egorov',
+                        foto: './images/Pavel.png',
+                        role: 'Head of the FIIT educational programme at UrFU'
+                    },
+                ],
+                radioRow: [
+                    {
+                        name: 'reviewControl',
+                        type: 'color',
+                        handler: 'reviewControl',
+                        values: [
+                            {
+                                name: 'first_review',
+                                text: "pink",
+                                value: "pink",
+                                select: true
+                            },
+                            {
+                                name: 'second_review',
+                                text: "pink",
+                                value: "pink",
+                                select: false
+                            },
+                           
+                        ]
+                    }
+                ],
+            },
+            {
+                className: 'column width2',
+            },
+        ]
+       
+    },
+    {
+        type: 'static',
         className: 'section gradient center nopadding_bottom',
         columns: [
             {

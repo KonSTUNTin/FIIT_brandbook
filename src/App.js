@@ -11,7 +11,7 @@ import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
 import LottieAnimation from './js/lottieAnimation'
 import PatternBlock from './js/patternBlock.js'
 
-let language = 0;
+let language = 1;
 let brandbookContent = brandbookContent_EN
 if(language === 1){
     brandbookContent = brandbookContent_RU
@@ -59,6 +59,7 @@ class Layout extends React.Component{
         this.scroll = 'noScroll';
         this.logoColor = this.logoColor.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
+        this.reviewControl = this.reviewControl.bind(this)
     }
     shouldComponentUpdate(nextProps, nextState){
         if(this.scroll===nextProps.data){
@@ -67,13 +68,14 @@ class Layout extends React.Component{
             this.scroll = ''
             return true
         }
-        
     }
-   
-
     logoColor(event){
         document.getElementById('logo_FIIT').setAttribute('class', '')
         document.getElementById('logo_FIIT').classList.add(event.target.value)
+    }
+    reviewControl(event){
+        console.log('hi')
+        document.getElementById('review_slider').classList.toggle('second')
     }
     downloadPDF(){
         console.log('hi')
@@ -97,7 +99,8 @@ class Layout extends React.Component{
                                         content = {item}
                                         generator = {this.state}
                                         handler = {{
-                                                'logoColor': this.logoColor
+                                                'logoColor': this.logoColor,
+                                                'reviewControl': this.reviewControl
                                             }}
                                     />}
                                     {item.type === 'PatternBlock'&&
@@ -112,6 +115,33 @@ class Layout extends React.Component{
             </div>
         )
   }
+}
+
+class Reviews extends React.Component{
+    render(){
+        return(
+            <div className = 'review_container'>
+                <div className = 'review_clip'>
+                    <div id ='review_slider' className = 'review_slider'>
+                    {this.props.data.map(
+                        (item, index)=>{
+                            return(
+                                <div className = 'review'>
+                                    <p className = 'review_kicker'>{item.text}</p>
+                                    <div className = 'review_author'>
+                                        <img src = {item.foto} className = 'author_foto'></img>
+                                        <span className = 'author_name'>{item.author}</span>
+                                        <span className = 'author_role'>{item.role}</span>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    )}
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
 class Footer extends React.Component{
@@ -221,6 +251,9 @@ class Column extends React.Component{
                             }
                             {el.indexOf('img')>-1&&
                                 <Picture data = {this.props.content[el]} key = { 'img' + index} handlerLoad = {this.props.handlerLoad}/>
+                            }
+                            {el.indexOf('reviews')>-1&&
+                                <Reviews data = {this.props.content[el]} key = { 'reviews' + index}/>
                             }
                             {el.indexOf('aboutGeraldic')>-1&&
                                 <GeraldicBlock data = {this.props.content[el]} key = { 'ag' + index}/>

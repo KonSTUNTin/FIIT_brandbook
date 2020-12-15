@@ -95,4 +95,10 @@
     .bigShield img {
         max-height: 30vh;
     }
+    .review_author {
+        align-items: flex-start;
+    }
+    p.review_kicker {
+        font-size: var(--x3);
+    }
 }

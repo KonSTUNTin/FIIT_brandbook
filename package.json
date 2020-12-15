@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "webpack -dev-server",
     "start": "react-scripts start",
-    "build": "react-scripts build && now=$(date +%s) && zip -r ru_$now.zip build",
+    "build": "react-scripts build && now=$(date +%s) && zip -r zip/ru_$now.zip build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
