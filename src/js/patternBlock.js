@@ -3,6 +3,10 @@ import MyCanvas from './myCanvas.js'
 import {RadioRow, ButtonRow, RangeRow} from './formElements.js'
 import Button from './button.js'
 
+
+
+
+
 class PatternBlock extends React.Component{
     constructor(props){
         super(props)
@@ -21,6 +25,14 @@ class PatternBlock extends React.Component{
         }
         this.CanvasRef = React.createRef();
         this.Myref = React.createRef();
+        this.controls_2 = controls_2_en;
+        this.controls_3 = controls_3_en;
+        this.controls_4 = controls_4_en;
+        if(this.props.lang === 1){
+            this.controls_2 = controls_2_ru
+            this.controls_3 = controls_3_ru
+            this.controls_4 = controls_4_ru
+        }
         this.rangeHandler = this.rangeHandler.bind(this)
         this.logoColorInGenerator = this.logoColorInGenerator.bind(this)
         this.saveImage = this.saveImage.bind(this)
@@ -71,9 +83,9 @@ class PatternBlock extends React.Component{
                     </div>
                     <div className = 'column width6 vertical controls_pattern'>
                         <RadioRow data = {controls_1} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>
-                        <RadioRow data = {controls_2} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>
-                        <RangeRow name = 'Логотип' data = {controls_3} handler = {{"rangeHandler": this.rangeHandler}} generator = {this.state}/>
-                        <RangeRow name = 'Узор' data = {controls_4} handler = {{"rangeHandler": this.rangeHandler}} generator = {this.state}/>
+                        <RadioRow data = {this.controls_2} handler = {{'logoColorInGenerator': this.logoColorInGenerator}}/>
+                        <RangeRow name = 'Логотип' data = {this.controls_3} handler = {{"rangeHandler": this.rangeHandler}} generator = {this.state}/>
+                        <RangeRow name = 'Узор' data = {this.controls_4} handler = {{"rangeHandler": this.rangeHandler}} generator = {this.state}/>
                     </div>
                 </div>
             </div>
@@ -113,7 +125,40 @@ const controls_1 = [
                     }
                 ]
 
-const controls_2 = [{
+const controls_2_en = [{
+            name: 'logo',
+            type: 'text',
+            handler: 'logoColorInGenerator',
+            values: [
+                // {
+                //     name: 'generator_logo_without',
+                //     value: 'none',
+                //     text: "Без логотипа",
+                //     select: false
+                // },
+                {
+                    name: 'generator_logo_main',
+                    value: 'main',
+                    text: "Main symbol",
+                    select: true
+                },
+                {
+                    name: 'generator_logo_brackets',
+                    value: 'brackets',
+                    text: "Emblem-container",
+                    select: false
+                },
+                {
+                    name: 'generator_logo_short',
+                    value: 'short',
+                    text: "Short form",
+                    select: false
+                },
+            ]
+        }]
+
+
+const controls_2_ru = [{
                         name: 'logo',
                         type: 'text',
                         handler: 'logoColorInGenerator',
@@ -145,45 +190,86 @@ const controls_2 = [{
                         ]
                     }]
 
-const controls_3 = [{
+const controls_3_ru = [{
                             text: 'Размер логотипа',
                             name: 'logoSize',
                             value: 50,
                             handler: 'rangeHandler'
                         }
                     ]
+const controls_3_en = [{
+        text: 'Logo size',
+        name: 'logoSize',
+        value: 50,
+        handler: 'rangeHandler'
+    }
+]
                 
-const controls_4 = [
+const controls_4_en = [
                     {
-                        text: 'Размер точек',
+                        text: 'Point size',
                         name: 'black',
                         value: 50,
                         handler: 'rangeHandler'
                     },
                     {
-                        text: 'Масштаб',
+                        text: 'Scale',
                         name: 'scale',
                         value: 50,
                         handler: 'rangeHandler'
                     },
                     {
-                        text: 'Контраст',
+                        text: 'Contrast',
                         name: 'trace',
                         value: 50,
                         handler: 'rangeHandler'
                     },
                     {
-                        text: 'Форма',
+                        text: 'Form',
                         name: 'form',
                         value: 50,
                         handler: 'rangeHandler'
                     },
                     {
-                        text: 'Разделение',
+                        text: 'Split',
                         name: 'split',
                         value: 50,
                         handler: 'rangeHandler'
                     }
 
                 ]
+                               
+const controls_4_ru = [
+    {
+        text: 'Размер точек',
+        name: 'black',
+        value: 50,
+        handler: 'rangeHandler'
+    },
+    {
+        text: 'Масштаб',
+        name: 'scale',
+        value: 50,
+        handler: 'rangeHandler'
+    },
+    {
+        text: 'Контраст',
+        name: 'trace',
+        value: 50,
+        handler: 'rangeHandler'
+    },
+    {
+        text: 'Форма',
+        name: 'form',
+        value: 50,
+        handler: 'rangeHandler'
+    },
+    {
+        text: 'Разделение',
+        name: 'split',
+        value: 50,
+        handler: 'rangeHandler'
+    }
+
+]
 export default PatternBlock

@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import brandbookContent from './js/content.js'
+import brandbookContent_RU from './js/content_ru.js';
+import brandbookContent_EN from './js/content_en.js';
+
 import Picture from './js/picture.js'
 import Header from './js/header.js'
 import HeroBlock from './js/heroBlock.js'
@@ -8,6 +10,12 @@ import {RadioRow, ButtonRow} from './js/formElements.js'
 import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
 import LottieAnimation from './js/lottieAnimation'
 import PatternBlock from './js/patternBlock.js'
+
+let language = 0;
+let brandbookContent = brandbookContent_EN
+if(language === 1){
+    brandbookContent = brandbookContent_RU
+}
 
 class App extends React.Component{
     constructor(props){
@@ -75,9 +83,9 @@ class Layout extends React.Component{
         console.log('render')
         return(
             <div className = {"Fiit_Container " + this.props.data}>
-                <Header handler = {this.downloadPDF}></Header>
+                <Header lang = {language} handler = {this.downloadPDF}></Header>
                 <div ref = {this.ref}>
-                    <HeroBlock/>
+                    <HeroBlock lang = {language}/>
                         {brandbookContent.map(
                             (item, index)=>{
                                 return(
@@ -93,7 +101,7 @@ class Layout extends React.Component{
                                             }}
                                     />}
                                     {item.type === 'PatternBlock'&&
-                                        <PatternBlock/>
+                                        <PatternBlock lang = {language}/>
                                     }
                                     </>
                                 )
@@ -138,7 +146,8 @@ class Footer extends React.Component{
                             <a href = 'https://www.jetstyle.ru' target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
                             
                                 <div onClick = {this.open} className = 'link'>
-                                    Смотреть варианты, которые не&nbsp;пошли в&nbsp;релиз
+                                    {(language === 0)&&<>See options that weren't included in the final version</>}
+                                    {(language === 1)&&<>Смотреть варианты, которые не&nbsp;пошли в&nbsp;релиз</>}
                                 </div>
                             
                         </div>

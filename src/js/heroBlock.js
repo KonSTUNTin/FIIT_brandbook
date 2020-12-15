@@ -1,4 +1,12 @@
 import React from 'react'
+let text = [
+    'Logo and brand identity for FIIT',
+    'Логотип и\u00A0фирменный стиль\u00A0ФИИТ'
+]
+let link = [
+    'https://www.jet.style',
+    'https://www.jetstyle.ru'
+]
 
 class HeroBlock extends React.Component{
     shouldComponentUpdate(){
@@ -16,9 +24,12 @@ class HeroBlock extends React.Component{
                 </div>
                 <div className = 'content'>
                     <div className = 'column width12'>
-                        <h1>
-                            Логотип<br/>и&nbsp;фирменный<br/>стиль ФИИТ
-                        </h1>
+                        {this.props.lang===1&&<h1>
+                            Логотип<br/>и фирменный стиль&nbsp;ФИИТ
+                        </h1>}
+                        {this.props.lang===0&&<h1>
+                            Logo&nbsp;and&nbsp;brand<br/>identity for&nbsp;FIIT
+                        </h1>}
                         <div className = 'heroBlockBottomLine'>
                             <a href = 'https://www.jetstyle.ru' target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
                             <div className = 'socialIcons'>

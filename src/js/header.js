@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './button.js'
 
-const menuContent = [
+const menuContent_ru = [
     {
         name: 'Концепция',
         link: 'conception', 
@@ -40,6 +40,45 @@ const menuContent = [
     },
 ]
 
+const menuContent_en = [
+    {
+        name: 'Concept',
+        link: 'conception', 
+    },
+    {
+        name: 'Main symbol',
+        link: 'major_logo', 
+    },
+    {
+        name: 'Heraldry',
+        link: 'geraldic', 
+    },
+    {
+        name: 'Emblem-container',
+        link: 'brackets', 
+    },
+    {
+        name: 'Short form',
+        link: 'short_form', 
+    },
+    {
+        name: 'Colours',
+        link: 'colors', 
+    },
+    {
+        name: 'Typeface',
+        link: 'font', 
+    },
+    {
+        name: 'Pattern',
+        link: 'pattern', 
+    },
+    {
+        name: 'Mediums',
+        link: 'mockups', 
+    },
+]
+
 
 
 class Header extends React.Component{
@@ -48,6 +87,13 @@ class Header extends React.Component{
         this.state = {
             class: ''
         }
+        this.content = [
+            menuContent_en, menuContent_ru
+        ]
+        this.buttonText = [
+            'Download\u00A0as\u00A0PDF',
+            'Скачать\u00A0как\u00A0PDF'
+        ]
         this.mobileMenuActive = this.mobileMenuActive.bind(this)
     }
     mobileMenuActive(){
@@ -65,7 +111,7 @@ class Header extends React.Component{
                         <div onClick = {this.mobileMenuActive} className = 'mobileMenu'> </div>
                         <div className = 'menuNavigation'>
                             {
-                                menuContent.map(
+                                this.content[this.props.lang].map(
                                     (item, index)=>{
                                         return(
                                             <a onClick = {this.mobileMenuActive}  className = 'menuUnit' href = {window.location.origin + window.location.pathname + '#' + item.link}>
@@ -78,7 +124,8 @@ class Header extends React.Component{
                         </div>
                     </div>
                     
-                    <Button file = './media/FIIT.pdf' text = 'Скачать&nbsp;как&nbsp;PDF'/>
+                    {(this.props.lang===1)&&<Button file = './media/FIIT.pdf' text = {this.buttonText[this.props.lang]}/>}
+                    {(this.props.lang===0)&&<Button file = './media/FIIT_en.pdf' text = {this.buttonText[this.props.lang]}/>}
                 </div>
             </div>
         )
