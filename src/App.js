@@ -11,7 +11,7 @@ import {GeraldicBlock, Person, ColorSwatches} from './js/layoutBlock.js'
 import LottieAnimation from './js/lottieAnimation'
 import PatternBlock from './js/patternBlock.js'
 
-let language = 1;
+let language = 0;
 let brandbookContent = brandbookContent_EN
 if(language === 1){
     brandbookContent = brandbookContent_RU
@@ -55,10 +55,15 @@ class Loader extends React.Component{
 class Layout extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            logo_language: "ru",
+            logo_color: 'white'
+        }
         //this.ref = React.createRef();
         this.scroll = 'noScroll';
         this.logoColor = this.logoColor.bind(this)
         this.downloadPDF = this.downloadPDF.bind(this)
+        this.languageHandler = this.languageHandler.bind(this)
         this.reviewControl = this.reviewControl.bind(this)
     }
     shouldComponentUpdate(nextProps, nextState){
@@ -69,9 +74,13 @@ class Layout extends React.Component{
             return true
         }
     }
+    languageHandler(event){
+        this.setState({logo_language: event.target.value})
+        document.getElementById('logo_FIIT').setAttribute('class',this.state.logo_color + ' ' + event.target.value)
+    }
     logoColor(event){
-        document.getElementById('logo_FIIT').setAttribute('class', '')
-        document.getElementById('logo_FIIT').classList.add(event.target.value)
+        this.setState({logo_color: event.target.value})
+        document.getElementById('logo_FIIT').setAttribute('class', event.target.value + ' ' + this.state.logo_language)
     }
     reviewControl(event){
         console.log('hi')
@@ -99,6 +108,7 @@ class Layout extends React.Component{
                                         content = {item}
                                         generator = {this.state}
                                         handler = {{
+                                                'languageHandler': this.languageHandler,
                                                 'logoColor': this.logoColor,
                                                 'reviewControl': this.reviewControl
                                             }}

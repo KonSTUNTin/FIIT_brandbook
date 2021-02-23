@@ -15,7 +15,7 @@ class MyCanvas extends React.Component{
         this.state = {
             width: 1024,
             height: 1024,
-            time: 0
+            time: Date.now()
         }
         this.ref = this.props.myref
         this.animate = this.animate.bind(this);
@@ -23,7 +23,7 @@ class MyCanvas extends React.Component{
     }
     animate(){
         requestAnimationFrame(this.animate)
-        let time = this.state.time + 1;
+        let time = Date.now();
         this.setState({time: time})
     }
     async componentDidMount(){

@@ -130,12 +130,7 @@ const controls_2_en = [{
             type: 'text',
             handler: 'logoColorInGenerator',
             values: [
-                // {
-                //     name: 'generator_logo_without',
-                //     value: 'none',
-                //     text: "Без логотипа",
-                //     select: false
-                // },
+               
                 {
                     name: 'generator_logo_main',
                     value: 'main',
@@ -154,6 +149,12 @@ const controls_2_en = [{
                     text: "Short form",
                     select: false
                 },
+                {
+                    name: 'generator_logo_without',
+                    value: 'none',
+                    text: "None",
+                    select: false
+                }
             ]
         }]
 
@@ -163,12 +164,12 @@ const controls_2_ru = [{
                         type: 'text',
                         handler: 'logoColorInGenerator',
                         values: [
-                            // {
-                            //     name: 'generator_logo_without',
-                            //     value: 'none',
-                            //     text: "Без логотипа",
-                            //     select: false
-                            // },
+                            {
+                                name: 'generator_logo_without',
+                                value: 'none',
+                                text: "Без логотипа",
+                                select: false
+                            },
                             {
                                 name: 'generator_logo_main',
                                 value: 'main',
@@ -225,7 +226,7 @@ const controls_4_en = [
                         handler: 'rangeHandler'
                     },
                     {
-                        text: 'Form',
+                        text: 'Shape',
                         name: 'form',
                         value: 50,
                         handler: 'rangeHandler'

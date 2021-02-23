@@ -34,13 +34,14 @@ const menuContent_ru = [
         name: 'Паттерн',
         link: 'pattern', 
     },
-    {
-        name: 'Отзывы',
-        link: 'testimonials', 
-    },
+    
     {
         name: 'Носители',
         link: 'mockups', 
+    },
+    {
+        name: 'Отзывы',
+        link: 'testimonials', 
     },
 ]
 
@@ -78,12 +79,12 @@ const menuContent_en = [
         link: 'pattern', 
     },
     {
-        name: 'Testimonials',
-        link: 'testimonials', 
+        name: 'Application',
+        link: 'mockups', 
     },
     {
-        name: 'Mediums',
-        link: 'mockups', 
+        name: 'Testimonials',
+        link: 'testimonials', 
     },
    
 ]

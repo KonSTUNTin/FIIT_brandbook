@@ -8,7 +8,7 @@ const brandbookContent = [
             },
             {   
                 className: 'column width8 bigText',
-                text_1: 'FIIT\u00A0–\u00A0Fundamental Informatics and\u00A0Information Technologies – is\u00A0a\u00A0new\u00A0educational programme based at\u00A0the\u00A0Ural Federal University. \
+                text_1: 'FIIT\u00A0(ФИИТ) –\u00A0Fundamental Informatics and\u00A0Information Technologies – is\u00A0a\u00A0new\u00A0educational programme based at\u00A0the\u00A0Ural Federal University. \
                 It\u00A0was\u00A0launched in\u00A02019 by\u00A0Kontur with\u00A0the\u00A0support of\u00A0Naumen, JetStyle and\u00A0other\u00A0representatives of\u00A0the\u00A0IT\u00A0industry\
                 in\u00A0Yekaterinburg.',
                 text_2: 'The main goal of\u00A0FIIT at\u00A0UrFU is\u00A0to\u00A0train software developers in\u00A0a\u00A0new way. And\u00A0our\u00A0task was\u00A0to\u00A0come\u00A0up\u00A0with\u00A0how\u00A0FIIT would look like\u00A0– we created a\u00A0logo and\u00A0brand identity.'
@@ -52,13 +52,13 @@ const brandbookContent = [
                 className: 'column width3 horizontal_center',
             },
             {
-                lottie: './lottie/new.json',
+                lottie: './lottie/new_2.json',
                 className: 'animate_sign column width5 center'
             },
             {
                 text: 'It is self-contained by default',
                 className: 'column width3 horizontal_center',
-                radioRow: [
+                radioRow_1: [
                     {
                         name: 'colorAnimation',
                         type: 'color',
@@ -85,14 +85,35 @@ const brandbookContent = [
                         ]
                     }
                 ],
+                radioRow_2: [
+                    {
+                        name: 'language',
+                        type: 'text',
+                        handler: 'languageHandler',
+                        values: [
+                            {
+                                name: 'logo_ru',
+                                text: "RU",
+                                value: "ru",
+                                select: true
+                            },
+                            {
+                                name: 'logo_en',
+                                text: "EN",
+                                value: "en",
+                                select: false
+                            },
+                        ]
+                    }
+                ],
                 buttonRow:[
                     {
                         text: 'PNG',
-                        file: './downloads/major_logo.png'
+                        file: './downloads/major_logo_png.zip'
                     },
                     {
                         text: 'SVG',
-                        file: './downloads/major_logo.svg'
+                        file: './downloads/major_logo_svg.zip'
                     }
                 ]
             },
@@ -286,7 +307,7 @@ const brandbookContent = [
             {   
                 className: 'column width4 concept',
                 img: './images/bracketExample1_eng.png',
-                text: 'Bracket\u00A0logo: can\u00A0be used in\u00A0graphics or\u00A0captions',
+                text: 'Bracket\u00A0logo can\u00A0be used in\u00A0graphics or\u00A0captions.',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -301,7 +322,7 @@ const brandbookContent = [
             {
                 className: 'column width4 concept',  
                 img: './images/Fletterexample.png',          
-                text: 'The\u00A0"Ф" letter: it\u00A0is\u00A0rhymed with the\u00A0shape of\u00A0the\u00A0lower bracket and\u00A0can\u00A0be\u00A0used as\u00A0a\u00A0graphics mask.',
+                text: 'The\u00A0"Ф"\u00A0symbol is\u00A0rhymed with the\u00A0shape of\u00A0the\u00A0lower bracket and\u00A0can\u00A0be used as\u00A0a\u00A0graphics mask.',
                 buttonRow:[
                     {
                         text: 'PNG',
@@ -412,7 +433,7 @@ const brandbookContent = [
         className: 'section black mobile_center',
         columns: [
             {
-                h2: 'Mediums',
+                h2: 'Brand application',
                 className: 'column width12 center',
                 img: [
                     './images/inLife1.jpg',
@@ -453,7 +474,7 @@ const brandbookContent = [
                         role: 'Head of educational programmes, SKB Kontur'
                     },
                     {
-                        text:'In general, it\u00A0was a\u00A0very pleasant experience to\u00A0work with\u00A0people who\u00A0are on\u00A0the\u00A0same\u00A0wavelength with\u00A0us and\u00A0practically read our\u00A0minds)',
+                        text:'In general, it\u00A0was a\u00A0very pleasant experience to\u00A0work with people who are on\u00A0the\u00A0same page with\u00A0us and\u00A0can practically read our\u00A0minds)',
                         full_text: 'Получилось красиво, аккуратно и современно. Но это как раз было предсказуемо. Что меня действительно приятно удивило, так это то, насколько идейным получился результат.\
                         Превратить программистские скобочки в герб, а буквы ФИИТ в гербовые символы — идея, от которой мы были в восторге!\
                         Ирония, которая проглядывает в фирменном стиле (вы ведь заметили костыль в гербе, да?), тоже попала в самую цель. \
@@ -528,7 +549,7 @@ const brandbookContent = [
                 person_2: {
                     photo: './images/Kostya.png',
                     name: 'Konstantin Ostroukhov',
-                    role: 'Designer, developer',
+                    role: 'Designer, developer of\u00A0the\u00A0pattern generator, made the\u00A0case study',
                 },
                 person_3: {
                     photo: './images/Lyasya.png',

@@ -31,7 +31,7 @@ class HeroBlock extends React.Component{
                             Logo&nbsp;and&nbsp;brand<br/>identity for&nbsp;FIIT
                         </h1>}
                         <div className = 'heroBlockBottomLine'>
-                            <a href = 'https://www.jetstyle.ru' target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
+                            <a href = {link[this.props.lang]} target = '_blank'><img className = 'jetLogo' src = './logoJS.svg'/></a>
                             <div className = 'socialIcons'>
 
                             </div>

@@ -51,13 +51,13 @@ const brandbookContent = [
                 className: 'column width3 horizontal_center',
             },
             {
-                lottie: './lottie/new.json',
+                lottie: './lottie/two_logos.json',
                 className: 'animate_sign column width5 center'
             },
             {
                 text: 'По\u00A0умолчанию является самостоятельным.',
                 className: 'column width3 horizontal_center',
-                radioRow: [
+                radioRow_1: [
                     {
                         name: 'colorAnimation',
                         type: 'color',
@@ -84,14 +84,35 @@ const brandbookContent = [
                         ]
                     }
                 ],
+                radioRow_2: [
+                    {
+                        name: 'language',
+                        type: 'text',
+                        handler: 'languageHandler',
+                        values: [
+                            {
+                                name: 'logo_ru',
+                                text: "RU",
+                                value: "ru",
+                                select: true
+                            },
+                            {
+                                name: 'logo_en',
+                                text: "EN",
+                                value: "en",
+                                select: false
+                            },
+                        ]
+                    }
+                ],
                 buttonRow:[
                     {
                         text: 'PNG',
-                        file: './downloads/major_logo.png'
+                        file: './downloads/major_logo_png.zip'
                     },
                     {
                         text: 'SVG',
-                        file: './downloads/major_logo.svg'
+                        file: './downloads/major_logo_svg.zip'
                     }
                 ]
             },

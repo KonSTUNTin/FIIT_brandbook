@@ -739,7 +739,23 @@ img.author_foto {
   width: 100px;
   margin-bottom: var(--x2);
 }
+.center .RadioRow {
+  margin-right: 0px;
+}
 
+#en{
+  opacity: 0;
+  transition: opacity 500ms;
+}
+#ru{
+  transition: opacity 500ms;
+}
+.en #en{
+  opacity: 1;
+}
+.en #ru{
+  opacity: 0;
+}
 /* .review_container:before {
   content: '«';
   position: absolute;
